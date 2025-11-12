@@ -1,0 +1,24 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# User-provided data files and datasets
+data/
+dataset.jsonl
+
+# Generated model artifacts
+/models/
+
+# MacOS
+.DS_Store
+
+# VSC
+*.code-workspace
+.vscode/
