@@ -82,3 +82,1577 @@
 2025-11-12 21:53:29.669 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
 2025-11-12 21:53:29.672 - RealTimeSTT: realtimestt - INFO - recording stopped
 2025-11-12 21:53:29.973 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie durften als Belohnung, wenn ich das richtig verstanden habe, sogar mit dem Zug nach Moskab.
+2025-11-12 22:04:53.349 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:04:53.354 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:04:53.357 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:04:53.844 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:04:53.844 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:04:53.844 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:04:53.973 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:04:53.973 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:04:53.973 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:04:59.759 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:04:59.759 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:05:03.579 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:05:03.580 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:05:03.812 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:05:03.813 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:05:04.025 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:05:04.027 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:05:04.226 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:05:04.228 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:05:04.444 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:05:04.567 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Oh!
+2025-11-12 22:05:04.644 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:05:04.807 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Oh, nice.
+2025-11-12 22:05:04.845 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:05:04.990 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Oh, das ist nicht.
+2025-11-12 22:05:05.070 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:05:05.204 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Olausen und hau
+2025-11-12 22:05:05.270 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:05:05.442 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Oh, Guys, man haben sie.
+2025-11-12 22:05:05.471 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 22:05:05.633 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reißen und haben sich
+2025-11-12 22:05:05.671 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:05:05.818 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort
+2025-11-12 22:05:05.899 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:05:06.033 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort
+2025-11-12 22:05:06.099 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:05:06.264 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort
+2025-11-12 22:05:06.299 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:05:06.459 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwa...
+2025-11-12 22:05:06.500 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 47104
+2025-11-12 22:05:06.665 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas G...
+2025-11-12 22:05:06.700 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:05:06.848 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz ...
+2025-11-12 22:05:06.934 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:05:07.132 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besucht.
+2025-11-12 22:05:07.135 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:05:07.318 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besunden.
+2025-11-12 22:05:07.336 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 60416
+2025-11-12 22:05:07.519 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besonderes.
+2025-11-12 22:05:07.536 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 22:05:07.712 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz Besonderes gekriegt.
+2025-11-12 22:05:07.737 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:05:07.901 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besonders gekauft.
+2025-11-12 22:05:07.938 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:05:08.167 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besonders gekauft.
+2025-11-12 22:05:08.167 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 73216
+2025-11-12 22:05:08.361 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz besonders gekauft.
+2025-11-12 22:05:08.368 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 76800
+2025-11-12 22:05:08.558 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz Besonderes gekauft, wissen Sie.
+2025-11-12 22:05:08.569 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:05:08.742 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz Besonderes gekauft, wissen Sie
+2025-11-12 22:05:08.769 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:05:08.973 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf?
+2025-11-12 22:05:08.973 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:05:09.188 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich ...
+2025-11-12 22:05:09.188 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 90112
+2025-11-12 22:05:09.446 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spann.
+2025-11-12 22:05:09.446 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 94208
+2025-11-12 22:05:09.651 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel.
+2025-11-12 22:05:09.651 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 97280
+2025-11-12 22:05:09.904 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:09.905 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 101376
+2025-11-12 22:05:10.131 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:10.131 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 104448
+2025-11-12 22:05:10.409 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch reisen und haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:10.409 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 109568
+2025-11-12 22:05:10.617 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:10.618 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 112640
+2025-11-12 22:05:10.867 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:10.867 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:05:11.094 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:11.094 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 119808
+2025-11-12 22:05:11.346 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:11.347 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 123904
+2025-11-12 22:05:11.556 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:11.556 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 128000
+2025-11-12 22:05:11.783 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:11.783 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 131072
+2025-11-12 22:05:12.011 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:12.011 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:05:12.260 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:12.260 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 139264
+2025-11-12 22:05:12.505 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:12.505 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 142336
+2025-11-12 22:05:12.744 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:12.744 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 146432
+2025-11-12 22:05:13.001 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:13.001 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 150528
+2025-11-12 22:05:13.227 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:13.227 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 154624
+2025-11-12 22:05:13.486 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:13.486 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 22:05:13.719 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:13.719 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 161792
+2025-11-12 22:05:13.998 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:13.998 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 166912
+2025-11-12 22:05:14.227 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:14.227 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 169984
+2025-11-12 22:05:14.453 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:14.453 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 174080
+2025-11-12 22:05:14.718 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:14.718 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:05:14.982 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:14.983 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 182272
+2025-11-12 22:05:15.199 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:15.199 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 185344
+2025-11-12 22:05:15.457 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:15.457 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 189440
+2025-11-12 22:05:15.696 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:15.696 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 193536
+2025-11-12 22:05:15.964 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:15.964 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 197632
+2025-11-12 22:05:16.207 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:16.207 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 201728
+2025-11-12 22:05:16.444 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:16.444 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 205824
+2025-11-12 22:05:16.711 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:16.711 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:05:16.977 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:16.977 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:05:17.199 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:17.199 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 218112
+2025-11-12 22:05:17.465 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:17.465 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 222208
+2025-11-12 22:05:17.737 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:17.737 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 226304
+2025-11-12 22:05:17.960 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:17.960 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 230400
+2025-11-12 22:05:18.215 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:18.215 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 234496
+2025-11-12 22:05:18.491 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:18.491 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 238592
+2025-11-12 22:05:18.735 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will.
+2025-11-12 22:05:18.735 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 242688
+2025-11-12 22:05:18.990 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja. Ja.
+2025-11-12 22:05:18.990 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 246784
+2025-11-12 22:05:19.300 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter.
+2025-11-12 22:05:19.300 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 251904
+2025-11-12 22:05:19.585 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:19.586 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 256000
+2025-11-12 22:05:19.851 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:19.851 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 260096
+2025-11-12 22:05:20.148 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:20.148 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 265216
+2025-11-12 22:05:20.433 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:20.433 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 269312
+2025-11-12 22:05:20.743 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:20.744 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 274432
+2025-11-12 22:05:21.032 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:21.033 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 279552
+2025-11-12 22:05:21.353 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:21.354 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 284160
+2025-11-12 22:05:21.649 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:21.650 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 288768
+2025-11-12 22:05:21.951 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja.
+2025-11-12 22:05:21.952 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 293888
+2025-11-12 22:05:22.259 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venühen.
+2025-11-12 22:05:22.260 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 299008
+2025-11-12 22:05:22.612 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü platten.
+2025-11-12 22:05:22.612 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 304128
+2025-11-12 22:05:22.910 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platten.
+2025-11-12 22:05:22.910 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 308224
+2025-11-12 22:05:23.230 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:23.230 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 314368
+2025-11-12 22:05:23.588 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:23.589 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 320512
+2025-11-12 22:05:23.891 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:23.891 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 324608
+2025-11-12 22:05:24.256 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:24.256 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 330752
+2025-11-12 22:05:24.574 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:24.575 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 335872
+2025-11-12 22:05:24.919 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft, wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:24.919 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 340992
+2025-11-12 22:05:25.248 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:25.248 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 346112
+2025-11-12 22:05:25.593 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:25.594 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 351744
+2025-11-12 22:05:25.921 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:25.921 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 357376
+2025-11-12 22:05:26.316 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:26.317 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 363520
+2025-11-12 22:05:26.687 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:26.687 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 369664
+2025-11-12 22:05:27.017 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:27.017 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 374784
+2025-11-12 22:05:27.387 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:27.388 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 380928
+2025-11-12 22:05:27.702 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:27.702 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 386048
+2025-11-12 22:05:28.075 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:28.075 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 391168
+2025-11-12 22:05:28.475 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:28.475 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 397824
+2025-11-12 22:05:28.849 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:28.849 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 404480
+2025-11-12 22:05:29.238 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:29.238 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 410624
+2025-11-12 22:05:29.612 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:29.612 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 415744
+2025-11-12 22:05:29.996 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:29.997 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 422912
+2025-11-12 22:05:30.382 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:30.383 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 428544
+2025-11-12 22:05:30.706 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:30.706 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 434176
+2025-11-12 22:05:31.077 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:31.078 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 440320
+2025-11-12 22:05:31.458 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:31.458 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 446464
+2025-11-12 22:05:31.840 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:31.841 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 451584
+2025-11-12 22:05:32.240 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:32.240 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 458752
+2025-11-12 22:05:32.619 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:32.620 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 464896
+2025-11-12 22:05:33.009 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:33.009 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 471040
+2025-11-12 22:05:33.381 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:33.381 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 477184
+2025-11-12 22:05:33.771 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:33.771 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 482816
+2025-11-12 22:05:34.174 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:34.174 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 489472
+2025-11-12 22:05:34.540 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:34.541 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 495616
+2025-11-12 22:05:34.932 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:34.932 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 501760
+2025-11-12 22:05:35.313 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:35.313 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 507904
+2025-11-12 22:05:35.698 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:35.698 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 514048
+2025-11-12 22:05:36.093 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:36.093 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 520192
+2025-11-12 22:05:36.461 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:36.461 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 526336
+2025-11-12 22:05:36.855 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:36.855 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 532480
+2025-11-12 22:05:37.244 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:37.244 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 538624
+2025-11-12 22:05:37.620 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:37.621 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 544768
+2025-11-12 22:05:38.015 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:38.015 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 550912
+2025-11-12 22:05:38.390 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:38.390 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 557056
+2025-11-12 22:05:38.783 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:38.783 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 563200
+2025-11-12 22:05:39.184 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:39.184 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 569344
+2025-11-12 22:05:39.566 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:39.566 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 575488
+2025-11-12 22:05:39.960 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:39.961 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 581632
+2025-11-12 22:05:40.341 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:40.341 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 587776
+2025-11-12 22:05:40.726 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:40.726 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 593920
+2025-11-12 22:05:41.113 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:41.113 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 600064
+2025-11-12 22:05:41.501 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:41.502 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 606208
+2025-11-12 22:05:41.900 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:41.900 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 613376
+2025-11-12 22:05:42.297 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:42.298 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 619520
+2025-11-12 22:05:42.672 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:42.672 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 625664
+2025-11-12 22:05:43.060 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:43.060 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 631808
+2025-11-12 22:05:43.442 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:43.442 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 637952
+2025-11-12 22:05:43.849 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:43.849 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 644096
+2025-11-12 22:05:44.228 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:44.228 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 650240
+2025-11-12 22:05:44.611 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:44.611 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 656384
+2025-11-12 22:05:45.010 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:45.010 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 662528
+2025-11-12 22:05:45.383 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:45.384 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 668672
+2025-11-12 22:05:45.797 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:45.797 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 674816
+2025-11-12 22:05:46.206 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:46.206 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 681984
+2025-11-12 22:05:46.579 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:46.582 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 688128
+2025-11-12 22:05:46.980 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:46.981 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 694272
+2025-11-12 22:05:47.358 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:47.359 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 700416
+2025-11-12 22:05:47.753 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:47.754 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 706560
+2025-11-12 22:05:48.142 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:48.142 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 712704
+2025-11-12 22:05:48.512 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:48.513 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 718848
+2025-11-12 22:05:48.946 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:48.947 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 726016
+2025-11-12 22:05:49.325 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aureisen haben sich dort etwas ganz Besonderes gekauft. Wissen Sie, worauf ich am Spiel will. Ja, ja, Mutter. Ja. Die so venü Platte mit...
+2025-11-12 22:05:49.325 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 729088
+2025-11-12 22:05:52.509 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:05:52.514 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:05:52.517 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:05:52.974 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:05:52.974 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:05:52.974 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:05:53.109 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:05:53.110 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:05:53.110 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:05:59.549 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:05:59.549 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:06:01.003 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:06:01.003 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:06:01.245 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 3072
+2025-11-12 22:06:01.246 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:01.464 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:06:01.466 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:01.664 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:06:01.666 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:01.877 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:06:01.879 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:02.078 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 22:06:02.080 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:02.301 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:06:02.305 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:02.501 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:06:02.649 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das ist ein ...
+2025-11-12 22:06:02.731 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:06:02.857 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  3, 2, 1
+2025-11-12 22:06:02.931 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 30720
+2025-11-12 22:06:03.063 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den.
+2025-11-12 22:06:03.132 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:06:03.288 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Szenen.
+2025-11-12 22:06:03.332 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:06:03.480 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von diesem Sandler.
+2025-11-12 22:06:03.532 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:06:03.698 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fondizanches.
+2025-11-12 22:06:03.739 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:06:03.878 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Fanges.
+2025-11-12 22:06:03.939 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 47104
+2025-11-12 22:06:04.128 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Fanges.
+2025-11-12 22:06:04.139 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:06:04.310 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  von den Fanges.
+2025-11-12 22:06:04.340 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:06:04.510 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Sandels, Jell.
+2025-11-12 22:06:04.541 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:06:04.694 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow.
+2025-11-12 22:06:04.741 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 22:06:04.926 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Sandels Jellos.
+2025-11-12 22:06:04.964 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 62464
+2025-11-12 22:06:05.150 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die von den Sandels Jellos.
+2025-11-12 22:06:05.165 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:06:05.340 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarine.
+2025-11-12 22:06:05.366 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:06:05.532 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarine
+2025-11-12 22:06:05.566 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:06:05.720 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarines.
+2025-11-12 22:06:05.767 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 22:06:05.994 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarine.
+2025-11-12 22:06:05.994 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:06:06.182 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarine.
+2025-11-12 22:06:06.195 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:06:06.378 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Die Fonditionels Yellow Submarine.
+2025-11-12 22:06:06.396 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:06:06.558 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarine.
+2025-11-12 22:06:06.596 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 22:06:06.773 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:06.797 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 92160
+2025-11-12 22:06:07.029 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarine.
+2025-11-12 22:06:07.029 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 22:06:07.230 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:07.231 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:06:07.424 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:07.431 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:06:07.609 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:07.632 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 105472
+2025-11-12 22:06:07.815 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:07.832 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 108544
+2025-11-12 22:06:08.016 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:08.033 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 111616
+2025-11-12 22:06:08.272 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:08.272 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:06:08.454 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:08.474 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
+2025-11-12 22:06:08.648 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:08.674 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 122880
+2025-11-12 22:06:08.862 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:08.874 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 125952
+2025-11-12 22:06:09.062 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:09.076 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 129024
+2025-11-12 22:06:09.264 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:09.276 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 132096
+2025-11-12 22:06:09.447 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:09.477 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:06:09.707 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:09.707 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 139264
+2025-11-12 22:06:09.902 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:09.908 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 142336
+2025-11-12 22:06:10.099 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:10.109 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 145408
+2025-11-12 22:06:10.300 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:10.310 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 148480
+2025-11-12 22:06:10.483 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:10.510 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 22:06:10.754 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:10.754 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 155136
+2025-11-12 22:06:10.946 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:10.954 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 22:06:11.149 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:11.154 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 161792
+2025-11-12 22:06:11.338 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:11.355 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 164864
+2025-11-12 22:06:11.536 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:11.556 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 168960
+2025-11-12 22:06:11.749 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:11.757 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 172032
+2025-11-12 22:06:11.947 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:11.958 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 175104
+2025-11-12 22:06:12.155 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:12.159 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:06:12.336 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:12.359 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 22:06:12.599 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:12.600 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 184320
+2025-11-12 22:06:12.801 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:12.802 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 188416
+2025-11-12 22:06:13.005 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:13.005 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 22:06:13.199 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:13.205 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 194560
+2025-11-12 22:06:13.389 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:13.406 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 197632
+2025-11-12 22:06:13.601 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:13.606 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 201728
+2025-11-12 22:06:13.805 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:13.807 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 204800
+2025-11-12 22:06:14.013 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:14.013 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 206848
+2025-11-12 22:06:14.210 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:14.214 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 210944
+2025-11-12 22:06:14.403 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:14.414 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:06:14.613 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:14.614 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 217088
+2025-11-12 22:06:14.818 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:14.818 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 221184
+2025-11-12 22:06:15.022 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:15.022 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 224256
+2025-11-12 22:06:15.216 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:15.223 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 227328
+2025-11-12 22:06:15.443 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:15.443 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 230400
+2025-11-12 22:06:15.709 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:15.709 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 234496
+2025-11-12 22:06:15.915 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:15.916 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 238592
+2025-11-12 22:06:16.123 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:16.123 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 241664
+2025-11-12 22:06:16.311 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:16.324 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 244736
+2025-11-12 22:06:16.579 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:16.579 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 248832
+2025-11-12 22:06:16.788 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:16.788 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 251904
+2025-11-12 22:06:16.997 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:16.998 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 256000
+2025-11-12 22:06:17.201 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:17.201 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 259072
+2025-11-12 22:06:17.393 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:17.402 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 262144
+2025-11-12 22:06:17.608 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:17.608 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 265216
+2025-11-12 22:06:17.815 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:17.816 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 268288
+2025-11-12 22:06:17.923 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:06:18.076 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Von den Sandels Yellow Submarines.
+2025-11-12 22:06:30.862 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:06:31.094 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:06:31.095 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:31.317 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:06:31.319 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:06:31.517 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:06:31.660 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  ... ... ...
+2025-11-12 22:06:31.745 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 14336
+2025-11-12 22:06:31.877 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wie ja?
+2025-11-12 22:06:31.946 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:06:32.079 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir haben...
+2025-11-12 22:06:32.147 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:06:32.296 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben...
+2025-11-12 22:06:32.348 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:06:32.482 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen...
+2025-11-12 22:06:32.563 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:06:32.707 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Ex...
+2025-11-12 22:06:32.763 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 30720
+2025-11-12 22:06:32.938 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exempel.
+2025-11-12 22:06:32.964 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:06:33.129 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar.
+2025-11-12 22:06:33.164 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:06:33.315 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplarfis.
+2025-11-12 22:06:33.364 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:06:33.577 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für sie da.
+2025-11-12 22:06:33.577 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 44032
+2025-11-12 22:06:33.765 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für sie da.
+2025-11-12 22:06:33.778 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 47104
+2025-11-12 22:06:33.953 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da.
+2025-11-12 22:06:33.979 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:06:34.150 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für sie da.
+2025-11-12 22:06:34.180 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:06:34.337 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für sie da.
+2025-11-12 22:06:34.381 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:06:34.611 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da. Sogar.
+2025-11-12 22:06:34.611 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 60416
+2025-11-12 22:06:34.796 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar.
+2025-11-12 22:06:34.811 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 22:06:34.994 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar.
+2025-11-12 22:06:35.012 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:06:35.184 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für Sie da, sogar.
+2025-11-12 22:06:35.213 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:06:35.375 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da, sogar.
+2025-11-12 22:06:35.414 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:06:35.593 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für Sie da, sogar...
+2025-11-12 22:06:35.615 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 22:06:35.849 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in ...
+2025-11-12 22:06:35.850 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:06:36.046 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in Russen.
+2025-11-12 22:06:36.051 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:06:36.229 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in Russischer.
+2025-11-12 22:06:36.252 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:06:36.442 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für Sie da sogar in Russischer Idee.
+2025-11-12 22:06:36.452 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 90112
+2025-11-12 22:06:36.651 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:36.653 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 93184
+2025-11-12 22:06:36.854 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:36.855 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 22:06:37.058 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:37.058 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:06:37.242 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für Sie da sogar in Russischer Edition.
+2025-11-12 22:06:37.288 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:06:37.494 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:37.494 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 106496
+2025-11-12 22:06:37.763 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für Sie da sogar in Russischer Edition.
+2025-11-12 22:06:37.764 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 110592
+2025-11-12 22:06:37.968 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:37.968 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 113664
+2025-11-12 22:06:38.157 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:38.168 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 116736
+2025-11-12 22:06:38.364 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:38.369 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 119808
+2025-11-12 22:06:38.568 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben ein Exemplar für Sie da sogar in Russischer Edition.
+2025-11-12 22:06:38.569 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 123904
+2025-11-12 22:06:38.772 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:38.773 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 126976
+2025-11-12 22:06:38.981 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:38.981 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 130048
+2025-11-12 22:06:39.171 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:39.181 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 133120
+2025-11-12 22:06:39.427 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:39.428 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 137216
+2025-11-12 22:06:39.638 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:39.638 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 140288
+2025-11-12 22:06:39.845 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:39.845 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 144384
+2025-11-12 22:06:40.040 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:40.046 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 147456
+2025-11-12 22:06:40.240 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:40.247 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 150528
+2025-11-12 22:06:40.456 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:40.456 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 153600
+2025-11-12 22:06:40.668 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:40.668 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 156672
+2025-11-12 22:06:40.878 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:40.878 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 160768
+2025-11-12 22:06:41.114 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:41.114 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 163840
+2025-11-12 22:06:41.331 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:41.331 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 167936
+2025-11-12 22:06:41.543 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:41.544 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 171008
+2025-11-12 22:06:41.757 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:41.757 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 174080
+2025-11-12 22:06:41.998 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:41.998 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:06:42.205 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:42.206 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 22:06:42.418 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:42.418 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 185344
+2025-11-12 22:06:42.641 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:42.641 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 188416
+2025-11-12 22:06:42.878 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:42.878 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 192512
+2025-11-12 22:06:43.076 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:43.079 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 195584
+2025-11-12 22:06:43.295 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:43.295 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 199680
+2025-11-12 22:06:43.538 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:43.538 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 202752
+2025-11-12 22:06:43.757 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:43.757 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 206848
+2025-11-12 22:06:43.990 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:43.990 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:06:44.205 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:44.206 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:06:44.461 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:44.461 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 217088
+2025-11-12 22:06:44.681 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:44.682 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 221184
+2025-11-12 22:06:44.887 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:44.887 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 224256
+2025-11-12 22:06:45.136 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:45.137 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 228352
+2025-11-12 22:06:45.358 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:45.358 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 232448
+2025-11-12 22:06:45.622 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:45.622 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 235520
+2025-11-12 22:06:45.829 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:45.829 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 239616
+2025-11-12 22:06:46.049 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:46.049 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 242688
+2025-11-12 22:06:46.305 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:46.305 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 246784
+2025-11-12 22:06:46.528 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:46.528 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 250880
+2025-11-12 22:06:46.776 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:46.776 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 254976
+2025-11-12 22:06:46.993 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:46.993 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 258048
+2025-11-12 22:06:47.262 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:47.262 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 263168
+2025-11-12 22:06:47.486 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:47.486 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 266240
+2025-11-12 22:06:47.734 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:47.734 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 270336
+2025-11-12 22:06:47.951 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:47.951 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 273408
+2025-11-12 22:06:48.217 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:48.217 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 277504
+2025-11-12 22:06:48.446 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:48.446 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 281600
+2025-11-12 22:06:48.698 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:48.698 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 284672
+2025-11-12 22:06:48.919 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:48.919 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 288768
+2025-11-12 22:06:49.185 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:49.185 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 293888
+2025-11-12 22:06:49.450 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:49.450 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 297984
+2025-11-12 22:06:49.679 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:49.680 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 301056
+2025-11-12 22:06:49.902 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:49.902 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 305152
+2025-11-12 22:06:50.166 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:50.166 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 308224
+2025-11-12 22:06:50.400 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:06:50.400 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 312320
+2025-11-12 22:06:50.593 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:06:50.667 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wir haben einen Exemplar für sie da sogar in russischer Edition.
+2025-11-12 22:07:36.212 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:07:36.216 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:07:36.219 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:07:36.689 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:07:36.689 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:07:36.689 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:07:36.816 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:07:36.816 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:07:36.816 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:07:42.832 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:07:42.832 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:07:45.238 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:07:45.239 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:07:45.274 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 1024
+2025-11-12 22:07:45.276 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:45.475 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:07:45.476 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:45.692 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:07:45.695 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:45.893 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:07:45.895 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:46.104 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:07:46.106 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:46.304 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:07:46.307 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:46.530 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:07:46.534 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:46.731 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:07:46.734 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:46.937 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 27648
+2025-11-12 22:07:46.942 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:47.138 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 30720
+2025-11-12 22:07:47.142 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:47.351 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:07:47.357 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:47.553 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:07:47.558 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:47.765 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:07:47.771 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:47.965 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 44032
+2025-11-12 22:07:47.972 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:48.187 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 47104
+2025-11-12 22:07:48.194 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:48.388 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:07:48.395 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:48.593 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 54272
+2025-11-12 22:07:48.601 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:48.794 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 57344
+2025-11-12 22:07:48.802 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:07:49.000 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 60416
+2025-11-12 22:07:49.136 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das ist das.
+2025-11-12 22:07:49.201 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 22:07:49.368 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das ist das.
+2025-11-12 22:07:49.401 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:07:49.554 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt!
+2025-11-12 22:07:49.602 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:07:49.754 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt vor.
+2025-11-12 22:07:49.811 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:07:49.986 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns.
+2025-11-12 22:07:50.012 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 76800
+2025-11-12 22:07:50.179 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns.
+2025-11-12 22:07:50.213 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:07:50.377 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als Band.
+2025-11-12 22:07:50.413 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:07:50.565 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns, das war ja nur.
+2025-11-12 22:07:50.614 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:07:50.789 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 2019.
+2025-11-12 22:07:50.829 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 22:07:51.010 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier.
+2025-11-12 22:07:51.030 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 93184
+2025-11-12 22:07:51.198 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns an 92 hier.
+2025-11-12 22:07:51.230 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 22:07:51.385 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier.
+2025-11-12 22:07:51.431 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:07:51.607 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier.
+2025-11-12 22:07:51.645 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:07:51.830 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier.
+2025-11-12 22:07:51.846 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 105472
+2025-11-12 22:07:52.027 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und...
+2025-11-12 22:07:52.047 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 109568
+2025-11-12 22:07:52.225 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich.
+2025-11-12 22:07:52.247 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 112640
+2025-11-12 22:07:52.409 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von 1992 hier und ich war...
+2025-11-12 22:07:52.448 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:07:52.640 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von 1992 hier und ich war...
+2025-11-12 22:07:52.672 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
+2025-11-12 22:07:52.868 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da.
+2025-11-12 22:07:52.874 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 121856
+2025-11-12 22:07:53.063 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da.
+2025-11-12 22:07:53.074 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 125952
+2025-11-12 22:07:53.253 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da...
+2025-11-12 22:07:53.275 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 129024
+2025-11-12 22:07:53.450 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da...
+2025-11-12 22:07:53.475 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 132096
+2025-11-12 22:07:53.664 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da immer.
+2025-11-12 22:07:53.676 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:07:53.868 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr.
+2025-11-12 22:07:53.876 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 138240
+2025-11-12 22:07:54.070 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahre.
+2025-11-12 22:07:54.077 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 141312
+2025-11-12 22:07:54.261 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahre.
+2025-11-12 22:07:54.278 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 144384
+2025-11-12 22:07:54.505 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahre.
+2025-11-12 22:07:54.505 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 148480
+2025-11-12 22:07:54.704 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da in den Jahren.
+2025-11-12 22:07:54.707 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 22:07:54.914 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 19.
+2025-11-12 22:07:54.915 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 154624
+2025-11-12 22:07:55.115 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 19.
+2025-11-12 22:07:55.115 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 157696
+2025-11-12 22:07:55.296 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:55.316 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 161792
+2025-11-12 22:07:55.512 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:55.517 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 164864
+2025-11-12 22:07:55.719 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:55.719 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 167936
+2025-11-12 22:07:55.957 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:55.957 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 172032
+2025-11-12 22:07:56.145 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:56.158 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 175104
+2025-11-12 22:07:56.346 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1900.
+2025-11-12 22:07:56.359 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:07:56.562 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1900.
+2025-11-12 22:07:56.562 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 22:07:56.811 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:56.811 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 185344
+2025-11-12 22:07:57.024 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:57.024 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 188416
+2025-11-12 22:07:57.217 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:57.224 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 22:07:57.470 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:57.470 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 195584
+2025-11-12 22:07:57.684 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:57.685 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 199680
+2025-11-12 22:07:57.905 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:57.905 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 202752
+2025-11-12 22:07:58.138 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:58.139 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 206848
+2025-11-12 22:07:58.349 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:58.349 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:07:58.611 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:58.611 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:07:58.824 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:58.824 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 217088
+2025-11-12 22:07:59.024 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:59.025 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 221184
+2025-11-12 22:07:59.267 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier und ich war da im Jahr 1901.
+2025-11-12 22:07:59.267 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 224256
+2025-11-12 22:07:59.501 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:59.501 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 228352
+2025-11-12 22:07:59.741 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:59.741 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 232448
+2025-11-12 22:07:59.966 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:07:59.966 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 235520
+2025-11-12 22:08:00.254 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:08:00.254 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 240640
+2025-11-12 22:08:00.485 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901.
+2025-11-12 22:08:00.485 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 243712
+2025-11-12 22:08:00.750 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901 oder 96.
+2025-11-12 22:08:00.751 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 248832
+2025-11-12 22:08:00.969 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960.
+2025-11-12 22:08:00.969 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 251904
+2025-11-12 22:08:01.223 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960.
+2025-11-12 22:08:01.224 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 256000
+2025-11-12 22:08:01.453 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so.
+2025-11-12 22:08:01.453 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 260096
+2025-11-12 22:08:01.720 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so.
+2025-11-12 22:08:01.720 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 264192
+2025-11-12 22:08:01.947 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so, da fährt uns.
+2025-11-12 22:08:01.948 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 267264
+2025-11-12 22:08:02.214 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so.
+2025-11-12 22:08:02.214 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 271360
+2025-11-12 22:08:02.545 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1901, 79 oder 79, 70, so ganz schwer. Und das war's.
+2025-11-12 22:08:02.546 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 276480
+2025-11-12 22:08:02.829 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901, 79 oder 79, so ganz schwer. Und da waren so eine...
+2025-11-12 22:08:02.830 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 281600
+2025-11-12 22:08:03.069 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine ...
+2025-11-12 22:08:03.069 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 285696
+2025-11-12 22:08:03.337 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:03.337 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 289792
+2025-11-12 22:08:03.619 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:03.620 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 293888
+2025-11-12 22:08:03.888 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns als 92 hier. Und ich war da im Jahr 1901, 79 oder 79. Und da waren so eine...
+2025-11-12 22:08:03.888 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 299008
+2025-11-12 22:08:04.176 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:04.176 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 303104
+2025-11-12 22:08:04.464 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:04.464 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 308224
+2025-11-12 22:08:04.737 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:04.737 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 312320
+2025-11-12 22:08:05.015 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:05.016 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 316416
+2025-11-12 22:08:05.304 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:05.304 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 320512
+2025-11-12 22:08:05.590 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:05.591 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 325632
+2025-11-12 22:08:05.862 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:05.862 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 329728
+2025-11-12 22:08:06.148 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:06.149 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 333824
+2025-11-12 22:08:06.441 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:06.442 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 338944
+2025-11-12 22:08:06.711 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:06.712 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 344064
+2025-11-12 22:08:06.973 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:06.973 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 348160
+2025-11-12 22:08:07.310 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:07.310 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 353280
+2025-11-12 22:08:07.591 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:07.592 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 357376
+2025-11-12 22:08:07.873 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:07.873 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 362496
+2025-11-12 22:08:08.171 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:08.172 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 366592
+2025-11-12 22:08:08.468 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:08.468 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 371712
+2025-11-12 22:08:08.747 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:08.747 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 375808
+2025-11-12 22:08:09.046 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:09.046 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 380928
+2025-11-12 22:08:09.345 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:09.345 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 386048
+2025-11-12 22:08:09.623 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:09.623 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 390144
+2025-11-12 22:08:09.922 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:09.922 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 395264
+2025-11-12 22:08:10.212 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:10.212 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 399360
+2025-11-12 22:08:10.494 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:10.494 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 404480
+2025-11-12 22:08:10.771 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:10.771 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 408576
+2025-11-12 22:08:11.060 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:11.061 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 413696
+2025-11-12 22:08:11.389 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:11.390 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 418816
+2025-11-12 22:08:11.645 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:11.645 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 422912
+2025-11-12 22:08:11.957 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:11.958 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 428032
+2025-11-12 22:08:12.254 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:12.254 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 432128
+2025-11-12 22:08:12.519 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:12.519 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 436224
+2025-11-12 22:08:12.813 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:12.813 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 441344
+2025-11-12 22:08:13.109 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:13.109 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 446464
+2025-11-12 22:08:13.383 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:13.384 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 450560
+2025-11-12 22:08:13.664 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:13.665 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 454656
+2025-11-12 22:08:13.975 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:08:13.976 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:08:13.976 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 459776
+2025-11-12 22:08:14.304 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das kommt von uns hat 92 hier. Und ich war da im Jahr 1990 oder 1960 so. Und da waren so eine...
+2025-11-12 22:10:30.451 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-11-12 22:10:30.451 - RealTimeSTT: realtimestt - INFO - None
+2025-11-12 22:10:33.399 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:10:33.403 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:10:33.406 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:10:33.891 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:10:33.891 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:10:33.891 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:10:34.023 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:10:34.023 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:10:34.023 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:10:39.925 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:10:39.926 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:10:41.904 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:10:41.904 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:10:42.137 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:10:42.139 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:10:42.348 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:10:42.350 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:10:42.548 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:10:42.551 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:10:42.764 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13824
+2025-11-12 22:10:42.894 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und dann mit.
+2025-11-12 22:10:42.964 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:10:43.122 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Abonniert.
+2025-11-12 22:10:43.165 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:10:43.306 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da bin ich üblich.
+2025-11-12 22:10:43.386 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:10:43.522 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da bin ich überladen.
+2025-11-12 22:10:43.586 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:10:43.758 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Und wie nötig, laden ich.
+2025-11-12 22:10:43.787 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 30720
+2025-11-12 22:10:43.955 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wenn ihr die Platten einst du.
+2025-11-12 22:10:43.987 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:10:44.139 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wenn ihr die Platten als wundern.
+2025-11-12 22:10:44.188 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:10:44.362 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln das Wunner.
+2025-11-12 22:10:44.398 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:10:44.583 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wie nötig, laden Sie eine ...
+2025-11-12 22:10:44.598 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:10:44.767 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wenn ihr die Platten als eine Bix...
+2025-11-12 22:10:44.800 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 22:10:44.953 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nehmen jetzt ein bisschen an.
+2025-11-12 22:10:45.000 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 49152
+2025-11-12 22:10:45.144 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Summ.
+2025-11-12 22:10:45.219 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:10:45.401 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Summdinger.
+2025-11-12 22:10:45.420 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:10:45.596 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Summdinger.
+2025-11-12 22:10:45.621 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 22:10:45.795 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Summdinger.
+2025-11-12 22:10:45.822 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 62464
+2025-11-12 22:10:45.978 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger.
+2025-11-12 22:10:46.022 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 65536
+2025-11-12 22:10:46.241 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die...
+2025-11-12 22:10:46.241 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:10:46.435 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nühen Platten als eine Big Samdinger, die...
+2025-11-12 22:10:46.442 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:10:46.620 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die...
+2025-11-12 22:10:46.642 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 22:10:46.821 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die ...
+2025-11-12 22:10:46.844 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 78848
+2025-11-12 22:10:47.012 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gap.
+2025-11-12 22:10:47.044 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 81920
+2025-11-12 22:10:47.276 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gapern.
+2025-11-12 22:10:47.276 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 84992
+2025-11-12 22:10:47.471 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:47.477 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 22:10:47.697 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:47.697 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 93184
+2025-11-12 22:10:47.879 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:47.898 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 22:10:48.126 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:48.127 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:10:48.325 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:48.327 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:10:48.523 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:48.527 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 106496
+2025-11-12 22:10:48.724 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:48.727 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 109568
+2025-11-12 22:10:48.909 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:48.928 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 112640
+2025-11-12 22:10:49.123 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:49.128 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:10:49.327 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:49.328 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
+2025-11-12 22:10:49.527 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:49.528 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 121856
+2025-11-12 22:10:49.724 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:49.730 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 124928
+2025-11-12 22:10:49.956 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:49.957 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 129024
+2025-11-12 22:10:50.157 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:50.157 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 132096
+2025-11-12 22:10:50.359 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:50.359 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:10:50.561 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:50.561 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 138240
+2025-11-12 22:10:50.750 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:50.761 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 141312
+2025-11-12 22:10:50.954 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:50.961 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 145408
+2025-11-12 22:10:51.164 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:51.164 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 148480
+2025-11-12 22:10:51.403 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:51.404 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 22:10:51.609 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:51.609 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 155648
+2025-11-12 22:10:51.797 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:51.809 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 22:10:52.014 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:52.014 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 161792
+2025-11-12 22:10:52.260 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:52.260 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 165888
+2025-11-12 22:10:52.468 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:52.468 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 168960
+2025-11-12 22:10:52.662 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:52.668 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 172032
+2025-11-12 22:10:52.869 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:52.869 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 175104
+2025-11-12 22:10:53.124 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:53.124 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 179200
+2025-11-12 22:10:53.337 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:53.338 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 183296
+2025-11-12 22:10:53.541 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:53.541 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 186368
+2025-11-12 22:10:53.732 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:53.742 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 189440
+2025-11-12 22:10:53.954 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:53.954 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 192512
+2025-11-12 22:10:54.164 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:54.165 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 196608
+2025-11-12 22:10:54.371 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:54.372 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 199680
+2025-11-12 22:10:54.569 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:54.572 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 202752
+2025-11-12 22:10:54.823 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:54.823 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 206336
+2025-11-12 22:10:55.036 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:55.037 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:10:55.249 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:55.249 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:10:55.479 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:55.480 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 217088
+2025-11-12 22:10:55.677 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:55.680 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 220160
+2025-11-12 22:10:55.893 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:55.894 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 224256
+2025-11-12 22:10:56.141 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:56.142 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 228352
+2025-11-12 22:10:56.358 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:56.358 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 231424
+2025-11-12 22:10:56.606 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:56.606 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 235520
+2025-11-12 22:10:56.821 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:10:56.821 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 238592
+2025-11-12 22:10:56.993 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:10:57.082 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Wir nöteln als eine Big Samdinger, die Gappel.
+2025-11-12 22:11:57.211 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-11-12 22:11:57.211 - RealTimeSTT: realtimestt - INFO - None
+2025-11-12 22:12:00.110 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:12:00.115 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:12:00.120 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:12:00.583 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:12:00.583 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:12:00.583 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:12:00.718 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:12:00.718 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:12:00.718 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:12:06.639 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:12:06.639 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:12:08.309 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:12:08.309 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:12:08.555 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 3072
+2025-11-12 22:12:08.556 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:12:08.766 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 6144
+2025-11-12 22:12:08.768 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:12:08.967 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:12:09.102 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja.
+2025-11-12 22:12:09.179 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:12:09.301 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:09.380 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 22:12:09.540 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:09.580 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 19456
+2025-11-12 22:12:09.730 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:09.780 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:12:09.934 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:09.989 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 25600
+2025-11-12 22:12:10.108 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:10.189 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 22:12:10.350 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber...
+2025-11-12 22:12:10.390 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 32768
+2025-11-12 22:12:10.542 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, mal. So, mal.
+2025-11-12 22:12:10.591 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 35840
+2025-11-12 22:12:10.764 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was.
+2025-11-12 22:12:10.805 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 38912
+2025-11-12 22:12:10.942 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber sowas ist das alles.
+2025-11-12 22:12:11.006 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:12:11.169 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber sowas ist heute offen.
+2025-11-12 22:12:11.207 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 22:12:11.368 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auf wieder.
+2025-11-12 22:12:11.407 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 49152
+2025-11-12 22:12:11.578 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auf wieder modell.
+2025-11-12 22:12:11.608 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 52224
+2025-11-12 22:12:11.766 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auf wieder modellen.
+2025-11-12 22:12:11.836 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 55296
+2025-11-12 22:12:12.015 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne.
+2025-11-12 22:12:12.037 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 22:12:12.289 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne.
+2025-11-12 22:12:12.289 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 22:12:12.486 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:12.490 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:12:12.669 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:12.691 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:12:12.853 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:12.892 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:12:13.071 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:13.093 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 22:12:13.324 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:13.325 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:12:13.511 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:13.526 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:12:13.697 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:13.726 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:12:13.896 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:13.927 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 22:12:14.106 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:14.128 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 92160
+2025-11-12 22:12:14.308 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:14.328 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 22:12:14.511 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:14.529 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:12:14.694 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:14.729 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:12:14.959 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:14.960 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 105472
+2025-11-12 22:12:15.158 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:15.160 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 109568
+2025-11-12 22:12:15.354 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:15.361 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 112640
+2025-11-12 22:12:15.540 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:15.562 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:12:15.739 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:15.762 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
+2025-11-12 22:12:15.948 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:15.962 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 121856
+2025-11-12 22:12:16.147 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:16.162 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 124928
+2025-11-12 22:12:16.348 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:16.362 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 128000
+2025-11-12 22:12:16.531 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:16.563 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 131072
+2025-11-12 22:12:16.747 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:16.764 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:12:17.002 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:17.003 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 138240
+2025-11-12 22:12:17.200 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:17.204 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 141312
+2025-11-12 22:12:17.391 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:17.404 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 145408
+2025-11-12 22:12:17.580 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:17.605 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 148480
+2025-11-12 22:12:17.797 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:17.806 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 22:12:18.050 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:18.050 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 155648
+2025-11-12 22:12:18.253 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:18.253 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 22:12:18.436 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:18.454 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 161792
+2025-11-12 22:12:18.638 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:18.654 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 164864
+2025-11-12 22:12:18.847 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:18.855 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 167936
+2025-11-12 22:12:19.049 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:19.055 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 171008
+2025-11-12 22:12:19.293 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:19.293 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 175104
+2025-11-12 22:12:19.487 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:19.494 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:12:19.687 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:19.694 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 22:12:19.888 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:19.894 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 185344
+2025-11-12 22:12:20.091 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:20.095 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 188416
+2025-11-12 22:12:20.281 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:20.295 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 22:12:20.488 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:20.496 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 194560
+2025-11-12 22:12:20.694 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:20.697 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 197632
+2025-11-12 22:12:20.896 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:20.897 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 200704
+2025-11-12 22:12:21.146 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:12:21.147 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 204800
+2025-11-12 22:12:21.244 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:12:21.350 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ja, aber so was ist heute auch wieder moderne Absolut.
+2025-11-12 22:13:48.050 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:13:48.054 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:13:48.057 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:13:48.531 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:13:48.532 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:13:48.532 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:13:48.666 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:13:48.667 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:13:48.667 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:13:54.540 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:13:54.540 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:13:57.393 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:13:57.393 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:13:57.646 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 3072
+2025-11-12 22:13:57.647 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:57.860 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:13:57.863 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:58.061 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:13:58.063 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:58.264 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:13:58.267 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:58.464 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 22:13:58.467 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:58.677 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 19456
+2025-11-12 22:13:58.680 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:58.877 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:13:58.881 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:59.090 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:13:59.095 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:59.290 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 22:13:59.294 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:59.502 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 32768
+2025-11-12 22:13:59.508 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:59.703 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:13:59.708 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:13:59.914 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:13:59.920 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:00.115 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:14:00.121 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:00.331 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 22:14:00.339 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:00.532 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:14:00.539 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:00.743 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 52224
+2025-11-12 22:14:00.752 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:00.944 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:14:00.951 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:01.155 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 22:14:01.164 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:01.356 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 62464
+2025-11-12 22:14:01.364 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:01.568 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:14:01.577 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:01.768 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:14:01.779 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:01.971 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 22:14:01.981 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:02.172 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 22:14:02.181 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:02.385 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:14:02.397 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:02.586 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 22:14:02.599 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:02.798 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:14:02.810 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:02.999 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 22:14:03.010 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:14:03.200 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 92160
+2025-11-12 22:14:03.334 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das ...
+2025-11-12 22:14:03.401 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 95232
+2025-11-12 22:14:03.556 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch.
+2025-11-12 22:14:03.601 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:14:03.780 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon.
+2025-11-12 22:14:03.819 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 22:14:04.001 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon.
+2025-11-12 22:14:04.020 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 105472
+2025-11-12 22:14:04.185 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch runter.
+2025-11-12 22:14:04.220 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 108544
+2025-11-12 22:14:04.366 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon.
+2025-11-12 22:14:04.444 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 111616
+2025-11-12 22:14:04.628 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon.
+2025-11-12 22:14:04.645 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 115712
+2025-11-12 22:14:04.818 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon da jetzt abmaring.
+2025-11-12 22:14:04.846 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 118784
+2025-11-12 22:14:05.027 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon da erst einmal rein sein.
+2025-11-12 22:14:05.047 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 121856
+2025-11-12 22:14:05.235 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon da ja Sabmarina.
+2025-11-12 22:14:05.266 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 125952
+2025-11-12 22:14:05.453 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon da erst einmal rein, ja.
+2025-11-12 22:14:05.466 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 129024
+2025-11-12 22:14:05.696 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon, da er es abmaringen. Ja, genau.
+2025-11-12 22:14:05.696 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 132096
+2025-11-12 22:14:05.881 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon da erst einmal rein. Ja, genau.
+2025-11-12 22:14:05.896 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 135168
+2025-11-12 22:14:06.073 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon da erst einmal rein. Ja, genau.
+2025-11-12 22:14:06.097 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 139264
+2025-11-12 22:14:06.314 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon da erst einmal rein. Ja, genau.
+2025-11-12 22:14:06.315 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 142336
+2025-11-12 22:14:06.512 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon da erst einmal rein. Ja, genau.
+2025-11-12 22:14:06.516 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 145408
+2025-11-12 22:14:06.720 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er es hat, Marina, ja, genau.
+2025-11-12 22:14:06.720 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 148480
+2025-11-12 22:14:06.924 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er es hat, Marina, ja, genau.
+2025-11-12 22:14:06.924 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 22:14:07.100 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon da erst einmal rein, ja, genau.
+2025-11-12 22:14:07.125 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 155648
+2025-11-12 22:14:07.346 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er sapten mal rein. Ja, genau. Zimm mal mal.
+2025-11-12 22:14:07.347 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 22:14:07.602 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon, da er es abmaringen, ja, genau. Sie macht mal das.
+2025-11-12 22:14:07.602 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 162816
+2025-11-12 22:14:07.800 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie macht mal das Link.
+2025-11-12 22:14:07.803 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 165888
+2025-11-12 22:14:07.980 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie machen das Link.
+2025-11-12 22:14:08.004 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 168960
+2025-11-12 22:14:08.244 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon. Ja, genau. Sie macht mal das Link.
+2025-11-12 22:14:08.244 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 173056
+2025-11-12 22:14:08.481 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er sapten mal ringen. Ja, genau. Sie machen mal das Link.
+2025-11-12 22:14:08.481 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 177152
+2025-11-12 22:14:08.743 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon, da er es abmaringen. Ja, genau. Sie machen mal das Link.
+2025-11-12 22:14:08.744 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 22:14:08.955 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann es auch schon, da er es abmaringen. Ja, genau. Sie machen mal das Link.
+2025-11-12 22:14:08.956 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 184320
+2025-11-12 22:14:09.161 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie machen das Link. Ja.
+2025-11-12 22:14:09.161 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 187392
+2025-11-12 22:14:09.442 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er es hat, Marina. Ja, genau. Sie machen mal das Link. Ja, ich...
+2025-11-12 22:14:09.443 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 22:14:09.727 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon da erst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es.
+2025-11-12 22:14:09.727 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 196608
+2025-11-12 22:14:10.002 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er es hat, Marina. Ja, genau. Sie machen mal das Link. Ja, ich freund's freund ich.
+2025-11-12 22:14:10.003 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 201216
+2025-11-12 22:14:10.249 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie macht mal das Link. Ja, ich freunds freunding.
+2025-11-12 22:14:10.249 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 204800
+2025-11-12 22:14:10.534 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Sie kann das auch schon. Ja, genau. Sie machen das Link. Ja, ich freunds freunding.
+2025-11-12 22:14:10.534 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:14:10.806 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon, da er es hat, Marina. Ja, genau. Sie machen mal das Link. Ja, ich freundig, ich meine ich.
+2025-11-12 22:14:10.806 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 22:14:11.131 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand's freundig, ich meine ich hatte.
+2025-11-12 22:14:11.131 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 219136
+2025-11-12 22:14:11.435 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand's freundig. Ich meine, ich hatte zwei...
+2025-11-12 22:14:11.435 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 224256
+2025-11-12 22:14:11.727 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand's freundig. Ich meine, ich hatte zwei Erfahrungen.
+2025-11-12 22:14:11.727 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 229376
+2025-11-12 22:14:12.014 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie machen das Link. Ja, ich fand's freundig. Ich meine, ich hatte zwei Erfahrungen bei dieser Runde.
+2025-11-12 22:14:12.015 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 233472
+2025-11-12 22:14:12.322 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, ja, genau. Sie macht mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russen.
+2025-11-12 22:14:12.322 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 238592
+2025-11-12 22:14:12.631 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie macht mal das Link. Ja, ich fand's vor allen Dingen, wenn ich hatte zwei Erfahrungen bei dieser Russland reißen.
+2025-11-12 22:14:12.631 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 243712
+2025-11-12 22:14:12.983 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie macht mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russland 30.
+2025-11-12 22:14:12.983 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 248832
+2025-11-12 22:14:13.301 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, genau. Sie macht mal das Link. Ja, ich fand's vor einigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise des Fahrt.
+2025-11-12 22:14:13.302 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 253952
+2025-11-12 22:14:13.624 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, ja, genau. Sie machen mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise des Fahrtes.
+2025-11-12 22:14:13.624 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 259072
+2025-11-12 22:14:13.992 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russland reisen, das war das erst.
+2025-11-12 22:14:13.992 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 265216
+2025-11-12 22:14:14.388 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:14:14.388 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 271360
+2025-11-12 22:14:14.715 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon. Ja, ja, genau. Sie machen mal das Link. Ja, ich fand's vor allen Dingen, ich meine, ich hatte zwei Erfahrungen bei dieser Russland, drei sind es vor, das erst.
+2025-11-12 22:14:14.715 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 276480
+2025-11-12 22:14:15.084 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es freundigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:14:15.084 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 282624
+2025-11-12 22:14:15.464 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es freundigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:14:15.464 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 288768
+2025-11-12 22:14:15.829 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es freundigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:14:15.829 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 294912
+2025-11-12 22:14:16.215 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es freundigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:14:16.215 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 301056
+2025-11-12 22:14:16.459 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:14:16.589 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Sie kann das auch schon untererst abmaringen. Ja, genau. Sie machen mal das Link. Ja, ich fand es freundigen. Ich meine, ich hatte zwei Erfahrungen bei dieser Russlandreise. Das war das erst.
+2025-11-12 22:18:34.909 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:18:34.914 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:18:34.917 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:18:35.416 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:18:35.416 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:18:35.417 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:18:35.547 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:18:35.547 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:18:35.548 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:18:41.341 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:18:41.341 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:18:42.687 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:18:42.688 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:18:42.743 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 1024
+2025-11-12 22:18:42.744 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:18:42.944 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:18:42.945 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:18:43.162 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:18:43.164 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:18:43.363 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 11264
+2025-11-12 22:18:43.366 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:18:43.578 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 14336
+2025-11-12 22:18:43.717 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da da da.
+2025-11-12 22:18:43.778 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:18:43.909 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Das ist das.
+2025-11-12 22:18:43.979 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:18:44.138 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die.
+2025-11-12 22:18:44.180 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 24576
+2025-11-12 22:18:44.322 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die kommt.
+2025-11-12 22:18:44.406 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 27648
+2025-11-12 22:18:44.536 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsum...
+2025-11-12 22:18:44.607 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 30720
+2025-11-12 22:18:44.776 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsum wird.
+2025-11-12 22:18:44.807 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:18:44.963 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsomolz mit.
+2025-11-12 22:18:45.007 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 37888
+2025-11-12 22:18:45.165 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den.
+2025-11-12 22:18:45.208 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 40960
+2025-11-12 22:18:45.417 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witz.
+2025-11-12 22:18:45.418 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 44032
+2025-11-12 22:18:45.610 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witzes ab.
+2025-11-12 22:18:45.619 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 47104
+2025-11-12 22:18:45.808 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witzesamt.
+2025-11-12 22:18:45.819 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:18:45.999 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witzesamt haben.
+2025-11-12 22:18:46.020 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:18:46.194 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witzen samtrafen kann.
+2025-11-12 22:18:46.221 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 57344
+2025-11-12 22:18:46.406 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit den Witzesamthafen kamen.
+2025-11-12 22:18:46.422 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 60416
+2025-11-12 22:18:46.615 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit denen wir zusammen trafen, kam und sagen.
+2025-11-12 22:18:46.623 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 22:18:46.824 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  sodass die Konsumolz mit denen wir zusammen trafen, kam und sagt nicht.
+2025-11-12 22:18:46.824 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:18:47.018 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die kommen so mal mit denen wir zusammen trafen, kam und sagt näher.
+2025-11-12 22:18:47.024 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:18:47.207 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  dass die Konsumolz mit denen wir zusammen trafen, kam und sagt näher.
+2025-11-12 22:18:47.249 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 73216
+2025-11-12 22:18:47.453 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die kommen so mal mit denen wir zusammen trafen, kam und sagt näher.
+2025-11-12 22:18:47.454 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 76800
+2025-11-12 22:18:47.679 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit denen wir zusammen trafen, kam und sagt näher, euer Land.
+2025-11-12 22:18:47.679 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 22:18:47.902 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit denen wir zusammen trafen, kam und sagt näher, euer Land ist.
+2025-11-12 22:18:47.902 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 83968
+2025-11-12 22:18:48.031 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:18:48.150 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da das die Konsumolz mit denen wir zusammen trafen, kam und sagt näher, euer Land ist jetzt ...
+2025-11-12 22:19:37.631 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-11-12 22:19:37.631 - RealTimeSTT: realtimestt - INFO - None
+2025-11-12 22:19:40.443 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 22:19:40.449 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 22:19:40.453 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 22:19:40.886 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 22:19:40.886 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 22:19:40.886 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 22:19:41.015 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 22:19:41.016 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 22:19:41.016 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 22:19:46.957 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 22:19:46.957 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 22:19:48.606 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 22:19:48.606 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 22:19:48.638 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 512
+2025-11-12 22:19:48.640 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:19:48.839 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 22:19:48.840 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:19:49.054 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 22:19:49.056 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 22:19:49.254 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 22:19:49.392 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Danke.
+2025-11-12 22:19:49.476 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 22:19:49.605 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Danke schön.
+2025-11-12 22:19:49.676 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 22:19:49.845 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da geht es trend ab.
+2025-11-12 22:19:49.877 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 22:19:50.027 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Da geht es trend aber.
+2025-11-12 22:19:50.077 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 22:19:50.245 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  eingetrennt aber auch wieder.
+2025-11-12 22:19:50.280 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 22:19:50.427 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  eingetrennt aber wie glaubt
+2025-11-12 22:19:50.481 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 22:19:50.648 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  eingetrennt aber wie glaub ich nicht
+2025-11-12 22:19:50.681 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 22:19:50.847 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht.
+2025-11-12 22:19:50.882 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 22:19:51.046 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bin.
+2025-11-12 22:19:51.082 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 22:19:51.300 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestanden.
+2025-11-12 22:19:51.300 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 22:19:51.491 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand hat.
+2025-11-12 22:19:51.500 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 22:19:51.688 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben.
+2025-11-12 22:19:51.701 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 22:19:51.881 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben kann.
+2025-11-12 22:19:51.901 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 22:19:52.072 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben kann.
+2025-11-12 22:19:52.101 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 22:19:52.289 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ergetrennt, aber wie glauben nicht, dass es Bestand haben kann.
+2025-11-12 22:19:52.302 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 22:19:52.532 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wie glauben nicht, dass es Bestand haben kann.
+2025-11-12 22:19:52.533 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 62976
+2025-11-12 22:19:52.740 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben kann. Das ist jetzt...
+2025-11-12 22:19:52.740 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 22:19:52.949 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist es, als wir...
+2025-11-12 22:19:52.950 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 22:19:53.203 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wie glauben nicht, dass es Bestand haben kann. Das ist es, ja, es werden wir.
+2025-11-12 22:19:53.203 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 73728
+2025-11-12 22:19:53.478 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist es, ja, als wenn wir zwischen ...
+2025-11-12 22:19:53.479 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 77824
+2025-11-12 22:19:53.710 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskern.
+2025-11-12 22:19:53.710 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 81920
+2025-11-12 22:19:53.965 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist jetzt, wenn wir zwischen Moskauen.
+2025-11-12 22:19:53.965 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 22:19:54.238 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist jetzt, wenn wir zwischen Moskau und Linik...
+2025-11-12 22:19:54.238 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 90112
+2025-11-12 22:19:54.521 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist ja als wenn wir zwischen Moskau und Ihnen gerade noch.
+2025-11-12 22:19:54.521 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 95232
+2025-11-12 22:19:54.795 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch machen.
+2025-11-12 22:19:54.796 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 22:19:55.092 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist jetzt, wenn wir zwischen Moskau und Indigraten machen.
+2025-11-12 22:19:55.093 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 103424
+2025-11-12 22:19:55.401 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es gestandt haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch machen würden.
+2025-11-12 22:19:55.401 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 108544
+2025-11-12 22:19:55.669 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch machen würden.
+2025-11-12 22:19:55.670 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 113664
+2025-11-12 22:19:55.957 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch machen würden, das klappt.
+2025-11-12 22:19:55.957 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 117760
+2025-11-12 22:19:56.259 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch mal machen würden, das klappt ich auch.
+2025-11-12 22:19:56.260 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 122880
+2025-11-12 22:19:56.556 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch mal machen würden, das klappt ich offen.
+2025-11-12 22:19:56.556 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 126976
+2025-11-12 22:19:56.852 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja als wenn wir zwischen Moskau und Ini gerade noch mal machen würden, das klappt ich auf mich richtig.
+2025-11-12 22:19:56.853 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 131072
+2025-11-12 22:19:57.165 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wenn wir zwischen Moskau und Ihnen gerade eine Mama machen würden, das klappt ich auf mich richtig.
+2025-11-12 22:19:57.166 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 137216
+2025-11-12 22:19:57.522 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade noch mal machen würden, das klappt ich auf mich richtig. Das wird sich ändert.
+2025-11-12 22:19:57.522 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 142336
+2025-11-12 22:19:57.828 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja als wenn wir zwischen Moskau und Ihnen gerade eine Mama machen würden, das klappt ich auf mich richtig. Das wird sich Ende.
+2025-11-12 22:19:57.828 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 147456
+2025-11-12 22:19:58.179 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Indiegraden im Aura machen würden, das klappt ich auf, wie ich das wird sich ändern. Und das...
+2025-11-12 22:19:58.180 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 153600
+2025-11-12 22:19:58.577 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt ja, wenn wir zwischen Moskau und Indiegrad eine Mama machen würden. Das klappt sich auf, wie ich das wird sich ändern. Und das weinte mal...
+2025-11-12 22:19:58.577 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 159744
+2025-11-12 22:19:58.961 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wenn wir zwischen Moskau und Indiegrad eine Mama machen würden, das klappt ich auf. Das wird sich erinnern und das weinte mal das.
+2025-11-12 22:19:58.962 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 165888
+2025-11-12 22:19:59.357 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es Bestand haben kann. Das ist ja, als wenn wir zwischen Moskau und Indiegrad eine Mama machen würden, das klappt ich auf mich, das wird sich ändern. Und das weinte mal, dass du plötzlich biechst.
+2025-11-12 22:19:59.357 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 172032
+2025-11-12 22:19:59.742 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wenn wir zwischen Moskau und Indiegrad eine Mama machen würden, das klappt ich auf dem, die ich das würde sich ändern. Und das weinte mal, dass du plötzlich widest.
+2025-11-12 22:19:59.742 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 178176
+2025-11-12 22:20:00.142 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja als wenn wir zwischen Moskau und in die gerade eine Mama machen würden, das klappt ich auf mich richtig, das wird sich ändern. Und das weinde mal, dass du plötzlich widelflaten kaufen.
+2025-11-12 22:20:00.142 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 184320
+2025-11-12 22:20:00.523 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Indiegrad eine Mama machen würden, das klappt ich auf die Idee. Das wird sich ändern. Und das weinde mal, dass du plötzlich widelflaten kaufen konnten.
+2025-11-12 22:20:00.523 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 190464
+2025-11-12 22:20:00.925 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist jetzt, wenn wir zwischen Moskau und Ini gerade einen Mama machen würden, das klappt ich auf mich, dass wir uns hier ändern. Und das weinde mal, dass du plötzlich widelflaten kaufen konnten.
+2025-11-12 22:20:00.925 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 197632
+2025-11-12 22:20:01.332 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wir in der Zwischen Moskau und Ihnen gerade eine Mama machen würden. Das klappt nicht auf, wie ich das wird sich ändern. Und das weinte mal, dass du plötzlich viel Spannung kaufen konnten.
+2025-11-12 22:20:01.333 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 203776
+2025-11-12 22:20:01.728 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wir in der Zwischen Moskau und Ihnen gerade eine Mama machen würden. Das klappt nicht auf, wie ich das wird sich ändern. Und das weinte mal, dass du plötzlich viel Spannung kaufen konnten.
+2025-11-12 22:20:01.728 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 22:20:02.141 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wir in der Zwischen Moskau und Ihnen gerade eine Mama machen würden. Das klappt nicht auf, wie ich das wird sich ändern. Und das weinte mal, dass du plötzlich viel Spannung kaufen konnten.
+2025-11-12 22:20:02.142 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 217088
+2025-11-12 22:20:02.246 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 22:20:02.557 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Er getrennt, aber wir glauben nicht, dass es bestand haben kann. Das ist ja, als wir in der Zwischen Moskau und Ihnen gerade eine Mama machen würden. Das klappt nicht auf, wie ich das wird sich ändern. Und das weinte mal, dass du plötzlich viel Spannung kaufen konnten.
