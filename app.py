@@ -19,16 +19,8 @@ def main():
     # Initialize session state variables
     if 'is_recording' not in st.session_state:
         st.session_state.is_recording = False
-    if 'is_loading' not in st.session_state:    # <-- 1. ADDED
-        st.session_state.is_loading = False     # <-- 2. ADDED
     if 'transcriber' not in st.session_state:
         st.session_state.transcriber = None
-    if 'text_queue' not in st.session_state:
-        st.session_state.text_queue = queue.Queue()
-    if 'language' not in st.session_state:
-        st.session_state.language = 'de'  # Default to German
-    if 'realtime_text' not in st.session_state:
-        st.session_state.realtime_text = ""
 
     def get_on_realtime_text_update(text_queue: queue.Queue):
         """
@@ -38,31 +30,12 @@ def main():
             text_queue.put(text)
         return on_realtime_text_update
 
-    # Create the button and define its behavior
-    # Disable button if loading
-    if st.button("Stop Recording" if st.session_state.is_recording else "Start Recording", disabled=st.session_state.is_loading): # <-- 4. MODIFIED
-        
-        if st.session_state.is_recording:
-            # This was a "Stop Recording" click
-            st.session_state.is_recording = False
-            if st.session_state.transcriber:
-                st.session_state.transcriber.stop()
-                st.session_state.transcriber = None
-            st.info("Recording stopped.")
-            st.rerun()
-        else:
-            # This was a "Start Recording" click
-            st.session_state.is_loading = True
-            st.session_state.realtime_text = "" # Clear previous text
-            st.rerun() # Rerun immediately to show spinner and disabled button
-
-    # --- LOGIC MOVED ---
-    # Handle the loading process if 'is_loading' is true
-    if st.session_state.is_loading:
-        with st.spinner("Loading Model..."):
-            # Clear the queue for the new session
-            while not st.session_state.text_queue.empty():
-                st.session_state.text_queue.get()
+    # Load the transcriber model on first run
+    if st.session_state.transcriber is None:
+        with st.spinner("The app is loading, please wait..."):
+            st.session_state.text_queue = queue.Queue()
+            st.session_state.language = 'de'
+            st.session_state.realtime_text = ""
 
             st.session_state.transcriber = AudioToTextRecorder(
                 model="nebi/whisper-large-v3-turbo-swiss-german-ct2",
@@ -74,20 +47,38 @@ def main():
                 enable_realtime_transcription=True,
                 level=logging.INFO
             )
-            st.session_state.transcriber.start()
+        st.rerun()
+
+    # Create the button and define its behavior
+    # Disable button if loading
+    if st.button("Stop Recording" if st.session_state.is_recording else "Start Recording"):
         
-        # Update state: loading is done, recording has started
-        st.session_state.is_loading = False # <-- 5. MOVED/ADDED
-        st.session_state.is_recording = True
-        st.info("Recording started.")
-        st.rerun() # Rerun to update the button to "Stop Recording"
+        if st.session_state.is_recording:
+            # This was a "Stop Recording" click
+            st.session_state.is_recording = False
+            if st.session_state.transcriber:
+                st.session_state.transcriber.stop()
+            st.info("Recording stopped.")
+            st.rerun()
+        else:
+            # This was a "Start Recording" click
+            st.session_state.realtime_text = "" # Clear previous text
+            # Clear the queue for the new session
+            while not st.session_state.text_queue.empty():
+                st.session_state.text_queue.get()
+
+            if st.session_state.transcriber:
+                st.session_state.transcriber.start()
+                st.session_state.is_recording = True
+                st.info("Recording started.")
+                st.rerun()
 
     # Display the transcription text area
     st.subheader("Transcription:")
     text_area = st.empty()
 
     # This is the main UI update loop
-    if st.session_state.is_recording:
+    if st.session_state.get('is_recording', False):
         try:
             # Check the queue for new text
             while not st.session_state.text_queue.empty():
@@ -106,7 +97,7 @@ def main():
             st.rerun()
     else:
         # When not recording, just display the last text
-        text_area.text_area("Live Transcription", value=st.session_state.realtime_text, height=200)
+        text_area.text_area("Live Transcription", value=st.session_state.get('realtime_text', ''), height=200)
 
 if __name__ == '__main__':
     main()

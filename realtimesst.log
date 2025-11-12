@@ -4992,3 +4992,199 @@ AttributeError: st.session_state has no attribute "text_queue". Did you forget t
 2025-11-12 19:51:45.497 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 271360
 2025-11-12 19:51:45.632 - RealTimeSTT: realtimestt - INFO - recording stopped
 2025-11-12 19:51:45.874 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:53:18.073 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 19:53:18.077 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 19:53:18.081 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 19:53:18.543 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 19:53:18.543 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 19:53:18.543 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 19:53:18.675 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 19:53:18.676 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 19:53:18.676 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 19:53:24.521 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 19:53:24.521 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 19:53:26.136 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 19:53:26.136 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 19:53:26.375 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 3072
+2025-11-12 19:53:26.376 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:26.589 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 6144
+2025-11-12 19:53:26.591 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:26.789 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 19:53:26.792 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:27.003 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 19:53:27.006 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:27.204 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 19:53:27.206 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:27.423 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 19456
+2025-11-12 19:53:27.427 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:27.624 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 19:53:27.628 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:27.831 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 19:53:27.835 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:28.032 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 19:53:28.180 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auf.
+2025-11-12 19:53:28.233 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 19:53:28.397 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch so etwas.
+2025-11-12 19:53:28.444 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 35840
+2025-11-12 19:53:28.580 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch so ein Blatt.
+2025-11-12 19:53:28.645 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 19:53:28.801 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch schönplätze.
+2025-11-12 19:53:28.845 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 19:53:28.999 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch so im Plätze die drauf.
+2025-11-12 19:53:29.046 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 19:53:29.265 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch schon im Plätze in die Wrauben.
+2025-11-12 19:53:29.265 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 49664
+2025-11-12 19:53:29.441 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch so im Plätze, die brauchen auch.
+2025-11-12 19:53:29.466 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 19:53:29.627 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch Schulplätze, die brauchen aufwohnen.
+2025-11-12 19:53:29.666 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 19:53:29.835 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch Schulplätze, die brauchen auch Wohnungen.
+2025-11-12 19:53:29.867 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 19:53:30.088 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch Schulplätze, die brauchen Aufwohnung.
+2025-11-12 19:53:30.089 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 19:53:30.276 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  und auch Schulplätze, die brauchen Aufwohnung.
+2025-11-12 19:53:30.290 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 19:53:30.454 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze die brauchen Aufwohnung.
+2025-11-12 19:53:30.492 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 19:53:30.678 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also...
+2025-11-12 19:53:30.692 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 19:53:30.880 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also in so...
+2025-11-12 19:53:30.892 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 19:53:31.083 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern...
+2025-11-12 19:53:31.093 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 78848
+2025-11-12 19:53:31.287 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen, also insofern nicht.
+2025-11-12 19:53:31.294 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 81920
+2025-11-12 19:53:31.517 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist...
+2025-11-12 19:53:31.517 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 84992
+2025-11-12 19:53:31.716 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da...
+2025-11-12 19:53:31.718 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 19:53:31.915 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da.
+2025-11-12 19:53:31.919 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 92160
+2025-11-12 19:53:32.123 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da viel.
+2025-11-12 19:53:32.124 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 95232
+2025-11-12 19:53:32.315 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles...
+2025-11-12 19:53:32.324 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 98304
+2025-11-12 19:53:32.559 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles genug.
+2025-11-12 19:53:32.559 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 19:53:32.777 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen.
+2025-11-12 19:53:32.778 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 105472
+2025-11-12 19:53:33.000 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen.
+2025-11-12 19:53:33.000 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 109568
+2025-11-12 19:53:33.243 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und der sein.
+2025-11-12 19:53:33.243 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 113664
+2025-11-12 19:53:33.460 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und der sagt
+2025-11-12 19:53:33.460 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 116736
+2025-11-12 19:53:33.717 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und der sagt.
+2025-11-12 19:53:33.717 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 120832
+2025-11-12 19:53:33.947 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und der sagt
+2025-11-12 19:53:33.947 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 124928
+2025-11-12 19:53:34.180 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und der sagt, finde ich.
+2025-11-12 19:53:34.180 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 128000
+2025-11-12 19:53:34.409 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze in die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich.
+2025-11-12 19:53:34.409 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 132096
+2025-11-12 19:53:34.673 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich...
+2025-11-12 19:53:34.673 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 136192
+2025-11-12 19:53:34.935 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich...
+2025-11-12 19:53:34.935 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 140288
+2025-11-12 19:53:35.149 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich...
+2025-11-12 19:53:35.149 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 144384
+2025-11-12 19:53:35.410 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze in die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ...
+2025-11-12 19:53:35.410 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 147456
+2025-11-12 19:53:35.654 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ...
+2025-11-12 19:53:35.654 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 151552
+2025-11-12 19:53:35.927 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:35.927 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 156672
+2025-11-12 19:53:36.193 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:36.194 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 160768
+2025-11-12 19:53:36.469 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ...
+2025-11-12 19:53:36.469 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 164864
+2025-11-12 19:53:36.745 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:36.745 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 169984
+2025-11-12 19:53:36.976 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:36.976 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 173056
+2025-11-12 19:53:37.253 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:37.254 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 177152
+2025-11-12 19:53:37.531 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:37.531 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 182272
+2025-11-12 19:53:37.853 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:37.854 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 186880
+2025-11-12 19:53:38.098 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:38.098 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 19:53:38.448 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:38.448 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 196608
+2025-11-12 19:53:38.748 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:38.748 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 200704
+2025-11-12 19:53:38.985 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:38.985 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 205824
+2025-11-12 19:53:39.254 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:39.255 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 19:53:39.547 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:39.548 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 214016
+2025-11-12 19:53:39.821 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:39.821 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 219136
+2025-11-12 19:53:40.091 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:40.091 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 223232
+2025-11-12 19:53:40.464 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich bin ...
+2025-11-12 19:53:40.464 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 229376
+2025-11-12 19:53:40.705 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 19:53:40.775 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  brauchen auch Schulplätze, die brauchen auch Wohnungen. Also insofern ist da vieles gelungen und deshalb finde ich ... Ich ...
+2025-11-12 19:53:45.794 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 19:53:46.027 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 19:53:46.028 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:46.240 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 6144
+2025-11-12 19:53:46.242 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:53:46.440 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 19:53:46.593 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Was ist das?
+2025-11-12 19:53:46.641 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 19:53:46.781 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Pasünnig.
+2025-11-12 19:53:46.867 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 19:53:46.999 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Was ist denn nicht fit?
+2025-11-12 19:53:47.068 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 19:53:47.186 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde...
+2025-11-12 19:53:47.268 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 19:53:47.421 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Paso nicht finde.
+2025-11-12 19:53:47.469 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 19:53:47.633 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Pasönlich finde...
+2025-11-12 19:53:47.684 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 19:53:47.828 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man so.
+2025-11-12 19:53:47.884 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 33792
+2025-11-12 19:53:48.041 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man zurück.
+2025-11-12 19:53:48.085 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 19:53:48.235 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll.
+2025-11-12 19:53:48.285 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 19:53:48.466 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll.
+2025-11-12 19:53:48.500 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 19:53:48.683 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man so richtig ...
+2025-11-12 19:53:48.701 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 19:53:48.864 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Brühen.
+2025-11-12 19:53:48.902 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 49152
+2025-11-12 19:53:49.052 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme.
+2025-11-12 19:53:49.103 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 19:53:49.313 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man so die Probleme.
+2025-11-12 19:53:49.313 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 19:53:49.496 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man so die Probleme nicht wird.
+2025-11-12 19:53:49.514 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 19:53:49.684 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man so die Probleme nicht unter.
+2025-11-12 19:53:49.715 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 62464
+2025-11-12 19:53:49.880 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also, nicht finde man so die Probleme nicht untergehen.
+2025-11-12 19:53:49.915 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 65536
+2025-11-12 19:53:50.093 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch.
+2025-11-12 19:53:50.115 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 68608
+2025-11-12 19:53:50.300 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch kieren.
+2025-11-12 19:53:50.316 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 19:53:50.497 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch her?
+2025-11-12 19:53:50.516 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 75776
+2025-11-12 19:53:50.687 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also, ich finde, man soll die Probleme nicht unter den Tisch her.
+2025-11-12 19:53:50.716 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 78848
+2025-11-12 19:53:50.936 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also, ich finde, man soll die Probleme nicht unter den Tisch her.
+2025-11-12 19:53:50.936 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 81920
+2025-11-12 19:53:51.133 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch her.
+2025-11-12 19:53:51.137 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 84992
+2025-11-12 19:53:51.325 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch her. Aber
+2025-11-12 19:53:51.337 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 19:53:51.528 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch her, aber man ...
+2025-11-12 19:53:51.537 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 92160
+2025-11-12 19:53:51.621 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 19:53:51.732 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Also nicht finde man soll die Probleme nicht unter den Tisch her, aber man ...
+2025-11-12 19:53:54.360 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-11-12 19:53:54.360 - RealTimeSTT: realtimestt - INFO - None
