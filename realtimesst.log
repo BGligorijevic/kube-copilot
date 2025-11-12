@@ -4844,3 +4844,151 @@ AttributeError: st.session_state has no attribute "text_queue". Did you forget t
 2025-11-12 19:39:57.142 - RealTimeSTT: realtimestt - INFO - None
 2025-11-12 19:39:57.142 - RealTimeSTT: realtimestt - INFO - None
 2025-11-12 19:39:57.142 - RealTimeSTT: realtimestt - INFO - None
+2025-11-12 19:51:22.058 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 19:51:22.062 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 19:51:22.066 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 19:51:22.530 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 19:51:22.530 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 19:51:22.530 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 19:51:22.664 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 19:51:22.665 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 19:51:22.665 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 19:51:28.518 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 19:51:28.518 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 19:51:28.519 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 19:51:28.519 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 19:51:28.754 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 3072
+2025-11-12 19:51:28.755 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:28.972 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 19:51:28.974 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:29.172 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 19:51:29.174 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:29.386 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-11-12 19:51:29.389 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:29.587 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-11-12 19:51:29.590 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:29.803 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 19:51:29.806 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:30.003 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 19:51:30.007 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 19:51:30.217 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 19:51:30.336 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Bye!
+2025-11-12 19:51:30.418 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 19:51:30.529 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Bye.
+2025-11-12 19:51:30.618 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 32768
+2025-11-12 19:51:30.762 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Bye!
+2025-11-12 19:51:30.846 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 19:51:30.971 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Bye!
+2025-11-12 19:51:31.047 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 19:51:31.174 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Weiß!
+2025-11-12 19:51:31.248 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 19:51:31.391 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  weiß ich finde...
+2025-11-12 19:51:31.476 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 19:51:31.612 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es.
+2025-11-12 19:51:31.677 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 50176
+2025-11-12 19:51:31.840 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  weiß ich finde es ist
+2025-11-12 19:51:31.878 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 53248
+2025-11-12 19:51:32.033 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  weiß ich finde es ist uns.
+2025-11-12 19:51:32.078 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 56320
+2025-11-12 19:51:32.215 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es ist uns.
+2025-11-12 19:51:32.299 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 59392
+2025-11-12 19:51:32.444 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es ist uns.
+2025-11-12 19:51:32.499 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 63488
+2025-11-12 19:51:32.670 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wann.
+2025-11-12 19:51:32.699 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 66560
+2025-11-12 19:51:32.862 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig.
+2025-11-12 19:51:32.900 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 69632
+2025-11-12 19:51:33.051 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es ist uns wahnsinnig viel.
+2025-11-12 19:51:33.120 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 72704
+2025-11-12 19:51:33.305 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel.
+2025-11-12 19:51:33.320 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 76800
+2025-11-12 19:51:33.508 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen.
+2025-11-12 19:51:33.521 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 79872
+2025-11-12 19:51:33.706 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen.
+2025-11-12 19:51:33.722 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 82944
+2025-11-12 19:51:33.903 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen.
+2025-11-12 19:51:33.922 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 86016
+2025-11-12 19:51:34.100 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen, man muss ja auch.
+2025-11-12 19:51:34.123 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 89088
+2025-11-12 19:51:34.351 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen.
+2025-11-12 19:51:34.351 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 93184
+2025-11-12 19:51:34.555 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen.
+2025-11-12 19:51:34.555 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 96256
+2025-11-12 19:51:34.759 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen das.
+2025-11-12 19:51:34.759 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 99328
+2025-11-12 19:51:34.951 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass...
+2025-11-12 19:51:34.960 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 102400
+2025-11-12 19:51:35.208 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in die ...
+2025-11-12 19:51:35.209 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 106496
+2025-11-12 19:51:35.430 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen Zeit.
+2025-11-12 19:51:35.430 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 110592
+2025-11-12 19:51:35.682 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren.
+2025-11-12 19:51:35.682 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 113664
+2025-11-12 19:51:35.886 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren.
+2025-11-12 19:51:35.886 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 117760
+2025-11-12 19:51:36.111 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann...
+2025-11-12 19:51:36.111 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 120832
+2025-11-12 19:51:36.372 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann...
+2025-11-12 19:51:36.372 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 124928
+2025-11-12 19:51:36.636 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2.
+2025-11-12 19:51:36.637 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 129024
+2025-11-12 19:51:36.857 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2000.
+2025-11-12 19:51:36.857 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 133120
+2025-11-12 19:51:37.126 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020.
+2025-11-12 19:51:37.126 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 137216
+2025-11-12 19:51:37.404 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020.
+2025-11-12 19:51:37.404 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 141312
+2025-11-12 19:51:37.694 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 nach.
+2025-11-12 19:51:37.694 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 146432
+2025-11-12 19:51:37.935 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angekommen.
+2025-11-12 19:51:37.935 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 150528
+2025-11-12 19:51:38.205 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:38.205 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 154624
+2025-11-12 19:51:38.485 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:38.485 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 158720
+2025-11-12 19:51:38.746 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:38.746 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 162816
+2025-11-12 19:51:39.033 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:39.033 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 167936
+2025-11-12 19:51:39.322 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:39.322 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 172032
+2025-11-12 19:51:39.588 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff.
+2025-11-12 19:51:39.588 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 177152
+2025-11-12 19:51:39.887 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann 2020 noch im Angriff Putin ist.
+2025-11-12 19:51:39.887 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 181248
+2025-11-12 19:51:40.224 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff Putin ist auf die Ukraine.
+2025-11-12 19:51:40.225 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 186368
+2025-11-12 19:51:40.498 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch im Angriff Putin ist auf die Ukraine.
+2025-11-12 19:51:40.498 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 191488
+2025-11-12 19:51:40.796 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft, und uns auf die Ukraine noch...
+2025-11-12 19:51:40.796 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 195584
+2025-11-12 19:51:41.088 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann 2020 noch im Angriff Putin ist auf die Ukraine noch einmal.
+2025-11-12 19:51:41.088 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 200704
+2025-11-12 19:51:41.397 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal ein.
+2025-11-12 19:51:41.397 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 205824
+2025-11-12 19:51:41.738 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million.
+2025-11-12 19:51:41.738 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 209920
+2025-11-12 19:51:42.058 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft, putt uns auf die Ukraine noch einmal eine Million Menschen.
+2025-11-12 19:51:42.058 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 216064
+2025-11-12 19:51:42.393 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu suchen.
+2025-11-12 19:51:42.394 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 221184
+2025-11-12 19:51:42.718 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu uns.
+2025-11-12 19:51:42.718 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 226304
+2025-11-12 19:51:43.090 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde es, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann 2020 noch immer angerefft, putt uns auf die Ukraine noch einmal eine Million Menschen zu uns kam.
+2025-11-12 19:51:43.091 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 232448
+2025-11-12 19:51:43.398 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen zehn Jahren dann 2020 noch im Angriff, Putins auf die Ukraine noch einmal eine Million Menschen zu uns kam.
+2025-11-12 19:51:43.398 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 237568
+2025-11-12 19:51:43.749 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:43.749 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 243712
+2025-11-12 19:51:44.091 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:44.092 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 248832
+2025-11-12 19:51:44.430 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:44.430 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 253952
+2025-11-12 19:51:44.777 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:44.777 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 260096
+2025-11-12 19:51:45.138 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:45.138 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 265216
+2025-11-12 19:51:45.497 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.
+2025-11-12 19:51:45.497 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 271360
+2025-11-12 19:51:45.632 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 19:51:45.874 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Ich finde, es ist uns wahnsinnig viel gelungen. Man muss ja auch sehen, dass in diesen 10 Jahren dann 2020 noch immer angerefft. Putz uns auf die Ukraine noch einmal eine Million Menschen zu ins kamen.

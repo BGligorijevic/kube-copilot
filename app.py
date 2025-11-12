@@ -38,15 +38,6 @@ def main():
             text_queue.put(text)
         return on_realtime_text_update
 
-    # Language selection toggle
-    st.session_state.language = st.radio(
-        "Language",
-        ('de', 'en'),
-        horizontal=True,
-        # Disable radio if loading OR recording
-        disabled=st.session_state.is_recording or st.session_state.is_loading # <-- 3. MODIFIED
-    )
-
     # Create the button and define its behavior
     # Disable button if loading
     if st.button("Stop Recording" if st.session_state.is_recording else "Start Recording", disabled=st.session_state.is_loading): # <-- 4. MODIFIED
