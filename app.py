@@ -2,12 +2,7 @@ import streamlit as st
 import logging
 import queue
 import time
-# Lazy import RealtimeSTT here or inside the loading block
-try:
-    from RealtimeSTT import AudioToTextRecorder
-except ImportError:
-    st.error("RealtimeSTT not installed. Please run: pip install RealtimeSTT")
-    st.stop()
+from RealtimeSTT import AudioToTextRecorder
 
 
 def main():
@@ -17,10 +12,12 @@ def main():
     st.title("🎙️ KuBe Co-Pilot")
 
     # Initialize session state variables
-    if 'is_recording' not in st.session_state:
-        st.session_state.is_recording = False
+    if 'is_listening' not in st.session_state:
+        st.session_state.is_listening = False
     if 'transcriber' not in st.session_state:
         st.session_state.transcriber = None
+    if 'language' not in st.session_state:
+        st.session_state.language = 'de'
 
     def get_on_realtime_text_update(text_queue: queue.Queue):
         """
@@ -30,11 +27,24 @@ def main():
             text_queue.put(text)
         return on_realtime_text_update
 
+    # Language selection UI
+    language_code = st.radio(
+        "Language",
+        ("DE", "EN"),
+        horizontal=True,
+        index=0 if st.session_state.language == 'de' else 1
+    ).lower()
+
+    # If language changed, reset the transcriber
+    if language_code != st.session_state.language:
+        st.session_state.language = language_code
+        st.session_state.transcriber = None
+        st.rerun()
+
     # Load the transcriber model on first run
     if st.session_state.transcriber is None:
         with st.spinner("The app is loading, please wait..."):
             st.session_state.text_queue = queue.Queue()
-            st.session_state.language = 'de'
             st.session_state.realtime_text = ""
 
             st.session_state.transcriber = AudioToTextRecorder(
@@ -51,17 +61,17 @@ def main():
 
     # Create the button and define its behavior
     # Disable button if loading
-    if st.button("Stop Recording" if st.session_state.is_recording else "Start Recording"):
+    if st.button("Stop Listening" if st.session_state.is_listening else "Start Listening"):
         
-        if st.session_state.is_recording:
-            # This was a "Stop Recording" click
-            st.session_state.is_recording = False
+        if st.session_state.is_listening:
+            # This was a "Stop Listening" click
+            st.session_state.is_listening = False
             if st.session_state.transcriber:
                 st.session_state.transcriber.stop()
-            st.info("Recording stopped.")
+            st.info("Stopped listening.")
             st.rerun()
         else:
-            # This was a "Start Recording" click
+            # This was a "Start Listening" click
             st.session_state.realtime_text = "" # Clear previous text
             # Clear the queue for the new session
             while not st.session_state.text_queue.empty():
@@ -69,8 +79,8 @@ def main():
 
             if st.session_state.transcriber:
                 st.session_state.transcriber.start()
-                st.session_state.is_recording = True
-                st.info("Recording started.")
+                st.session_state.is_listening = True
+                st.info("Started listening.")
                 st.rerun()
 
     # Display the transcription text area
@@ -78,7 +88,7 @@ def main():
     text_area = st.empty()
 
     # This is the main UI update loop
-    if st.session_state.get('is_recording', False):
+    if st.session_state.get('is_listening', False):
         try:
             # Check the queue for new text
             while not st.session_state.text_queue.empty():
@@ -96,7 +106,7 @@ def main():
             time.sleep(0.05)
             st.rerun()
     else:
-        # When not recording, just display the last text
+        # When not listening, just display the last text
         text_area.text_area("Live Transcription", value=st.session_state.get('realtime_text', ''), height=200, label_visibility="collapsed")
 
 if __name__ == '__main__':
