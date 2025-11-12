@@ -6768,3 +6768,49 @@
 2025-11-12 23:45:55.520 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4490240
 2025-11-12 23:45:55.520 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4490240
 2025-11-12 23:45:55.520 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4490240
+2025-11-12 23:47:30.370 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-11-12 23:47:30.375 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-11-12 23:47:30.378 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: auto, device index: 0, download root: None
+2025-11-12 23:47:30.849 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-11-12 23:47:30.849 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-11-12 23:47:30.849 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-11-12 23:47:31.307 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-11-12 23:47:31.307 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-11-12 23:47:31.307 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-11-12 23:47:37.090 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-11-12 23:47:37.090 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-11-12 23:47:40.320 - RealTimeSTT: realtimestt - INFO - recording started
+2025-11-12 23:47:40.320 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-11-12 23:47:40.358 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 1024
+2025-11-12 23:47:40.360 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 23:47:40.559 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-11-12 23:47:40.560 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 23:47:40.759 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-11-12 23:47:40.760 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 23:47:40.981 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-11-12 23:47:40.983 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-11-12 23:47:41.181 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 14336
+2025-11-12 23:47:41.293 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo!
+2025-11-12 23:47:41.382 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 17408
+2025-11-12 23:47:41.508 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo, Hans.
+2025-11-12 23:47:41.584 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 20480
+2025-11-12 23:47:41.739 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:41.784 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 23552
+2025-11-12 23:47:41.946 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo
+2025-11-12 23:47:41.985 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-11-12 23:47:42.152 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:42.186 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-11-12 23:47:42.305 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo, Hallo.
+2025-11-12 23:47:42.387 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 32768
+2025-11-12 23:47:42.541 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:42.588 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 36864
+2025-11-12 23:47:42.744 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:42.788 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 39936
+2025-11-12 23:47:42.943 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:42.988 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-11-12 23:47:43.134 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:47:43.189 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-11-12 23:47:43.260 - RealTimeSTT: realtimestt - INFO - recording stopped
+2025-11-12 23:47:43.354 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected:  Hallo Hallo!
+2025-11-12 23:48:06.483 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-11-12 23:48:06.483 - RealTimeSTT: realtimestt - INFO - None

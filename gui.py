@@ -20,6 +20,11 @@ def main():
             .block-container {
                 max-width: 1400px;
             }
+            /* Increase font size for text areas */
+            .stTextArea textarea {
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
         </style>
     """, unsafe_allow_html=True)
 
