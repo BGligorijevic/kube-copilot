@@ -1,0 +1,39 @@
+import queue
+from RealtimeSTT import AudioToTextRecorder
+
+
+class TranscriptionService:
+    """
+    Manages the AudioToTextRecorder instance and transcription state.
+    """
+
+    def __init__(self, language: str, text_queue: queue.Queue):
+        self.language = language
+        self.text_queue = text_queue
+        self._recorder = self._create_recorder()
+
+    def _create_recorder(self) -> AudioToTextRecorder:
+        """Creates a new AudioToTextRecorder instance."""
+        return AudioToTextRecorder(
+            model="nebi/whisper-large-v3-turbo-swiss-german-ct2",
+            language=self.language,
+            device="mps",
+            compute_type="auto",
+            on_realtime_transcription_update=self._get_on_realtime_text_update(),
+            realtime_model_type="tiny",
+            enable_realtime_transcription=True
+        )
+
+    def _get_on_realtime_text_update(self):
+        """Returns a thread-safe callback for text updates."""
+
+        def on_realtime_text_update(text: str):
+            self.text_queue.put(text)
+
+        return on_realtime_text_update
+
+    def start(self):
+        self._recorder.start()
+
+    def stop(self):
+        self._recorder.stop()
