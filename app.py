@@ -14,7 +14,7 @@ def main():
     """
     Main function to run the Streamlit application.
     """
-    st.title("🎙️ RealtimeSTT Demo")
+    st.title("🎙️ KuBe Co-Pilot")
 
     # Initialize session state variables
     if 'is_recording' not in st.session_state:
@@ -85,7 +85,7 @@ def main():
                 text = st.session_state.text_queue.get(block=False)
                 st.session_state.realtime_text = text
 
-            text_area.text_area("Live Transcription", value=st.session_state.realtime_text, height=200)
+            text_area.text_area("Live Transcription", value=st.session_state.realtime_text, height=200, label_visibility="collapsed")
 
             # Rerun periodically to check the queue
             time.sleep(0.05)
@@ -97,7 +97,7 @@ def main():
             st.rerun()
     else:
         # When not recording, just display the last text
-        text_area.text_area("Live Transcription", value=st.session_state.get('realtime_text', ''), height=200)
+        text_area.text_area("Live Transcription", value=st.session_state.get('realtime_text', ''), height=200, label_visibility="collapsed")
 
 if __name__ == '__main__':
     main()
