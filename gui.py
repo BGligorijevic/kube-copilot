@@ -147,12 +147,7 @@ def main():
         st.info("Started listening.")
         st.rerun()
 
-    # Display the transcription text area
-    col1, col2 = st.columns(2, gap="large")
-    with col1:
-        st.subheader("Transcript:")
-    with col2:
-        st.subheader("Co-Pilot Insights:")
+    # Main loop for when the app is listening for transcription
     if st.session_state.get("is_listening", False):
         new_chunk_received = False
         try:
@@ -184,49 +179,32 @@ def main():
         except queue.Empty: # this is expected
             pass
         
-        # --- Display UI elements ---
-        with col1:
-            # Display the live, updating transcript
-            # The accumulated_text often contains parts of the stabilized_text, causing duplication.
-            # We only display the stabilized text and rely on frequent updates for a near-real-time feel.
-            st.text_area(
-                "Live Transcription",
-                value=st.session_state.stabilized_text.strip(),
-                height=800,
-                label_visibility="collapsed",
-            )
-        
-        with col2:
-            # Display the agent's suggestions
-            chat_display = ""
-            # We only display agent messages in the copilot window
-            for speaker, text in st.session_state.conversation:
-                if speaker == "agent":
-                    chat_display += f"{text}\n---\n"
-            st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
-        
-        # Rerun periodically to check the queue and update UI
-        time.sleep(0.1)
-        st.rerun()
-        
-    else:
-        # When not listening, just display the last text
-        with col1:
-            st.text_area(
-                "Transcription",
-                value=st.session_state.get("stabilized_text", ""),
-                height=800,
-                label_visibility="collapsed",
-            )
-        # Display conversation
+    # --- UI Display (runs in all states) ---
+    col1, col2 = st.columns(2, gap="large")
+
+    with col1:
+        st.subheader("Transcript:")
+        st.text_area(
+            "Live Transcription",
+            value=st.session_state.stabilized_text.strip(),
+            height=800,
+            label_visibility="collapsed",
+        )
+
+    with col2:
+        st.subheader("Co-Pilot Insights:")
+        # Display the agent's suggestions
         chat_display = ""
-        # We only display agent messages in the copilot window
         for speaker, text in st.session_state.conversation:
             if speaker == "agent":
                 chat_display += f"{text}\n---\n"
-        # Use a disabled text_area for the co-pilot to match the transcript's look and feel
-        with col2:
-            st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
+        st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
+
+    # If we are listening, we need to periodically rerun to update the UI
+    if st.session_state.get("is_listening", False):
+        # Rerun periodically to check the queue and update UI
+        time.sleep(0.1)
+        st.rerun()
 
 
 if __name__ == "__main__":
