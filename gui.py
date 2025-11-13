@@ -1,53 +1,41 @@
 import streamlit as st
 import queue
 import time
+from dataclasses import dataclass, field
 from transcription_service import TranscriptionService
 from agent import AgentService
 
-# --- Constants ---
 
-def handle_button_click():
-    """Handles the logic for the 'Start/Stop Listening' button."""
-    if st.session_state.is_listening:
-        # This was a "Stop Listening" click
-        st.session_state.is_listening = False
-        if st.session_state.transcription_service:
-            st.session_state.transcription_service.stop()
+@dataclass
+class AppState:
+    """A dataclass to hold the application's state, managed in st.session_state."""
+    is_listening: bool = False
+    language: str = "de"
+    conversation: list = field(default_factory=list)
+    stabilized_text: str = ""
+    last_agent_transcript: str = ""
 
-        st.rerun()
-    else:
-        # This was a "Start Listening" click
-        # This is the single point where a new session is initiated.
-        # We must clear ALL state here to guarantee a clean slate.
+    # Service-related state
+    transcription_service: TranscriptionService | None = None
+    agent_service: AgentService | None = None
+    text_queue: queue.Queue = field(default_factory=queue.Queue)
+    finished_text_queue: queue.Queue = field(default_factory=queue.Queue)
 
-        # 1. Invalidate services to force re-creation.
-        st.session_state.transcription_service = None
-        st.session_state.agent_service = None
 
-        # 2. Reset all text and conversation state.
-        st.session_state.realtime_text = ""
-        st.session_state.accumulated_text = ""
-        st.session_state.stabilized_text = ""
-        st.session_state.last_agent_transcript = ""
-        st.session_state.conversation = []
+def get_state() -> AppState:
+    """Initializes and retrieves the app state from Streamlit's session state."""
+    if "app_state" not in st.session_state:
+        st.session_state.app_state = AppState()
+    return st.session_state.app_state
 
-        # 3. Set the flag to start listening after services are re-created.
-        st.session_state.start_listening_requested = True
-        st.rerun()
 
-def main():
-    """
-    Main function to run the Streamlit application.
-    """
-    st.set_page_config(layout="centered")  # Use centered layout as a base
-
-    # Inject custom CSS to set a custom max-width for the main container
+def _apply_custom_css():
+    """Applies custom CSS for styling the Streamlit page."""
     st.markdown("""
         <style>
             .block-container {
                 max-width: 1400px;
             }
-            /* Increase font size for text areas */
             .stTextArea textarea {
                 font-size: 1.2rem;
                 line-height: 1.6;
@@ -55,30 +43,32 @@ def main():
         </style>
     """, unsafe_allow_html=True)
 
-    # Initialize session state variables
-    if "is_listening" not in st.session_state:
-        st.session_state.is_listening = False
-    if "start_listening_requested" not in st.session_state:
-        st.session_state.start_listening_requested = False
-    if "transcription_service" not in st.session_state:
-        st.session_state.transcription_service = None
-    if "language" not in st.session_state:
-        st.session_state.language = "de"
-    if "agent_service" not in st.session_state:
-        st.session_state.agent_service = None
-    if "accumulated_text" not in st.session_state:
-        st.session_state.accumulated_text = ""
-    if "stabilized_text" not in st.session_state:
-        st.session_state.stabilized_text = ""
-    if "last_agent_transcript" not in st.session_state:
-        st.session_state.last_agent_transcript = ""
-    if "conversation" not in st.session_state:
-        st.session_state.conversation = []
 
-    # --- UI Components ---
-    # --- Centered Header ---
+def _stop_listening(state: AppState):
+    """Stops the transcription service and updates the state."""
+    state.is_listening = False
+    if state.transcription_service:
+        state.transcription_service.stop()
+
+
+def _start_listening(state: AppState):
+    """Resets state and services to begin a new listening session."""
+    # Invalidate services to force re-creation.
+    if state.transcription_service:
+        state.transcription_service.shutdown()
+
+    # Create a completely new state object for a clean session.
+    st.session_state.app_state = AppState(language=state.language)
+    new_state = get_state()
+
+    # Services will be re-created on the next rerun, then we start listening.
+    st.session_state.start_listening_requested = True
+    st.rerun()
+
+
+def render_header(state: AppState):
+    """Renders the header, language selection, and start/stop button."""
     with st.container():
-        # Use columns to center the radio button and the main button
         _, col2, _ = st.columns([1, 2, 1])
         with col2:
             st.title("🎙️ KuBe Co-Pilot")
@@ -87,43 +77,41 @@ def main():
                 "Language",
                 ("DE", "EN"),
                 horizontal=True,
-                index=0 if st.session_state.language == "de" else 1,
+                index=0 if state.language == "de" else 1,
             ).lower()
 
-            # Create the button and define its behavior
+            # Handle language change
+            if language_code != state.language:
+                _stop_listening(state)
+                state.language = language_code
+                # Invalidate services to force re-creation with the new language
+                state.transcription_service = None
+                state.agent_service = None
+                st.rerun()
+
             if st.button(
-                "Stop Listening" if st.session_state.is_listening else "Start Listening",
+                "Stop Listening" if state.is_listening else "Start Listening",
                 use_container_width=True
             ):
-                handle_button_click()
+                if state.is_listening:
+                    _stop_listening(state)
+                    st.rerun()
+                else:
+                    _start_listening(state)
 
-    # --- Service Initialization and Session Management ---
 
-    # If language changed, reset the transcriber
-    if language_code != st.session_state.language:
-        st.session_state.language = language_code
-        # Invalidate services to force re-creation with the new language
-        st.session_state.transcription_service = None
-        st.session_state.agent_service = None
-        # Stop listening if it was active
-        st.session_state.is_listening = False
-        st.rerun()
-
-    # Load the transcriber model on first run
-    if st.session_state.transcription_service is None:
-        # Determine if this is the very first run to decide if a spinner is needed.
-        # The spinner is only for the initial model loading.
+def _ensure_services_are_running(state: AppState):
+    """Initializes and starts services if they are not already running."""
+    if state.agent_service is None or state.transcription_service is None:
         is_first_run = not st.session_state.get("services_initialized", False)
 
         def create_services():
-            """Function to create and initialize services."""
-            st.session_state.agent_service = AgentService(language=st.session_state.language)
-            st.session_state.text_queue = queue.Queue()
-            st.session_state.finished_text_queue = queue.Queue()
-            st.session_state.transcription_service = TranscriptionService(
-                st.session_state.language,
-                st.session_state.text_queue,
-                st.session_state.finished_text_queue
+            """Creates and assigns the transcription and agent services."""
+            state.agent_service = AgentService(language=state.language)
+            state.transcription_service = TranscriptionService(
+                state.language,
+                state.text_queue,
+                state.finished_text_queue
             )
             st.session_state.services_initialized = True
 
@@ -131,78 +119,110 @@ def main():
             with st.spinner("The app is loading, please wait..."):
                 create_services()
         else:
-            # On subsequent re-initializations, create services without a spinner.
             create_services()
 
-    # If a start was requested, now that services are fresh, we can begin.
-    if st.session_state.start_listening_requested:
-        # Ensure queues are empty before starting
-        if "text_queue" in st.session_state:
-            while not st.session_state.text_queue.empty(): st.session_state.text_queue.get()
-            while not st.session_state.finished_text_queue.empty(): st.session_state.finished_text_queue.get()
+    # If a start was requested, and services are ready, begin listening.
+    if st.session_state.get("start_listening_requested", False):
+        # Clear any stale items from queues before starting
+        while not state.text_queue.empty(): state.text_queue.get()
+        while not state.finished_text_queue.empty(): state.finished_text_queue.get()
 
-        st.session_state.transcription_service.start()
-        st.session_state.is_listening = True
-        st.session_state.start_listening_requested = False # Reset the flag
+        state.transcription_service.start()
+        state.is_listening = True
+        st.session_state.start_listening_requested = False  # Reset the flag
         st.info("Started listening.")
         st.rerun()
 
-    # Main loop for when the app is listening for transcription
-    if st.session_state.get("is_listening", False):
-        new_chunk_received = False
-        try:
-            # Check the queue for live text updates
-            while not st.session_state.text_queue.empty():
-                text = st.session_state.text_queue.get(block=False)
-                st.session_state.accumulated_text = text
 
-            # Accumulate stabilized text from the queue
-            while not st.session_state.finished_text_queue.empty():
-                new_full_transcript = st.session_state.finished_text_queue.get(block=False)
-                if new_full_transcript != st.session_state.stabilized_text:
-                    st.session_state.stabilized_text = new_full_transcript
-                    new_chunk_received = True
+def process_transcription_updates(state: AppState):
+    """
+    Checks queues for new text, processes it, and calls the agent service.
+    Returns True if the UI should be updated.
+    """
+    if not state.is_listening:
+        return False
 
-            if new_chunk_received:
-                new_transcript_chunk = st.session_state.stabilized_text[len(st.session_state.last_agent_transcript):].strip()
+    new_chunk_received = False
+    try:
+        # Drain the real-time queue (currently not displayed, but good practice)
+        while not state.text_queue.empty():
+            state.text_queue.get_nowait()
 
-                if new_transcript_chunk and len(new_transcript_chunk.split()) > 2:
-                    history = st.session_state.conversation.copy()
-                    st.session_state.conversation.append(("user", new_transcript_chunk))
-                    response = st.session_state.agent_service.get_response(new_transcript_chunk, history)
-                    if response:
-                        st.session_state.conversation.append(("agent", response))
-                
-                # CRUCIALLY: Update the last processed transcript state immediately
-                st.session_state.last_agent_transcript = st.session_state.stabilized_text
+        # Process stabilized text from the finished queue
+        while not state.finished_text_queue.empty():
+            new_full_transcript = state.finished_text_queue.get_nowait()
+            if new_full_transcript != state.stabilized_text:
+                state.stabilized_text = new_full_transcript
+                new_chunk_received = True
 
-        except queue.Empty: # this is expected
-            pass
-        
-    # --- UI Display (runs in all states) ---
+        if new_chunk_received:
+            # Identify the new part of the transcript to send to the agent
+            new_transcript_chunk = state.stabilized_text[len(state.last_agent_transcript):].strip()
+
+            if new_transcript_chunk and len(new_transcript_chunk.split()) > 2:
+                history = state.conversation.copy()
+                state.conversation.append(("user", new_transcript_chunk))
+                response = state.agent_service.get_response(new_transcript_chunk, history)
+                if response:
+                    state.conversation.append(("agent", response))
+
+            # Crucially, update the pointer for the last processed transcript
+            state.last_agent_transcript = state.stabilized_text
+            return True # Indicates a state change that requires a UI update
+
+    except queue.Empty:
+        # This is expected when no new text is available
+        pass
+
+    return False
+
+
+def render_ui(state: AppState):
+    """Renders the main UI components for transcription and insights."""
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
         st.subheader("Transcript:")
         st.text_area(
             "Live Transcription",
-            value=st.session_state.stabilized_text.strip(),
+            value=state.stabilized_text.strip(),
             height=800,
             label_visibility="collapsed",
         )
 
     with col2:
         st.subheader("Co-Pilot Insights:")
-        # Display the agent's suggestions
         chat_display = ""
-        for speaker, text in st.session_state.conversation:
+        for speaker, text in state.conversation:
             if speaker == "agent":
                 chat_display += f"{text}\n---\n"
-        st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
+        st.text_area(
+            "Co-Pilot Display",
+            value=chat_display,
+            height=800,
+            label_visibility="collapsed",
+            disabled=True
+        )
 
-    # If we are listening, we need to periodically rerun to update the UI
-    if st.session_state.get("is_listening", False):
-        # Rerun periodically to check the queue and update UI
+
+def main():
+    """Main function to run the Streamlit application."""
+    st.set_page_config(layout="centered")
+    _apply_custom_css()
+
+    state = get_state()
+
+    render_header(state)
+    _ensure_services_are_running(state)
+
+    # Process any new text from the transcription service
+    process_transcription_updates(state)
+
+    # The UI is rendered on every run, reflecting the current state
+    render_ui(state)
+
+    # The core polling loop: if listening, schedule a rerun to check for new text
+    if state.is_listening:
         time.sleep(0.1)
         st.rerun()
 
