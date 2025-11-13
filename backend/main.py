@@ -31,6 +31,12 @@ async def transcription_sender(websocket: WebSocket, language: str):
     conversation = []
     last_agent_transcript = ""
 
+    # Notify the client that the service is ready and listening
+    await websocket.send_text(json.dumps({
+        "type": "status",
+        "data": "listening"
+    }))
+
     try:
         agent_service = AgentService(language=language)
         transcription_service = TranscriptionService(
@@ -40,13 +46,6 @@ async def transcription_sender(websocket: WebSocket, language: str):
         # Run the blocking start method in a separate thread
         await asyncio.to_thread(transcription_service.start)
         print(f"Transcription started for language: {language}")
-
-        # Notify the client that the service is ready and listening
-        await websocket.send_text(json.dumps({
-            "type": "status",
-            "data": "listening"
-        }))
-
         while True:
             # Asynchronously wait for a new transcript to be available in the queue.
             # This is non-blocking and integrates with the asyncio event loop.
@@ -75,7 +74,7 @@ async def transcription_sender(websocket: WebSocket, language: str):
 
             last_agent_transcript = stabilized_text
 
-    except Exception as e:
+    except (Exception, asyncio.CancelledError) as e:
         print(f"An error occurred: {e}")
     finally:
         print("Transcription service shutting down.")
