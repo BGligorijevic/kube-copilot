@@ -46,4 +46,11 @@ class TranscriptionService:
         self._recorder.start()
 
     def stop(self):
-        self._recorder.stop()
+        """Stops and completely shuts down the recorder."""
+        self.shutdown()
+
+    def shutdown(self):
+        """Explicitly stops and deletes the recorder instance to free resources."""
+        if hasattr(self, '_recorder') and self._recorder:
+            self._recorder.stop()
+            del self._recorder
