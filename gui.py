@@ -17,24 +17,22 @@ def handle_button_click():
         st.rerun()
     else:
         # This was a "Start Listening" click
-        st.session_state.realtime_text = ""  # Clear previous text
-        st.session_state.accumulated_text = ""
-        st.session_state.stabilized_text = ""
-        st.session_state.full_transcript = ""
-        st.session_state.last_agent_transcript = ""
-        st.session_state.conversation = []
-
-        # Clear the queue for the new session
-        while not st.session_state.text_queue.empty():
-            st.session_state.text_queue.get()
-        while not st.session_state.finished_text_queue.empty():
-            st.session_state.finished_text_queue.get()
-
+        # Invalidate services to force re-creation for the new session
         if st.session_state.transcription_service:
+            st.session_state.realtime_text = ""  # Clear previous text
+            st.session_state.accumulated_text = ""
+            st.session_state.stabilized_text = ""
+            st.session_state.full_transcript = ""
+            st.session_state.last_agent_transcript = ""
+            st.session_state.conversation = []
+
+            # Clear any leftover items in the queues
+            while not st.session_state.text_queue.empty(): st.session_state.text_queue.get()
+            while not st.session_state.finished_text_queue.empty(): st.session_state.finished_text_queue.get()
+
             st.session_state.transcription_service.start()
             st.session_state.is_listening = True
-            st.info("Started listening.")
-            st.rerun()
+        st.rerun()
 
 def main():
     """
@@ -64,7 +62,7 @@ def main():
     if "language" not in st.session_state:
         st.session_state.language = "de"
     if "agent_service" not in st.session_state:
-        st.session_state.agent_service = AgentService()
+        st.session_state.agent_service = None
     if "accumulated_text" not in st.session_state:
         st.session_state.accumulated_text = ""
     if "stabilized_text" not in st.session_state:
@@ -100,11 +98,18 @@ def main():
     if language_code != st.session_state.language:
         st.session_state.language = language_code
         st.session_state.transcription_service = None  # Invalidate the service
+        st.session_state.agent_service = None # Invalidate the agent service
         st.rerun()
 
     # Load the transcriber model on first run
     if st.session_state.transcription_service is None:
         with st.spinner("The app is loading, please wait..."):
+            # Initialize agent service here as well to ensure it has the correct language
+            if st.session_state.agent_service is None:
+                st.session_state.agent_service = AgentService(
+                    language=st.session_state.language
+                )
+
             st.session_state.text_queue = queue.Queue()
             st.session_state.finished_text_queue = queue.Queue()
             st.session_state.transcription_service = TranscriptionService(
@@ -172,7 +177,7 @@ def main():
             # We only display agent messages in the copilot window
             for speaker, text in st.session_state.conversation:
                 if speaker == "agent":
-                    chat_display += f"{text}\n\n---\n\n"
+                    chat_display += f"{text}\n---\n"
             st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
         
         # Rerun periodically to check the queue and update UI
@@ -193,7 +198,7 @@ def main():
         # We only display agent messages in the copilot window
         for speaker, text in st.session_state.conversation:
             if speaker == "agent":
-                chat_display += f"{text}\n\n---\n\n"
+                chat_display += f"{text}\n---\n"
         # Use a disabled text_area for the co-pilot to match the transcript's look and feel
         with col2:
             st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
