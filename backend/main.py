@@ -63,7 +63,7 @@ async def transcription_sender(websocket: WebSocket, language: str):
             if new_chunk and len(new_chunk.split()) > 2:
                 history = conversation.copy()
                 conversation.append(("user", new_chunk))
-                response = agent_service.get_response(new_chunk, history)
+                response = await asyncio.to_thread(agent_service.get_response, new_chunk, history)
                 if response:
                     conversation.append(("agent", response))
                     # Send agent insight to the client
