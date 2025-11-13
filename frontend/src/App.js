@@ -73,7 +73,7 @@ function App() {
       if (message.type === 'transcript') {
         setTranscript(message.data);
       } else if (message.type === 'insight') {
-        setInsights(prevInsights => [...prevInsights, message.data]);
+        setInsights(prevInsights => [message.data, ...prevInsights]);
       }
     };
 
@@ -93,6 +93,7 @@ function App() {
   };
 
   const handleStartListening = () => {
+    setAppStatus('initializing');
     setTranscript('');
     setInsights([]);
     connectWebSocket();
@@ -150,7 +151,7 @@ function App() {
             </label>
           </div>
           <button
-            onClick={(appStatus === 'listening' || appStatus === 'disconnected') ? handleStopListening : handleStartListening}
+            onClick={(appStatus === 'listening') ? handleStopListening : handleStartListening}
             className={`listen-button ${appStatus === 'disconnected' ? 'reconnect-button' : ''}`}
             disabled={appStatus === 'initializing'}>
             {getButtonText()}

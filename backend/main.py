@@ -30,18 +30,12 @@ async def transcription_sender(websocket: WebSocket, language: str):
     finished_text_queue = asyncio.Queue()
     conversation = []
     last_agent_transcript = ""
-
-    # Notify the client that the service is ready and listening
-    await websocket.send_text(json.dumps({
-        "type": "status",
-        "data": "listening"
-    }))
-
     try:
         agent_service = AgentService(language=language)
         transcription_service = TranscriptionService(
             language, text_queue, finished_text_queue
         )
+        print(f"Starting transcription service for language: {language}")
 
         # Run the blocking start method in a separate thread
         await asyncio.to_thread(transcription_service.start)
@@ -49,6 +43,12 @@ async def transcription_sender(websocket: WebSocket, language: str):
         while True:
             # Asynchronously wait for a new transcript to be available in the queue.
             # This is non-blocking and integrates with the asyncio event loop.
+            # Notify the client that the service is ready and listening
+            await websocket.send_text(json.dumps({
+                "type": "status",
+                "data": "listening"
+            }))
+
             stabilized_text = await finished_text_queue.get()
 
             # Send the full transcript to the client
@@ -60,7 +60,8 @@ async def transcription_sender(websocket: WebSocket, language: str):
             # Identify the new part of the transcript to send to the agent
             new_chunk = stabilized_text[len(last_agent_transcript):].strip()
 
-            if new_chunk and len(new_chunk.split()) > 2:
+            # number of words
+            if new_chunk and len(new_chunk.split()) > 10:
                 history = conversation.copy()
                 conversation.append(("user", new_chunk))
                 response = await asyncio.to_thread(agent_service.get_response, new_chunk, history)
@@ -100,6 +101,11 @@ async def message_receiver(websocket: WebSocket, transcription_task_group):
                 # Cancel any existing transcription task before starting a new one.
                 for task in transcription_task_group:
                     task.cancel()
+                # Notify the client that the service is starting
+                await websocket.send_text(json.dumps({
+                    "type": "status",
+                    "data": "starting"
+                }))
 
                 language = data.get("language", "de")
                 # Create a new task in the provided task group

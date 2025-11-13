@@ -24,3 +24,5 @@ dataset.jsonl
 .vscode/
 
 realtimesst.log
+
+audio-samples/
