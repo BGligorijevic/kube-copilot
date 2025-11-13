@@ -4,8 +4,8 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
-from backend.transcription_service import TranscriptionService
-from backend.agent import AgentService
+from .transcription_service import TranscriptionService
+from .agent import AgentService
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 app = FastAPI()
