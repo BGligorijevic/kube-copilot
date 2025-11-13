@@ -4,12 +4,10 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
+from backend.transcription_service import TranscriptionService
+from backend.agent import AgentService
 
-# Add the parent directory to the Python path to import sibling modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from transcription_service import TranscriptionService
-from agent import AgentService
-
 app = FastAPI()
 
 # Configure CORS to allow the React frontend to connect.
@@ -23,12 +21,10 @@ app.add_middleware(
 )
 
 
-async def transcription_agent_task(
-    websocket: WebSocket,
-    language: str
-):
+async def transcription_sender(websocket: WebSocket, language: str):
     """
-    Manages the transcription and agent services for a single WebSocket connection.
+    Handles the transcription and agent services, sending data to the client.
+    This function only WRITES to the websocket.
     """
     text_queue = asyncio.Queue()
     finished_text_queue = asyncio.Queue()
@@ -87,30 +83,52 @@ async def transcription_agent_task(
             transcription_service.shutdown()
 
 
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
+async def message_receiver(websocket: WebSocket, transcription_task_group):
     """
-    The main WebSocket endpoint that handles client connections.
-    Awaits a 'start' message from the client to begin transcription.
+    Handles receiving messages from the client.
+    This function only READS from the websocket.
     """
-    await websocket.accept()
-    transcription_task = None
-
     try:
         while True:
             message = await websocket.receive_text()
             data = json.loads(message)
 
-            if data.get("action") == "start":
-                if transcription_task:
-                    transcription_task.cancel()
+            action = data.get("action")
+            if action == "ping":
+                await websocket.send_text(json.dumps({"type": "pong"}))
+            elif action == "start":
+                print("Received start message.")
+                # Cancel any existing transcription task before starting a new one.
+                for task in transcription_task_group:
+                    task.cancel()
 
                 language = data.get("language", "de")
-                transcription_task = asyncio.create_task(
-                    transcription_agent_task(websocket, language)
-                )
+                # Create a new task in the provided task group
+                new_task = asyncio.create_task(transcription_sender(websocket, language))
+                transcription_task_group.add(new_task)
+
+    except WebSocketDisconnect:
+        print("Client disconnected from receiver.")
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    """
+    The main WebSocket endpoint that handles client connections.
+    It creates two concurrent tasks: one for receiving messages and one for sending them.
+    """
+    await websocket.accept()
+    transcription_tasks = set()
+
+    try:
+        # Run the sender and receiver tasks concurrently.
+        # They will run until one of them finishes (e.g., due to disconnection).
+        await message_receiver(websocket, transcription_tasks)
 
     except WebSocketDisconnect:
         print("Client disconnected.")
-        if transcription_task:
-            transcription_task.cancel()
+    finally:
+        # Ensure all transcription tasks are cancelled on disconnect.
+        for task in transcription_tasks:
+            task.cancel()
+        print("All transcription tasks cancelled.")
