@@ -25,6 +25,14 @@ body {
   font-size: 2rem;
 }
 
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 .controls {
   display: flex;
   justify-content: center;
@@ -44,13 +52,20 @@ body {
 
 .listen-button {
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background: linear-gradient(to right, #4a90e2, #63b8ff); /* Gradient background */
   color: white;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.2s ease-in-out;
+  outline: none; /* Remove default outline */
+}
+
+.listen-button:hover {
+  background: linear-gradient(to right, #357bd9, #4a90e2); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .listen-button:hover {
@@ -62,11 +77,15 @@ body {
   cursor: not-allowed;
 }
 
+.reconnect-button {
+  background: linear-gradient(to right, #f44336, #d32f2f);
+}
+
 .App-main {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 0 2rem;
+  padding: 2rem; /* Increased padding */
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -85,8 +104,10 @@ body {
   line-height: 1.6;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #f9f9f9; /* Light gray background for read-only */
   box-sizing: border-box;
+  resize: none; /* Disable resizing */
+  cursor: not-allowed; /* Indicate read-only */
 }
 
 .insights-display {
