@@ -3,7 +3,6 @@ import queue
 import time
 from transcription_service import TranscriptionService
 from agent import AgentService
-import re
 
 # --- Constants ---
 
@@ -15,22 +14,16 @@ def handle_button_click():
         if st.session_state.transcription_service:
             st.session_state.transcription_service.stop()
 
-        # Process any remaining text from the queue
-        while not st.session_state.finished_text_queue.empty():
-            final_text = st.session_state.finished_text_queue.get(block=False)
-            # TODO: This overwrites previous stabilized text. This should probably append.
-            st.session_state.stabilized_text_buffer = final_text
-        
-        if st.session_state.stabilized_text_buffer:
-            response = st.session_state.agent_service.get_response(st.session_state.stabilized_text_buffer)
-            st.session_state.conversation.append(("agent", response))
         st.rerun()
     else:
         # This was a "Start Listening" click
         st.session_state.realtime_text = ""  # Clear previous text
         st.session_state.accumulated_text = ""
-        st.session_state.stabilized_text_buffer = ""
+        st.session_state.stabilized_text = ""
+        st.session_state.full_transcript = ""
+        st.session_state.last_agent_transcript = ""
         st.session_state.conversation = []
+
         # Clear the queue for the new session
         while not st.session_state.text_queue.empty():
             st.session_state.text_queue.get()
@@ -74,8 +67,10 @@ def main():
         st.session_state.agent_service = AgentService()
     if "accumulated_text" not in st.session_state:
         st.session_state.accumulated_text = ""
-    if "stabilized_text_buffer" not in st.session_state:
-        st.session_state.stabilized_text_buffer = ""
+    if "stabilized_text" not in st.session_state:
+        st.session_state.stabilized_text = ""
+    if "last_agent_transcript" not in st.session_state:
+        st.session_state.last_agent_transcript = ""
     if "conversation" not in st.session_state:
         st.session_state.conversation = []
 
@@ -126,59 +121,79 @@ def main():
     with col2:
         st.subheader("Co-Pilot Insights:")
     if st.session_state.get("is_listening", False):
+        new_chunk_received = False
         try:
             # Check the queue for live text updates
             while not st.session_state.text_queue.empty():
                 text = st.session_state.text_queue.get(block=False)
                 st.session_state.accumulated_text = text
 
-            with col1:
-                st.text_area(
-                    "Live Transcription",
-                    value=st.session_state.accumulated_text,
-                    height=800,
-                    label_visibility="collapsed",
-                )
-
             # Accumulate stabilized text from the queue
             while not st.session_state.finished_text_queue.empty():
-                final_text = st.session_state.finished_text_queue.get(block=False)
-                st.session_state.stabilized_text_buffer = final_text
+                new_stabilized_text = st.session_state.finished_text_queue.get(block=False)
+                if new_stabilized_text != st.session_state.stabilized_text:
+                    st.session_state.stabilized_text = new_stabilized_text
+                    new_chunk_received = True
 
-            # Display conversation
+            # If a new chunk was received, call the agent. This is now outside the queue-draining loop.
+            if new_chunk_received and st.session_state.stabilized_text.strip():
+                # Determine what part of the transcript is new since the last agent call
+                new_transcript_chunk = st.session_state.stabilized_text[len(st.session_state.last_agent_transcript):].strip()
+
+                # Pass the current conversation history to the agent for context
+                history = st.session_state.conversation.copy() 
+                
+                # Add the new user/transcript part to the conversation history for the agent
+                # Only process chunks that are likely to be meaningful (more than 2 words)
+                if new_transcript_chunk and len(new_transcript_chunk.split()) > 2:
+                    st.session_state.conversation.append(("user", new_transcript_chunk))
+                    response = st.session_state.agent_service.get_response(new_transcript_chunk, history)
+                    if response: # Only add agent response if it's not empty
+                        st.session_state.conversation.append(("agent", response))
+                    st.session_state.last_agent_transcript = st.session_state.stabilized_text
+
+        except queue.Empty: # this is expected
+            pass
+        
+        # --- Display UI elements ---
+        with col1:
+            # Display the live, updating transcript
+            live_display = st.session_state.stabilized_text + " " + st.session_state.accumulated_text
+            st.text_area(
+                "Live Transcription",
+                value=live_display.strip(),
+                height=800,
+                label_visibility="collapsed",
+            )
+        
+        with col2:
+            # Display the agent's suggestions
             chat_display = ""
+            # We only display agent messages in the copilot window
             for speaker, text in st.session_state.conversation:
                 if speaker == "agent":
-                    chat_display += f"{text}\n\n"
-            # Use a disabled text_area for the co-pilot to match the transcript's look and feel
-            with col2:
-                st.text_area("Co-Pilot Display", value=chat_display, height=400, label_visibility="collapsed", disabled=True)
-
-            if not st.session_state.is_listening:
-                st.info("Stopped listening. Processing final text...")
-
-            # Rerun periodically to check the queue
-            time.sleep(0.05)
-            st.rerun()
-
-        except queue.Empty:
-            # If the queue is empty, just wait and rerun
-            time.sleep(0.05)
-            st.rerun()
+                    chat_display += f"{text}\n\n---\n\n"
+            st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)
+        
+        # Rerun periodically to check the queue and update UI
+        time.sleep(0.1)
+        st.rerun()
+        
     else:
         # When not listening, just display the last text
         with col1:
             st.text_area(
                 "Transcription",
-                value=st.session_state.get("stabilized_text_buffer", ""),
+                value=st.session_state.get("stabilized_text", ""),
                 height=800,
                 label_visibility="collapsed",
             )
         # Display conversation
         chat_display = ""
+        # We only display agent messages in the copilot window
         for speaker, text in st.session_state.conversation:
             if speaker == "agent":
-                chat_display += f"{text}\n\n"
+                chat_display += f"{text}\n\n---\n\n"
         # Use a disabled text_area for the co-pilot to match the transcript's look and feel
         with col2:
             st.text_area("Co-Pilot Display", value=chat_display, height=800, label_visibility="collapsed", disabled=True)

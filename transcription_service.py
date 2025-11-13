@@ -23,7 +23,8 @@ class TranscriptionService:
             on_realtime_transcription_update=self._get_on_realtime_text_update(),
             on_realtime_transcription_stabilized=self._get_on_transcription_finished(),
             realtime_model_type="tiny",
-            enable_realtime_transcription=True
+            enable_realtime_transcription=True,
+            realtime_processing_pause=1 # Wait for a 1-second pause before stabilizing
         )
 
     def _get_on_realtime_text_update(self):

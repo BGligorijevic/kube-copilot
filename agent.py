@@ -1,34 +1,59 @@
 from langchain_ollama import ChatOllama
-from langchain.agents import create_agent
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import AIMessage, HumanMessage
 
 class AgentService:
     """
-    A service to interact with a Large Language Model (LLM).
-
-    This is a placeholder implementation that simply echoes the input text.
-    In the future, this will be replaced with actual calls to a local LLM.
+    A service to interact with a Large Language Model (LLM) agent
+    that can decide when it is appropriate to provide insights.
     """
     def __init__(self):
         self._llm = ChatOllama(model="llama3.1", temperature=0)
-        self._agent = create_agent(
-            model=self._llm,
-            system_prompt="You help the bank client advisor advise the customer based on the transcript of the discussion you receive from the customer and the bank client advisor." \
-            "Always respond in the same language you receive the questions in. You are based in Switzerland and are consulting client advisors who works in a Swiss bank." \
-            "The customers are almost always Swiss residents. Be consise and clear, because your suggestions are read in real-time from the client advisor. He cannot read too much text quickly."
-)
 
-    def get_response(self, input: str) -> str:
+        # This prompt instructs the agent on its role and tells it to output '[SILENT]'
+        # when it has no valuable insight to contribute.
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are a 'Co-Pilot' assistant for a Swiss bank client advisor, acting as a whisperer in their ear. Your role is to provide ONLY concise, actionable insights based on the live conversation transcript.
+
+**Your core directives are:**
+1.  **BE SILENT BY DEFAULT:** If you do not have a concrete, valuable insight, you MUST respond with the exact string '[SILENT]'.
+2.  **PROVIDE INSIGHTS, NOT CONVERSATION:** Do not engage in conversation. Do not ask questions. Do not greet the user or state the obvious (e.g., 'The conversation has started'). Your output should be a direct insight, not a commentary on the conversation.
+3.  **BE A WHISPERER:** Your output should be a direct, bullet-pointed insight that the advisor can use immediately. Think of it as a helpful note passed during a meeting.
+
+**Example of a good insight:**
+* Suggest checking the client's risk tolerance due to mentions of market volatility.
+* Flag opportunity to discuss sustainable investment products based on client's interest in environmental topics.
+
+Analyze the transcript and provide only high-value, actionable intelligence.
+"""),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ])
+
+        # We create a simple chain that pipes the formatted prompt into the language model.
+        self._chain = prompt | self._llm
+
+    def get_response(self, input: str, chat_history: list) -> str:
         """Receives text and returns a response from the 'LLM'."""
-        
         print(f"Received from the transcript: {input}")
-        messages = [
-            {"role": "user", "content": input},
-        ]
 
-        result = self._agent.invoke({"messages": messages})
+        # Convert our simple chat history into the format LangChain expects.
+        history_messages = []
+        for speaker, text in chat_history:
+            if speaker == "agent":
+                history_messages.append(AIMessage(content=text))
+            else:
+                history_messages.append(HumanMessage(content=text))
 
-        ai_messages = [m for m in result["messages"] if m.__class__.__name__ == "AIMessage" and m.content]
-        content_str = ai_messages[0].content
+        result = self._chain.invoke({"input": input, "chat_history": history_messages})
+        print(f"Agent raw response: {result}")
 
-        return content_str
+        # Extract the text content from the AIMessage response.
+        content = result.content if isinstance(result, AIMessage) else ""
 
+        # If the agent decides to be silent, we return an empty string.
+        if "[SILENT]" in content:
+            content = ""
+
+        print(f"Agent final output: {content}")
+        return content
