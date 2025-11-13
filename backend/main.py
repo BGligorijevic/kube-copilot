@@ -45,6 +45,12 @@ async def transcription_agent_task(
         await asyncio.to_thread(transcription_service.start)
         print(f"Transcription started for language: {language}")
 
+        # Notify the client that the service is ready and listening
+        await websocket.send_text(json.dumps({
+            "type": "status",
+            "data": "listening"
+        }))
+
         while True:
             # Asynchronously wait for a new transcript to be available in the queue.
             # This is non-blocking and integrates with the asyncio event loop.

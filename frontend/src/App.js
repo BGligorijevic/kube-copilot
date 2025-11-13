@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
-  const [isListening, setIsListening] = useState(false);
+  const [appStatus, setAppStatus] = useState('idle'); // 'idle', 'initializing', 'listening'
   const [language, setLanguage] = useState('de');
   const [transcript, setTranscript] = useState('');
   const [insights, setInsights] = useState([]);
@@ -28,14 +28,17 @@ function App() {
 
     socket.current.onopen = () => {
       console.log('WebSocket connected');
+      setAppStatus('initializing');
       // Send start message to the backend
       socket.current.send(JSON.stringify({ action: 'start', language: language }));
-      setIsListening(true);
     };
 
     socket.current.onmessage = (event) => {
       const message = JSON.parse(event.data);
-      console.log('Received message from WebSocket:', message); // Add this line
+      console.log('Received message from WebSocket:', message);
+      if (message.type === 'status' && message.data === 'listening') {
+        setAppStatus('listening');
+      }
       if (message.type === 'transcript') {
         setTranscript(message.data);
       } else if (message.type === 'insight') {
@@ -45,12 +48,12 @@ function App() {
 
     socket.current.onclose = () => {
       console.log('WebSocket disconnected');
-      setIsListening(false);
+      setAppStatus('idle');
     };
 
     socket.current.onerror = (error) => {
       console.error('WebSocket error:', error);
-      setIsListening(false);
+      setAppStatus('idle');
     };
   };
 
@@ -65,15 +68,28 @@ function App() {
       socket.current.close();
       socket.current = null;
     }
-    setIsListening(false);
+    setAppStatus('idle');
   };
 
   const handleLanguageChange = (e) => {
     setLanguage(e.target.value);
-    if (isListening) {
+    if (appStatus !== 'idle') {
       handleStopListening();
     }
   };
+
+  const getButtonText = () => {
+    switch (appStatus) {
+      case 'initializing':
+        return 'Initializing...';
+      case 'listening':
+        return 'Stop Listening';
+      case 'idle':
+      default:
+        return 'Start Listening';
+    }
+  };
+
 
   return (
     <div className="App">
@@ -90,8 +106,11 @@ function App() {
               EN
             </label>
           </div>
-          <button onClick={isListening ? handleStopListening : handleStartListening} className="listen-button">
-            {isListening ? 'Stop Listening' : 'Start Listening'}
+          <button
+            onClick={appStatus === 'listening' ? handleStopListening : handleStartListening}
+            className="listen-button"
+            disabled={appStatus === 'initializing'}>
+            {getButtonText()}
           </button>
         </div>
       </header>
