@@ -138,11 +138,13 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         # 4. Force silence
         # Also force silence on the model's new, bad "explanation" habit
         if (
-            is_exact_duplicate
-            or is_subset_duplicate
-            or "[SILENT]" in new_content
-            or "(Siehe oben" in new_content  # Filter new bad behavior
-            or ": Das bedeutet" in new_content
+            is_exact_duplicate or
+            is_subset_duplicate or
+            "[SILENT]" in new_content or
+            new_content.startswith("I cannot provide") or  # Catch refusals
+            "(Siehe oben" in new_content or  # Filter new bad behavior
+            ": Das bedeutet" in new_content  # Filter new bad behavior
+
         ):  # Filter new bad behavior
             response.content = "[SILENT]"
 

@@ -16,7 +16,7 @@ npm install
 # Start server
 ```
 cd backend
-python -m uvicorn backend.main:app --reload
+python -m uvicorn backend.main:app --reload --host 0.0.0.0
 ```
 
 # Start UI

@@ -49,8 +49,11 @@ function App() {
       clearTimeout(pongTimeout.current);
     };
 
-    // Use ws:// for local development, wss:// for production
-    socket.current = new WebSocket('ws://localhost:8000/ws');
+    // Use the window's hostname to dynamically connect to the backend.
+    // This works for both localhost and local network access.
+    // For production, you might use wss:// and a different logic.
+    const backendHost = window.location.hostname;
+    socket.current = new WebSocket(`ws://${backendHost}:8000/ws`);
 
     socket.current.onopen = () => {
       console.log('WebSocket connected');
