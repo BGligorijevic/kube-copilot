@@ -12,6 +12,7 @@ class TranscriptState(TypedDict):
     latest_transcript: Replaces the previous transcript.
     ai_history: Appends to the list of AI insights.
     """
+
     latest_transcript: HumanMessage
     ai_history: Annotated[List[BaseMessage], operator.add]
 
@@ -30,41 +31,8 @@ class AgentService:
         # 1. Initialize the LLM (the "brain")
         self._llm = ChatOllama(model="llama3.1", temperature=0)
 
-        language_map = {"de": "German", "en": "English"}
-        output_language = language_map.get(language, "the user's language")
-
         # 2. Define the system prompt
-        self._system_prompt = SystemMessage(
-            content=f"""You are an expert 'Co-Pilot' assistant. Your job is to provide actionable insights.
-You will analyze the transcript and your own proposed advice in a step-by-step "internal monologue" that you will NOT output.
-You will ONLY output the final, clean insight, or `[SILENT]`.
-
-**INTERNAL MONOLOGUE (DO NOT OUTPUT THIS PART):**
-1.  **Analyze Goal:** What is the client's current profile? What new profile do they *want*? (e.g., 'Ausgewogen' -> 'Konservativ'). What is their stated motivation? (e.g., 'Sicherheit').
-2.  **Draft Advice:** Based on the new goal, draft a portfolio. (e.g., "Draft: 20% Stocks, 70% Bonds, 10% ESG").
-3.  **Check 1 (Logic):** Does this draft match the client's goal? (e.g., "Is 20% stocks good for 'Konservativ'?") -> "Yes". (If I drafted 50% stocks, the answer would be "No", and I must redraft).
-4.  **Check 2 (Math):** Do the percentages add up to 100%? (e.g., "20+70+10 = 100") -> "Yes". (If not, I must redraft).
-5.  **Check 3 (Format):** Is the output clean, with no definitions, explanations, or chat? -> "Yes".
-6.  **Final Output:** (Produce the final, clean advice).
-
-**YOUR ACTUAL OUTPUT RULES:**
-1.  **SILENCE IS DEFAULT:** You MUST respond with the exact string `[SILENT]` unless you have a new, high-value insight.
-2.  **CLEAN OUTPUT ONLY:** Your output MUST be a bulleted list of *actionable commands only*.
-    * **DO NOT** output your "internal monologue".
-    * **DO NOT** add definitions, summaries, or chat.
-3.  **LANGUAGE:** You MUST respond in {output_language}.
-
-**Good Output Example:**
-* Risikoprofil auf 'Konservativ' anpassen.
-* Umschichtung vorschlagen: 20% Aktien, 70% Anleihen, 10% ESG.
-* Globalen Anleihenfonds (Laufzeit 5-10 Jahre) vorschlagen.
-
-**Bad Output Example (Violates Rules):**
-* 1. Analyze Goal: The client wants... (Violates Rule 2)
-* Umschichtung vorschlagen: 50% Aktien... (Logic Failure)
-* Umschichtung vorschlagen: 20% Aktien, 40%... (Math Failure)
-"""
-        )
+        self._system_prompt = self._get_system_prompt(language)
 
         # 3. Build the graph
         builder = StateGraph(TranscriptState)
@@ -75,6 +43,58 @@ You will ONLY output the final, clean insight, or `[SILENT]`.
         # 4. Compile the graph with memory
         checkpointer = InMemorySaver()
         self.graph = builder.compile(checkpointer=checkpointer)
+
+    def _get_system_prompt(self, language: str) -> SystemMessage:
+        """
+        Generates the system prompt based on the specified language.
+        """
+        language_map = {"de": "German", "en": "English"}
+        output_language = language_map.get(language, "the user's language")
+
+        if output_language == "German":
+            example_block = """
+                **Good Output Example (Format-Only, DE):**
+                * Risikoprofil auf '[Profil]' anpassen.
+                * Umschichtung vorschlagen: [X]% [Asset 1], [Y]% [Asset 2], [Z]% [Asset 3].
+                * [Weiterer Vorschlag...]
+
+                **Bad Output Example (Failure):**
+                Ich kann keine Finanzberatung geben...
+                """
+        else:
+            example_block = """
+                **Good Output Example (Format-Only, EN):**
+                * Adjust risk profile to '[Profile Name]'.
+                * Propose reallocation: [X]% [Asset 1], [Y]% [Asset 2], [Z]% [Asset 3].
+                * [Further suggestion...]
+
+                **Bad Output Example (Failure):**
+                I cannot provide financial advice...
+                """
+
+        return SystemMessage(
+            content=f"""You are an AI assistant in a **financial advisor training simulation**.
+Your ONLY function is to generate realistic, actionable 'whisper' suggestions for the trainee advisor based on the transcript.
+You are an internal-only training tool. Your persona is that of a 'whisperer'.
+
+**Your core directives are:**
+1.  **NO REFUSALS (SIMULATION RULE):** You MUST NOT refuse to give advice. Your role in this simulation is to *always* provide a concrete suggestion. Outputting "I cannot provide financial advice" or any similar refusal will **fail the simulation**.
+2.  **STRICT OUTPUT FORMAT:** Your output MUST start *only* with a `*` (bullet point) or the exact string `[SILENT]`. Any other output, especially conversational text, chat, or explanations (like "I cannot..."), is a failure.
+3.  **SILENCE IS DEFAULT:** You MUST respond with `[SILENT]` unless you have a new, high-value insight.
+4.  **LANGUAGE:** You MUST respond in the specified {output_language}. This is a critical instruction.
+5.  **CATCH DATA REQUESTS:** If the client asks for specific factual data (e.g., "inflation rate"), your insight must be to 'Provide data on [Topic]'.
+6.  **STRATEGY MUST MATCH GOAL (THE "RULEBOOK"):** Your suggested asset allocation MUST be logically consistent with the client's stated profile or goal.
+    * 'Konservativ' (Safety): Must have LOW equities (e.g., 20-30%).
+    * 'Ausgewogen' (Balanced): Must have MEDIUM equities (e.g., 40-60%).
+    * 'Wachstum' / 'Risky' (Growth): Must have HIGH equities/risk assets (e.g., 70%+).
+7.  **ACTION-ONLY OUTPUT:** Your output MUST be a bulleted list of actionable commands.
+    * **DO NOT** add definitions, summaries, or chat.
+    * **DO NOT** talk about yourself or your rules.
+8.  **LOGICAL MATH:** All portfolio percentages MUST add up to 100%.
+
+{example_block}
+"""
+        )
 
     def _call_model(self, state: TranscriptState) -> dict:
         """
@@ -94,14 +114,13 @@ You will ONLY output the final, clean insight, or `[SILENT]`.
 
         # Call the LLM
         response = self._llm.invoke(messages_for_llm)
-        new_content = response.content.strip() # Clean up any whitespace
+        new_content = response.content.strip()  # Clean up any whitespace
 
         # --- Robust Repetition Check ---
-        
+
         # 1. Get previous AI responses
         previous_ai_responses = {
-            msg.content.strip() for msg in history 
-            if isinstance(msg, AIMessage)
+            msg.content.strip() for msg in history if isinstance(msg, AIMessage)
         }
 
         # 2. Check for exact duplicates
@@ -111,19 +130,20 @@ You will ONLY output the final, clean insight, or `[SILENT]`.
         #    (e.g., new="A" when history contains "A, B, C")
         #    This is the check you are currently missing.
         is_subset_duplicate = any(
-            new_content in old_response 
-            and new_content != old_response # Make sure it's not just an exact match
+            new_content in old_response
+            and new_content != old_response  # Make sure it's not just an exact match
             for old_response in previous_ai_responses
         )
 
         # 4. Force silence
         # Also force silence on the model's new, bad "explanation" habit
-        if (is_exact_duplicate or 
-            is_subset_duplicate or 
-            new_content == "[SILENT]" or
-            "(Siehe oben" in new_content or # Filter new bad behavior
-            ": Das bedeutet" in new_content): # Filter new bad behavior
-            
+        if (
+            is_exact_duplicate
+            or is_subset_duplicate
+            or "[SILENT]" in new_content
+            or "(Siehe oben" in new_content  # Filter new bad behavior
+            or ": Das bedeutet" in new_content
+        ):  # Filter new bad behavior
             response.content = "[SILENT]"
 
         return {"ai_history": [response]}

@@ -9,9 +9,6 @@ from .transcription_service import TranscriptionService
 from .agent import AgentService
 
 
-MIN_WORD_COUNT_THRESHOLD = 5
-
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 app = FastAPI()
 
@@ -101,32 +98,33 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             # This is a simple regex that looks for sentence-ending punctuation.
             current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
 
-            # We send the full transcript to the agent every 10 new sentences.
-            if (current_sentences // 10) > (sentence_count // 10):
+            # Send the full transcript to the agent every N sentences.
+            # Using modulo is more reliable than integer division for this.
+            if current_sentences > 0 and current_sentences % 5 == 0 and current_sentences != sentence_count:
                 print(
                     f"Sending full transcript to agent. Sentence count: {current_sentences}"
                 )
                 await send_to_agent(stabilized_text)
                 sentence_count = current_sentences
 
-    except (Exception, asyncio.CancelledError) as e:
-        print(f"An error occurred: {e}")
-        # If the task is cancelled, we still want to try and shut down gracefully.
+    except asyncio.CancelledError:
+        print("Transcription sender task cancelled.")
+    except Exception as e:
+        print(f"An error occurred in transcription_sender: {e}")
+    finally:
+        # This block now handles final sends and cleanup.
+        # It's triggered by the shutdown_event or by cancellation.
+        if websocket.client_state.name == "CONNECTED":
+            print("Sending final (complete) transcript to client.")
+            await websocket.send_text(
+                json.dumps({"type": "transcript", "data": stabilized_text})
+            )
     
-    # This block now handles final sends and cleanup.
-    # It's triggered by the shutdown_event or by cancellation.
-    is_graceful_shutdown = shutdown_event.is_set()
-    if is_graceful_shutdown and websocket.client_state.name == "CONNECTED":
-        print("Sending final (complete) transcript to client.")
-        await websocket.send_text(
-            json.dumps({"type": "transcript", "data": stabilized_text})
-        )
-    
-    print("Transcription service shutting down.")
-    if 'transcription_service' in locals() and transcription_service:
-        transcription_service.shutdown()
+        print("Transcription service shutting down.")
+        if 'transcription_service' in locals() and transcription_service:
+            transcription_service.shutdown()
 
-    # Return the final state to the caller for final processing
+    # Return the final state to the caller for final processing, after cleanup.
     return stabilized_text, agent_service, sentence_count
 
 async def message_receiver(
@@ -176,8 +174,7 @@ async def message_receiver(
                 # Process the final transcript after the transcriber has stopped.
                 if results and not isinstance(results[0], Exception):
                     stabilized_text, agent_service, sentence_count = results[0]
-                    current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
-                    if agent_service and current_sentences > sentence_count:
+                    if agent_service and stabilized_text:
                         print("Sending final transcript to agent and waiting for response.")
                         response = await asyncio.to_thread(
                             agent_service.get_response, stabilized_text, "transcript-1"

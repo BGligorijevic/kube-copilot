@@ -69,6 +69,9 @@ function App() {
         return;
       } else if (message.type === 'status' && message.data === 'listening') {
         setAppStatus('listening');
+      } else if (message.type === 'status' && message.data === 'stopped') {
+        // Backend confirms graceful shutdown. Now we can close.
+        socket.current.close();
       }
       if (message.type === 'transcript') {
         setTranscript(message.data);
@@ -188,6 +191,11 @@ function App() {
                 {insight.split('\n').map((line, i) => <p key={i}>{line}</p>)}
               </div>
             ))}
+            {(appStatus === 'initializing' || appStatus === 'listening' || appStatus === 'stopping') && (
+              <div className="insight-item thinking">
+                <p>Der Flüsterer hört aktiv zu und denkt mit...</p>
+              </div>
+            )}
           </div>
         </div>
       </main>
