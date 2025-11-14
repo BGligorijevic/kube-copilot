@@ -7,6 +7,9 @@ import os
 from .transcription_service import TranscriptionService
 from .agent import AgentService
 
+MIN_WORD_COUNT_THRESHOLD = 5
+
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 app = FastAPI()
 
@@ -44,33 +47,32 @@ async def transcription_sender(websocket: WebSocket, language: str):
             # Asynchronously wait for a new transcript to be available in the queue.
             # This is non-blocking and integrates with the asyncio event loop.
             # Notify the client that the service is ready and listening
-            await websocket.send_text(json.dumps({
-                "type": "status",
-                "data": "listening"
-            }))
+            await websocket.send_text(
+                json.dumps({"type": "status", "data": "listening"})
+            )
 
             stabilized_text = await finished_text_queue.get()
 
             # Send the full transcript to the client
-            await websocket.send_text(json.dumps({
-                "type": "transcript",
-                "data": stabilized_text
-            }))
+            await websocket.send_text(
+                json.dumps({"type": "transcript", "data": stabilized_text})
+            )
 
             # Identify the new part of the transcript to send to the agent
-            new_chunk = stabilized_text[len(last_agent_transcript):].strip()
+            new_chunk = stabilized_text[len(last_agent_transcript) :].strip()
 
-            if new_chunk and len(new_chunk.split()) > 5:
+            if new_chunk and len(new_chunk.split()) > MIN_WORD_COUNT_THRESHOLD:
                 history = conversation.copy()
                 conversation.append(("user", new_chunk))
-                response = await asyncio.to_thread(agent_service.get_response, new_chunk, history)
+                response = await asyncio.to_thread(
+                    agent_service.get_response, new_chunk, history
+                )
                 if response:
                     conversation.append(("agent", response))
                     # Send agent insight to the client
-                    await websocket.send_text(json.dumps({
-                        "type": "insight",
-                        "data": response
-                    }))
+                    await websocket.send_text(
+                        json.dumps({"type": "insight", "data": response})
+                    )
 
             last_agent_transcript = stabilized_text
 
@@ -78,7 +80,7 @@ async def transcription_sender(websocket: WebSocket, language: str):
         print(f"An error occurred: {e}")
     finally:
         print("Transcription service shutting down.")
-        if 'transcription_service' in locals() and transcription_service:
+        if "transcription_service" in locals() and transcription_service:
             transcription_service.shutdown()
 
 
@@ -101,14 +103,15 @@ async def message_receiver(websocket: WebSocket, transcription_task_group):
                 for task in transcription_task_group:
                     task.cancel()
                 # Notify the client that the service is starting
-                await websocket.send_text(json.dumps({
-                    "type": "status",
-                    "data": "starting"
-                }))
+                await websocket.send_text(
+                    json.dumps({"type": "status", "data": "starting"})
+                )
 
                 language = data.get("language", "de")
                 # Create a new task in the provided task group
-                new_task = asyncio.create_task(transcription_sender(websocket, language))
+                new_task = asyncio.create_task(
+                    transcription_sender(websocket, language)
+                )
                 transcription_task_group.add(new_task)
 
     except WebSocketDisconnect:

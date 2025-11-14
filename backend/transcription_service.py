@@ -26,14 +26,16 @@ class TranscriptionService:
             on_realtime_transcription_stabilized=self._get_on_transcription_finished(),
             realtime_model_type="tiny",
             enable_realtime_transcription=True,
-            realtime_processing_pause=1 # Wait for a 1-second pause before stabilizing
+            realtime_processing_pause=1, # Wait for a 1-second pause before stabilizing
+            no_log_file=True,
+            spinner=False
         )
 
     def _get_on_realtime_text_update(self):
         """Returns a thread-safe callback for text updates."""
 
         def on_realtime_text_update(text: str):
-            print(f"TranscriptionService: Realtime update received: '{text}'")
+            # print(f"TranscriptionService: Realtime update received: '{text}'")
             self.text_queue.put_nowait(text)
 
         return on_realtime_text_update
@@ -41,7 +43,7 @@ class TranscriptionService:
     def _get_on_transcription_finished(self):
         """Returns a thread-safe callback for finished text updates."""
         def on_transcription_finished(text: str):
-            print(f"TranscriptionService: Stabilized text received: '{text}'")
+            # print(f"TranscriptionService: Stabilized text received: '{text}'")
             self.finished_text_queue.put_nowait(text)
 
         return on_transcription_finished

@@ -41,7 +41,7 @@ Analyze the transcript and provide only high-value, actionable intelligence.
         self._chain = prompt | self._llm
 
     def get_response(self, input: str, chat_history: list) -> str:
-        """Receives text and returns a response from the 'LLM'."""
+        """Receives the transcript and returns a response from the 'LLM' when appropriate."""
         print(f"Received from the transcript: {input}")
 
         # Convert our simple chat history into the format LangChain expects.
@@ -52,8 +52,9 @@ Analyze the transcript and provide only high-value, actionable intelligence.
             else:
                 history_messages.append(HumanMessage(content=text))
 
+        print(f"Invoking agent with input: {input} and chat history {history_messages}\n")
         result = self._chain.invoke({"input": input, "chat_history": history_messages})
-        print(f"Agent raw response: {result}")
+        # print(f"Agent raw response: {result}")
 
         # Extract the text content from the AIMessage response.
         content = result.content if isinstance(result, AIMessage) else ""
@@ -62,5 +63,5 @@ Analyze the transcript and provide only high-value, actionable intelligence.
         if "[SILENT]" in content:
             content = ""
 
-        print(f"Agent final output: {content}")
+        print(f"Agent output: {content}\n")
         return content
