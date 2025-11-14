@@ -94,15 +94,6 @@ body {
   background: linear-gradient(to right, #f44336, #d32f2f);
 }
 
-.App-main {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem; /* Increased padding */
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 .column {
   flex: 1;
   display: flex;
@@ -149,5 +140,41 @@ body {
   }
   100% {
     opacity: 0.5;
+  }
+}
+/* In App.css */
+
+/* Default desktop styles (side-by-side) */
+.App-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem; /* Adds some space between the columns */
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.transcript-column,
+.fluesterer-column {
+  flex: 1; /* Each column takes up half the space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Mobile View --- */
+/* On screens smaller than 768px, stack the columns */
+@media (max-width: 768px) {
+  .App-main {
+    flex-direction: column;
+  }
+
+  /* Use the 'order' property to change the visual order */
+  .fluesterer-column {
+    order: 1; /* Show this column first */
+  }
+
+  .transcript-column {
+    order: 2; /* Show this column second */
   }
 }

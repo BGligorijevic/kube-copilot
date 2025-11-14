@@ -178,7 +178,7 @@ function App() {
         </div>
       </header>
       <main className="App-main">
-        <div className="column">
+        <div className="column transcript-column">
           <h2>Transkript</h2>
           <textarea
             className="display-area"
@@ -186,7 +186,7 @@ function App() {
             readOnly
           />
         </div>
-        <div className="column">
+        <div className="column fluesterer-column">
           <h2>Der Flüsterer</h2>
           <div className="display-area insights-display">
             {insights.map((insight, index) => (
