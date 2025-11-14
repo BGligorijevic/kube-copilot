@@ -1,11 +1,13 @@
 import asyncio
 import json
+import re
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
 from .transcription_service import TranscriptionService
 from .agent import AgentService
+
 
 MIN_WORD_COUNT_THRESHOLD = 5
 
@@ -31,8 +33,7 @@ async def transcription_sender(websocket: WebSocket, language: str):
     """
     text_queue = asyncio.Queue()
     finished_text_queue = asyncio.Queue()
-    conversation = []
-    last_agent_transcript = ""
+    sentence_count = 0
     try:
         agent_service = AgentService(language=language)
         transcription_service = TranscriptionService(
@@ -58,23 +59,24 @@ async def transcription_sender(websocket: WebSocket, language: str):
                 json.dumps({"type": "transcript", "data": stabilized_text})
             )
 
-            # Identify the new part of the transcript to send to the agent
-            new_chunk = stabilized_text[len(last_agent_transcript) :].strip()
+            # print(f"Stabilized text: {stabilized_text}")
 
-            if new_chunk and len(new_chunk.split()) > MIN_WORD_COUNT_THRESHOLD:
-                history = conversation.copy()
-                conversation.append(("user", new_chunk))
+            # Count sentences in the stabilized text.
+            # This is a simple regex that looks for sentence-ending punctuation.
+            current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
+
+            # We send the full transcript to the agent every 5 new sentences.
+            if current_sentences > sentence_count and current_sentences % 5 == 0:
+                print(f"Sending full transcript to agent. Sentence count: {current_sentences}")
                 response = await asyncio.to_thread(
-                    agent_service.get_response, new_chunk, history
+                    agent_service.get_response, stabilized_text, "transcript-1"
                 )
-                if response:
-                    conversation.append(("agent", response))
+                if response != "[SILENT]":
                     # Send agent insight to the client
                     await websocket.send_text(
                         json.dumps({"type": "insight", "data": response})
                     )
-
-            last_agent_transcript = stabilized_text
+                sentence_count = current_sentences
 
     except (Exception, asyncio.CancelledError) as e:
         print(f"An error occurred: {e}")
