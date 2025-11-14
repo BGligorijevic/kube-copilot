@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
-  const [appStatus, setAppStatus] = useState('idle'); // 'idle', 'initializing', 'listening', 'disconnected'
+  const [appStatus, setAppStatus] = useState('idle'); // 'idle', 'initializing', 'listening', 'stopping', 'disconnected'
   const [language, setLanguage] = useState('de');
   const [transcript, setTranscript] = useState('');
   const [insights, setInsights] = useState([]);
@@ -80,9 +80,11 @@ function App() {
     socket.current.onclose = () => {
       console.log('WebSocket disconnected');
       stopHealthCheck();
-      // Only show disconnected error if it wasn't a manual stop.
-      if (!intentionalClose.current) {
+      if (intentionalClose.current) {
+        setAppStatus('idle'); // Graceful stop, return to idle.
+      } else {
         setAppStatus('disconnected');
+        // Don't nullify the socket here, so reconnect can be attempted.
       }
     };
 
@@ -100,12 +102,13 @@ function App() {
   };
 
   const handleStopListening = () => {
-    intentionalClose.current = true; // Mark the close as intentional
-    if (socket.current) {
-      socket.current.close();
-      socket.current = null;
+    if (socket.current && socket.current.readyState === WebSocket.OPEN) {
+      intentionalClose.current = true; // Mark the close as intentional
+      setAppStatus('stopping');
+      // Request a graceful shutdown from the backend.
+      socket.current.send(JSON.stringify({ action: 'stop' }));
+      // The backend will now send final data and then close the connection.
     }
-    setAppStatus('idle');
   };
 
   const handleLanguageChange = (e) => {
@@ -119,6 +122,8 @@ function App() {
     switch (appStatus) {
       case 'initializing':
         return 'Initialisierung...';
+      case 'stopping':
+        return 'Wird gestoppt...';
       case 'listening':
         return 'Flüsterer stoppen';
       case 'disconnected':
@@ -160,7 +165,7 @@ function App() {
             <button
               onClick={(appStatus === 'listening') ? handleStopListening : handleStartListening}
               className={`listen-button ${appStatus === 'disconnected' ? 'reconnect-button' : ''}`}
-              disabled={appStatus === 'initializing'}>
+              disabled={appStatus === 'initializing' || appStatus === 'stopping'}>
               {getButtonText()}
             </button>
           </div>

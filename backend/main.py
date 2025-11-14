@@ -35,6 +35,7 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
     finished_text_queue = asyncio.Queue()
     sentence_count = 0
     stabilized_text = ""
+    agent_service = None
     try:
         async def send_to_agent(text_to_send):
             """Helper function to send text to the agent and handle the response."""
@@ -101,7 +102,7 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
 
             # We send the full transcript to the agent every 10 new sentences.
-            if current_sentences > sentence_count and current_sentences % 10 == 0:
+            if (current_sentences // 10) > (sentence_count // 10):
                 print(
                     f"Sending full transcript to agent. Sentence count: {current_sentences}"
                 )
@@ -111,24 +112,26 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
     except (Exception, asyncio.CancelledError) as e:
         print(f"An error occurred: {e}")
         # If the task is cancelled, we still want to try and shut down gracefully.
-    finally:
-        print("Transcription service shutting down.")
-        # This block now handles final sends and cleanup.
-        # It's triggered by the shutdown_event or by cancellation.
-        # We only send the final transcript if the shutdown was graceful (event is set).
-        if shutdown_event.is_set() and websocket.client_state.name == "CONNECTED":
-            print("Sending final (complete) transcript to client.")
-            await websocket.send_text(
-                json.dumps({"type": "transcript", "data": stabilized_text})
-            )
-            current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
-            if current_sentences > sentence_count:
-                print("Sending final (complete) transcript to agent.")
-                await send_to_agent(stabilized_text)
+    
+    # This block now handles final sends and cleanup.
+    # It's triggered by the shutdown_event or by cancellation.
+    is_graceful_shutdown = shutdown_event.is_set()
+    if is_graceful_shutdown and websocket.client_state.name == "CONNECTED":
+        print("Sending final (complete) transcript to client.")
+        await websocket.send_text(
+            json.dumps({"type": "transcript", "data": stabilized_text})
+        )
+    
+    print("Transcription service shutting down.")
+    if 'transcription_service' in locals() and transcription_service:
         transcription_service.shutdown()
 
+    # Return the final state to the caller for final processing
+    return stabilized_text, agent_service, sentence_count
 
-async def message_receiver(websocket: WebSocket, transcription_task_group, shutdown_events):
+async def message_receiver(
+    websocket: WebSocket, transcription_task_group, shutdown_events
+):
     """
     Handles receiving messages from the client.
     This function only READS from the websocket.
@@ -166,10 +169,27 @@ async def message_receiver(websocket: WebSocket, transcription_task_group, shutd
                     event.set()
                 print("Waiting for transcription tasks to send final messages and clean up.")
                 # Await the completion of the tasks to ensure they finish gracefully.
-                await asyncio.gather(*transcription_task_group, return_exceptions=True)
-                print("All transcription tasks gracefully stopped.")
-                await websocket.close()
-                break # Exit the while loop after stopping
+                results = await asyncio.gather(
+                    *transcription_task_group, return_exceptions=True
+                )
+                
+                # Process the final transcript after the transcriber has stopped.
+                if results and not isinstance(results[0], Exception):
+                    stabilized_text, agent_service, sentence_count = results[0]
+                    current_sentences = len(re.findall(r"[.!?]+", stabilized_text))
+                    if agent_service and current_sentences > sentence_count:
+                        print("Sending final transcript to agent and waiting for response.")
+                        response = await asyncio.to_thread(
+                            agent_service.get_response, stabilized_text, "transcript-1"
+                        )
+                        if response and response.strip().upper() != "[SILENT]":
+                            await websocket.send_text(
+                                json.dumps({"type": "insight", "data": response})
+                            )
+
+                print("All tasks gracefully stopped. Closing connection.")
+                await websocket.close() # Close the connection as the very last step.
+                break # Exit the while loop.
 
     except WebSocketDisconnect:
         print("Client disconnected from receiver.")
