@@ -118,14 +118,14 @@ function App() {
   const getButtonText = () => {
     switch (appStatus) {
       case 'initializing':
-        return 'Initializing...';
+        return 'Initialisierung...';
       case 'listening':
-        return 'Stop Listening';
+        return 'Flüsterer stoppen';
       case 'disconnected':
-        return 'Reconnect';
+        return 'Wiederverbinden';
       case 'idle':
       default:
-        return 'Start Listening';
+        return 'Flüsterer aktivieren';
     }
   };
 
@@ -133,35 +133,42 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>KuBe Flüsterer</h1>
+        <h1 style={{ marginBottom: "20px"}}>KuBe Flüsterer</h1>
         <img src="kube_whisperer.png" className="App-logo" alt="logo" width={"150px"} height={'150px'} />
         {appStatus === 'disconnected' && (
           <div className="error-message">
-            Connection to the server was lost. Please ensure the backend is running.
+            Die Verbindung zum Server wurde unterbrochen. Bitte stellen Sie sicher, dass das Backend ausgeführt wird.
           </div>
         )}
-        <div className="controls">
-          <div className="language-selector">
-            <label>
-              <input type="radio" value="de" checked={language === 'de'} onChange={handleLanguageChange} disabled={appStatus !== 'idle'} />
-              DE
-            </label>
-            <label>
-              <input type="radio" value="en" checked={language === 'en'} onChange={handleLanguageChange} disabled={appStatus !== 'idle'} />
-              EN
-            </label>
+        <div className="controls-container">
+          <div className="language-controls">
+            <div className="controls">
+              <span className="language-label">Besprechungssprache</span>
+              <div className="language-selector">
+                <label>
+                  <input type="radio" value="de" checked={language === 'de'} onChange={handleLanguageChange} disabled={appStatus !== 'idle'} />
+                  DE
+                </label>
+                <label>
+                  <input type="radio" value="en" checked={language === 'en'} onChange={handleLanguageChange} disabled={appStatus !== 'idle'} />
+                  EN
+                </label>
+              </div>
+            </div>
           </div>
-          <button
-            onClick={(appStatus === 'listening') ? handleStopListening : handleStartListening}
-            className={`listen-button ${appStatus === 'disconnected' ? 'reconnect-button' : ''}`}
-            disabled={appStatus === 'initializing'}>
-            {getButtonText()}
-          </button>
+          <div className="button-container">
+            <button
+              onClick={(appStatus === 'listening') ? handleStopListening : handleStartListening}
+              className={`listen-button ${appStatus === 'disconnected' ? 'reconnect-button' : ''}`}
+              disabled={appStatus === 'initializing'}>
+              {getButtonText()}
+            </button>
+          </div>
         </div>
       </header>
       <main className="App-main">
         <div className="column">
-          <h2>Transcript</h2>
+          <h2>Transkript</h2>
           <textarea
             className="display-area"
             value={transcript}
@@ -169,7 +176,7 @@ function App() {
           />
         </div>
         <div className="column">
-          <h2>Co-Pilot Insights</h2>
+          <h2>Der Flüsterer</h2>
           <div className="display-area insights-display">
             {insights.map((insight, index) => (
               <div key={index} className="insight-item">

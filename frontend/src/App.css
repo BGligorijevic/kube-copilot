@@ -33,12 +33,25 @@ body {
   margin-top: 1rem;
 }
 
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Adds space between language controls and button */
+}
+
 .controls {
   display: flex;
+  flex-direction: column; /* Stack label and radios vertically */
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem; /* Space between label and radios */
   margin-top: 1rem;
+}
+
+.language-label {
+  font-size: 1rem;
+  color: #333;
 }
 
 .language-selector {
