@@ -60,8 +60,7 @@ async def transcription_sender(websocket: WebSocket, language: str):
             # Identify the new part of the transcript to send to the agent
             new_chunk = stabilized_text[len(last_agent_transcript):].strip()
 
-            # number of words
-            if new_chunk and len(new_chunk.split()) > 10:
+            if new_chunk and len(new_chunk.split()) > 5:
                 history = conversation.copy()
                 conversation.append(("user", new_chunk))
                 response = await asyncio.to_thread(agent_service.get_response, new_chunk, history)

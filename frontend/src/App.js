@@ -133,7 +133,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🎙️ KuBe Co-Pilot</h1>
+        <h1>KuBe Flüsterer</h1>
+        <img src="kube_whisperer.png" className="App-logo" alt="logo" width={"150px"} height={'150px'} />
         {appStatus === 'disconnected' && (
           <div className="error-message">
             Connection to the server was lost. Please ensure the backend is running.
