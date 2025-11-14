@@ -4,21 +4,16 @@ from langchain_core.messages import HumanMessage, SystemMessage, BaseMessage
 from langchain_ollama import ChatOllama
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import InMemorySaver
+from langchain_core.messages import AIMessage
 
 
-# --- State Definition (Shared) ---
-# This defines the structure of our memory.
 class TranscriptState(TypedDict):
     """
     latest_transcript: Replaces the previous transcript.
     ai_history: Appends to the list of AI insights.
     """
-
     latest_transcript: HumanMessage
     ai_history: Annotated[List[BaseMessage], operator.add]
-
-
-# --- Service Class ---
 
 
 class AgentService:
@@ -40,25 +35,34 @@ class AgentService:
 
         # 2. Define the system prompt
         self._system_prompt = SystemMessage(
-            content=f"""You are an expert 'Co-Pilot' assistant for a Swiss bank client advisor, acting as a whisperer in their ear. Your role is to provide ONLY high-value, concise, and actionable insights based on the live conversation transcript.
+            content=f"""You are an expert 'Co-Pilot' assistant. Your job is to provide actionable insights.
+You will analyze the transcript and your own proposed advice in a step-by-step "internal monologue" that you will NOT output.
+You will ONLY output the final, clean insight, or `[SILENT]`.
 
-**Your core directives are:**
-1.  **SILENCE IS YOUR DEFAULT STATE:** Your primary goal is to remain silent. It is better to say nothing than to provide a low-value comment. Do not summarize, repeat, or state the obvious. You MUST respond with the exact string '[SILENT]' unless you have an insight that meets the high standard below.
-2.  **HIGH-VALUE INSIGHTS ONLY:** Only break your silence if you identify a critical opportunity, a significant risk, a client misunderstanding, or a key piece of missing information that the advisor needs to act on. Your insights must be strategic.
-3.  **BE A CONCISE WHISPERER:** When you do provide an insight, it must be a direct, bullet-pointed suggestion that the advisor can use immediately. Do not engage in conversation, ask questions, or use pleasantries.
-4.  **IMPERSONAL INSTRUCTIONS:** Your output must be an impersonal command or action item for the advisor. Do NOT address the client (e.g., "Frau Eger"), do NOT use polite forms ("Sie"), and do NOT create scripts for the advisor to say. Frame insights as direct, internal notes. Avoid phrases like "I would suggest..." or "Ich würde vorschlagen...".
-5.  **LANGUAGE:** You MUST respond in {output_language}.
+**INTERNAL MONOLOGUE (DO NOT OUTPUT THIS PART):**
+1.  **Analyze Goal:** What is the client's current profile? What new profile do they *want*? (e.g., 'Ausgewogen' -> 'Konservativ'). What is their stated motivation? (e.g., 'Sicherheit').
+2.  **Draft Advice:** Based on the new goal, draft a portfolio. (e.g., "Draft: 20% Stocks, 70% Bonds, 10% ESG").
+3.  **Check 1 (Logic):** Does this draft match the client's goal? (e.g., "Is 20% stocks good for 'Konservativ'?") -> "Yes". (If I drafted 50% stocks, the answer would be "No", and I must redraft).
+4.  **Check 2 (Math):** Do the percentages add up to 100%? (e.g., "20+70+10 = 100") -> "Yes". (If not, I must redraft).
+5.  **Check 3 (Format):** Is the output clean, with no definitions, explanations, or chat? -> "Yes".
+6.  **Final Output:** (Produce the final, clean advice).
 
-**Examples of good insights (EN):**
-*   Review risk profile and propose hedging strategies due to volatility concerns.
-*   Introduce the new sustainable investment fund.
-*   Clarify the fee structure for product X.
+**YOUR ACTUAL OUTPUT RULES:**
+1.  **SILENCE IS DEFAULT:** You MUST respond with the exact string `[SILENT]` unless you have a new, high-value insight.
+2.  **CLEAN OUTPUT ONLY:** Your output MUST be a bulleted list of *actionable commands only*.
+    * **DO NOT** output your "internal monologue".
+    * **DO NOT** add definitions, summaries, or chat.
+3.  **LANGUAGE:** You MUST respond in {output_language}.
 
-**Examples of good insights (DE):**
-*   "Anlagestrategie anpassen und eine höhere Portfoliobewertung in Betracht ziehen."
-*   "20% von Aktien in ein diversifiziertes Fondsportfolio investieren und den Rest in festverzinsliche Wertpapiere mit einer Laufzeit von 5-10 Jahren."
+**Good Output Example:**
+* Risikoprofil auf 'Konservativ' anpassen.
+* Umschichtung vorschlagen: 20% Aktien, 70% Anleihen, 10% ESG.
+* Globalen Anleihenfonds (Laufzeit 5-10 Jahre) vorschlagen.
 
-Analyze the transcript with patience and provide only truly exceptional, actionable intelligence.
+**Bad Output Example (Violates Rules):**
+* 1. Analyze Goal: The client wants... (Violates Rule 2)
+* Umschichtung vorschlagen: 50% Aktien... (Logic Failure)
+* Umschichtung vorschlagen: 20% Aktien, 40%... (Math Failure)
 """
         )
 
@@ -90,8 +94,38 @@ Analyze the transcript with patience and provide only truly exceptional, actiona
 
         # Call the LLM
         response = self._llm.invoke(messages_for_llm)
+        new_content = response.content.strip() # Clean up any whitespace
 
-        # Return *only* the AI's response to be added to 'ai_history'
+        # --- Robust Repetition Check ---
+        
+        # 1. Get previous AI responses
+        previous_ai_responses = {
+            msg.content.strip() for msg in history 
+            if isinstance(msg, AIMessage)
+        }
+
+        # 2. Check for exact duplicates
+        is_exact_duplicate = new_content in previous_ai_responses
+
+        # 3. Check if new response is a "subset" of an old one
+        #    (e.g., new="A" when history contains "A, B, C")
+        #    This is the check you are currently missing.
+        is_subset_duplicate = any(
+            new_content in old_response 
+            and new_content != old_response # Make sure it's not just an exact match
+            for old_response in previous_ai_responses
+        )
+
+        # 4. Force silence
+        # Also force silence on the model's new, bad "explanation" habit
+        if (is_exact_duplicate or 
+            is_subset_duplicate or 
+            new_content == "[SILENT]" or
+            "(Siehe oben" in new_content or # Filter new bad behavior
+            ": Das bedeutet" in new_content): # Filter new bad behavior
+            
+            response.content = "[SILENT]"
+
         return {"ai_history": [response]}
 
     def get_response(self, transcript: str, thread_id: str) -> str:
@@ -113,14 +147,16 @@ Analyze the transcript with patience and provide only truly exceptional, actiona
         # Run the graph
         result = self.graph.invoke(input_data, config=config)
 
-        #final_memory = self.get_memory(thread_id)
-        #print(f"AI memory - transcript:\n{final_memory['latest_transcript'].content}")
-        #print(f"AI memory - his insights:\n")
-        #for msg in final_memory['ai_history']:
+        # final_memory = self.get_memory(thread_id)
+        # print(f"AI memory - transcript:\n{final_memory['latest_transcript'].content}")
+        # print(f"AI memory - his insights:\n")
+        # for msg in final_memory['ai_history']:
         #    print(f"  - {msg.content}")
 
         # Return the content of the *last* AI message added
-        return result["ai_history"][-1].content
+        agent_output = result["ai_history"][-1].content
+        print(f"Agent output: {agent_output}\n")
+        return agent_output
 
     def get_memory(self, thread_id: str) -> dict:
         """
