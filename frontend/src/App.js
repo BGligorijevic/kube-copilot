@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [appStatus, setAppStatus] = useState('idle'); // 'idle', 'initializing', 'listening', 'stopping', 'disconnected'
   const [language, setLanguage] = useState('de');
+  const [userId, setUserId] = useState('');
   const [transcript, setTranscript] = useState('');
   const [insights, setInsights] = useState([]);
   const socket = useRef(null);
@@ -59,7 +60,7 @@ function App() {
       console.log('WebSocket connected');
       setAppStatus('initializing');
       // Send start message to the backend
-      socket.current.send(JSON.stringify({ action: 'start', language: language }));
+      socket.current.send(JSON.stringify({ action: 'start', language: language, user_id: userId }));
       startHealthCheck();
     };
 
@@ -166,6 +167,16 @@ function App() {
                 </label>
               </div>
             </div>
+            <div className="controls">
+              <span className="language-label">Kunde ID</span>
+              <input
+                type="text"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+                className="customer-id-input"
+                disabled={appStatus !== 'idle'}
+              />
+            </div>
           </div>
           <div className="button-container">
             <button
@@ -194,7 +205,7 @@ function App() {
                 {insight.split('\n').map((line, i) => <p key={i}>{line}</p>)}
               </div>
             ))}
-            {(appStatus === 'initializing' || appStatus === 'listening' || appStatus === 'stopping') && (
+            {(appStatus === 'listening' || appStatus === 'stopping') && (
               <div className="insight-item thinking">
                 <p>Der Flüsterer hört aktiv zu und denkt mit...</p>
               </div>

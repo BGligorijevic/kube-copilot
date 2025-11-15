@@ -24,3 +24,8 @@ python -m uvicorn backend.main:app --reload --host 0.0.0.0
 cd frontend
 npm start
 ```
+
+# Testing agent
+```
+python -m backend.tests.test_agent
+```

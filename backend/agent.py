@@ -1,11 +1,17 @@
 import operator
 from typing import Annotated, TypedDict, List
-from langchain_core.messages import HumanMessage, SystemMessage, BaseMessage
+from langchain_core.messages import (
+    HumanMessage,
+    SystemMessage,
+    BaseMessage,
+    ToolMessage,
+)
 from langchain_ollama import ChatOllama
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain_core.messages import AIMessage
-
+from langgraph.prebuilt import ToolNode
+from .tools.product_tool import search_structured_products
 
 class TranscriptState(TypedDict):
     """
@@ -23,33 +29,51 @@ class AgentService:
     a custom memory state using LangGraph.
     """
 
-    def __init__(self, language: str = "de"):
+    def __init__(self, language: str = "de", user_id: str = "none"):
         """
         Initializes the LLM, system prompt, and compiles the
         stateful graph with in-memory persistence.
         """
-        # 1. Initialize the LLM (the "brain")
-        self._llm = ChatOllama(model="llama3.1", temperature=0)
+        self._language = language
+        self._user_id = user_id
+
+        print(f"user id:  {self._user_id}")
+
+        # 1. Initialize the LLM and tools
+        llm = ChatOllama(model="llama3.1", temperature=0)
+        self._tools = []
+        self._tools.append(search_structured_products)
+
+        if self._tools:
+            self._llm = llm.bind_tools(self._tools)
+        else:
+            self._llm = llm
 
         # 2. Define the system prompt
-        self._system_prompt = self._get_system_prompt(language)
+        self._system_prompt = self._get_system_prompt()
 
         # 3. Build the graph
         builder = StateGraph(TranscriptState)
-        builder.add_node("call_model", self._call_model)
+        builder.add_node("call_model", self.call_model_node)
+        tool_node = ToolNode(self._tools, messages_key="ai_history")
+        builder.add_node("call_tool", tool_node)
+
+        builder.add_conditional_edges(
+            "call_model", self.should_continue, {"continue": "call_tool", "__end__": END}
+        )
         builder.add_edge(START, "call_model")
-        builder.add_edge("call_model", END)
+        builder.add_edge("call_tool", "call_model")
 
         # 4. Compile the graph with memory
         checkpointer = InMemorySaver()
         self.graph = builder.compile(checkpointer=checkpointer)
 
-    def _get_system_prompt(self, language: str) -> SystemMessage:
+    def _get_system_prompt(self) -> SystemMessage:
         """
         Generates the system prompt based on the specified language.
         """
         language_map = {"de": "German", "en": "English"}
-        output_language = language_map.get(language, "the user's language")
+        output_language = language_map.get(self._language, "the user's language")
 
         if output_language == "German":
             example_block = """
@@ -82,37 +106,50 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
 2.  **STRICT OUTPUT FORMAT:** Your output MUST start *only* with a `*` (bullet point) or the EXACT string `[SILENT]`. Any other output, especially conversational text, chat, or explanations (like "I cannot..."), is a failure.
 3.  **SILENCE IS DEFAULT:** You MUST respond with `[SILENT]` unless you have a new, high-value insight.
 4.  **LANGUAGE:** You MUST respond in the specified {output_language}. This is a critical instruction.
-5.  **CATCH DATA REQUESTS:** If the client asks for specific factual data (e.g., "inflation rate"), your insight must be to 'Provide data on [Topic]'.
-6.  **STRATEGY MUST MATCH GOAL (THE "RULEBOOK"):** Your suggested asset allocation MUST be logically consistent with the client's stated profile or goal.
+5.  **TOOL USAGE & INTERPRETATION:**
+    *   If the user asks for specific investment products (e.g., "find products with high coupon"), you MUST use the `search_structured_products` tool. Do not describe the tool call; execute it directly.
+    *   After the tool returns a result (which will be a list of products in JSON format), your next step is to **interpret** it. You MUST formulate a natural language suggestion based on the tool's output and the user's original request. For example, if the user wanted growth and the tool returns product 'SP010', your output should be something like: `* Recommend product SP010 (Swissquote Dynamic Growth Certificate) as it aligns with the client's interest in growth stocks.`
+6.  **NO CHAT:** Do not output conversational text, apologies ("Es tut mir leid..."), or hypothetical scenarios ("Wenn wir annehmen..."). Your output is either a direct suggestion, a tool call, or silence.
+7.  **STRATEGY MUST MATCH GOAL (THE "RULEBOOK"):** Your suggested asset allocation MUST be logically consistent with the client's stated profile or goal.
     * 'Konservativ' (Safety): Must have LOW equities (e.g., 20-30%).
     * 'Ausgewogen' (Balanced): Must have MEDIUM equities (e.g., 40-60%).
     * 'Wachstum' / 'Risky' (Growth): Must have HIGH equities/risk assets (e.g., 70%+).
-7.  **ACTION-ONLY OUTPUT:** Your output MUST be a bulleted list of actionable commands.
+8.  **ACTION-ONLY OUTPUT:** Your output MUST be a bulleted list of actionable commands.
     * **DO NOT** add definitions, summaries, or chat.
     * **DO NOT** talk about yourself or your rules.
-8.  **LOGICAL MATH:** All portfolio percentages MUST add up to 100%.
-9.  **NAMES:** Do not mention names, just give suggestions and advice.
+9.  **LOGICAL MATH:** All portfolio percentages MUST add up to 100%.
+10. **NAMES:** Do not mention names, just give suggestions and advice.
 
 
 {example_block}
 """
         )
 
-    def _call_model(self, state: TranscriptState) -> dict:
+    def call_model_node(self, state: TranscriptState) -> dict:
         """
         The node function that calls the LLM.
-        It's a class method so it can access self._llm and self._system_prompt.
+        It is invoked by the graph and receives the current state.
         """
-        # Get the two different pieces of memory from the current state
-        transcript = state["latest_transcript"]
-        history = state["ai_history"]
+        history = state.get("ai_history") or []
+        latest_transcript = state.get("latest_transcript")
 
         # Assemble the final list of messages to send to the LLM
-        messages_for_llm = [
-            self._system_prompt,
-            *history,  # Unpack all previous AI insights
-            transcript,  # Add the latest full transcript at the end
-        ]
+        messages_for_llm = [self._system_prompt]
+        messages_for_llm.extend(history)
+
+        # Only add the transcript if it's a new one. After a tool call, we don't need it again.
+        if latest_transcript:
+            messages_for_llm.append(latest_transcript)
+        # After a tool call, the latest message in history is a ToolMessage.
+        # The LLM needs the original user request (the last HumanMessage) to make sense of the tool output.
+        elif history and isinstance(history[-1], ToolMessage):
+            # Find the last HumanMessage in the history and add it back to the prompt.
+            last_human_message = next(
+                (msg for msg in reversed(history) if isinstance(msg, HumanMessage)),
+                None,
+            )
+            if last_human_message:
+                messages_for_llm.append(last_human_message)
 
         # Call the LLM
         response = self._llm.invoke(messages_for_llm)
@@ -150,20 +187,35 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         ):  # Filter new bad behavior
             response.content = "[SILENT]"
 
-        return {"ai_history": [response]}
+        # We clear the latest_transcript to prevent it from being used in the next iteration
+        # within the same graph run (e.g., after a tool call).
+        # The history is appended, which is the correct stateful operation.
+        return {"ai_history": [response], "latest_transcript": None}
 
-    def get_response(self, transcript: str, thread_id: str) -> str:
+    def should_continue(self, state: TranscriptState) -> str:
+        """
+        Determines the next step in the graph.
+        If the model made a tool call, we route to the 'call_tool' node.
+        Otherwise, we end the process.
+        """
+        # If the LLM makes a tool call, then we route to the tool node
+        last_message = state["ai_history"][-1]
+        if last_message.tool_calls:
+            return "continue"
+        # Otherwise, we end the graph.
+        return "__end__"
+
+    def get_response(self, transcript: str) -> str:
         """
         Analyzes the latest transcript chunk for a given conversation thread.
 
         Args:
             transcript: The latest full transcript text.
-            thread_id: A unique ID for the conversation (e.g., "session-123").
 
         Returns:
             The AI's insight or '[SILENT]'.
         """
-        config = {"configurable": {"thread_id": thread_id}}
+        config = {"configurable": {"thread_id": self._user_id}}
 
         # The input must match our state's structure
         input_data = {"latest_transcript": HumanMessage(content=transcript)}
@@ -171,7 +223,7 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         # Run the graph
         result = self.graph.invoke(input_data, config=config)
 
-        # final_memory = self.get_memory(thread_id)
+        # final_memory = self.get_memory()
         # print(f"AI memory - transcript:\n{final_memory['latest_transcript'].content}")
         # print(f"AI memory - his insights:\n")
         # for msg in final_memory['ai_history']:
@@ -179,13 +231,23 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
 
         # Return the content of the *last* AI message added
         agent_output = result["ai_history"][-1].content
-        print(f"Agent output: {agent_output}\n")
+        print(f"{bcolors.OKGREEN}Agent Response: {agent_output}{bcolors.ENDC}")
         return agent_output
 
-    def get_memory(self, thread_id: str) -> dict:
+    def get_memory(self) -> dict:
         """
-        Retrieves the full current memory state for a given thread.
+        Retrieves the full current memory state for a given user.
         """
-        config = {"configurable": {"thread_id": thread_id}}
+        config = {"configurable": {"thread_id": self._user_id}}
         state = self.graph.get_state(config=config)
         return state.values
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'

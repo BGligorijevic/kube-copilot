@@ -1,0 +1,189 @@
+[
+    {
+        "id": "SP001",
+        "name": "UBS CHF Capital Protected Note on SMI",
+        "risk_profile": "Konservativ",
+        "description_de": "100% Kapitalschutz bei Fälligkeit mit bedingter Partizipation an der positiven Wertentwicklung des SMI.",
+        "description_en": "100% capital protection at maturity with conditional participation in the positive performance of the SMI.",
+        "currency": "CHF",
+        "coupon_pa": 0.5,
+        "underlying_assets": "SMI Index",
+        "maturity_date": "2028-12-31"
+    },
+    {
+        "id": "SP002",
+        "name": "CS Barrier Reverse Convertible on Roche",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Bietet einen attraktiven Kupon, solange der Kurs von Roche über der Barriere bleibt.",
+        "description_en": "Offers an attractive coupon as long as the Roche share price remains above the barrier.",
+        "currency": "CHF",
+        "coupon_pa": 5.5,
+        "underlying_assets": "Roche Holding AG",
+        "maturity_date": "2026-06-30"
+    },
+    {
+        "id": "SP003",
+        "name": "Vontobel Tracker Certificate on Swiss Real Estate",
+        "risk_profile": "Wachstum",
+        "description_de": "Partizipiert 1:1 an der Wertentwicklung eines Korbs von Schweizer Immobilienaktien.",
+        "description_en": "Participates 1:1 in the performance of a basket of Swiss real estate stocks.",
+        "currency": "CHF",
+        "coupon_pa": null,
+        "underlying_assets": "Basket of Swiss Real Estate Stocks",
+        "maturity_date": "2030-12-31"
+    },
+    {
+        "id": "SP004",
+        "name": "Leonteq EUR Yield Enhancement Note on SAP",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Hoher Kupon mit bedingtem Kapitalschutz, abhängig von der SAP-Aktienperformance.",
+        "description_en": "High coupon with conditional capital protection, dependent on SAP stock performance.",
+        "currency": "EUR",
+        "coupon_pa": 7.2,
+        "underlying_assets": "SAP SE",
+        "maturity_date": "2026-09-30"
+    },
+    {
+        "id": "SP005",
+        "name": "ZKB USD Capital Protected Note on S&P 500",
+        "risk_profile": "Konservativ",
+        "description_de": "95% Kapitalschutz mit Partizipation am S&P 500 Index.",
+        "description_en": "95% capital protection with participation in the S&P 500 Index.",
+        "currency": "USD",
+        "coupon_pa": 1.0,
+        "underlying_assets": "S&P 500 Index",
+        "maturity_date": "2029-03-31"
+    },
+    {
+        "id": "SP006",
+        "name": "BCV Barrier Reverse Convertible on Nestlé & Novartis",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Kuponzahlung basierend auf der Performance der schlechteren von zwei Schweizer Blue-Chip-Aktien.",
+        "description_en": "Coupon payment based on the performance of the worst of two Swiss blue-chip stocks.",
+        "currency": "CHF",
+        "coupon_pa": 6.1,
+        "underlying_assets": "Nestlé SA, Novartis AG",
+        "maturity_date": "2025-12-19"
+    },
+    {
+        "id": "SP007",
+        "name": "Julius Bär Tracker on Global Tech Leaders",
+        "risk_profile": "Wachstum",
+        "description_de": "Einfache Partizipation an einem Korb globaler Technologieführer wie Apple, Microsoft und Google.",
+        "description_en": "Simple participation in a basket of global tech leaders like Apple, Microsoft, and Google.",
+        "currency": "USD",
+        "coupon_pa": null,
+        "underlying_assets": "Basket of Global Tech Stocks",
+        "maturity_date": "2028-06-30"
+    },
+    {
+        "id": "SP008",
+        "name": "Pictet Multi-Asset Yield Note (EUR)",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Diversifizierte Renditequelle mit bedingtem Schutz über verschiedene Anlageklassen.",
+        "description_en": "Diversified yield source with conditional protection across multiple asset classes.",
+        "currency": "EUR",
+        "coupon_pa": 4.8,
+        "underlying_assets": "Multi-Asset Basket (Equities, Bonds)",
+        "maturity_date": "2027-03-31"
+    },
+    {
+        "id": "SP009",
+        "name": "Raiffeisen CHF Fixed Coupon Note",
+        "risk_profile": "Konservativ",
+        "description_de": "Fester jährlicher Kupon mit 100% Kapitalschutz bei Fälligkeit, unabhängig von der Marktentwicklung.",
+        "description_en": "Fixed annual coupon with 100% capital protection at maturity, regardless of market performance.",
+        "currency": "CHF",
+        "coupon_pa": 2.5,
+        "underlying_assets": "Raiffeisen Switzerland Cooperative",
+        "maturity_date": "2027-12-31"
+    },
+    {
+        "id": "SP010",
+        "name": "Swissquote Dynamic Growth Certificate",
+        "risk_profile": "Wachstum",
+        "description_de": "Hebel-Partizipation an einem dynamischen Portfolio von Schweizer Wachstumsaktien.",
+        "description_en": "Leveraged participation in a dynamic portfolio of Swiss growth stocks.",
+        "currency": "CHF",
+        "coupon_pa": null,
+        "underlying_assets": "Dynamic Basket of Swiss Growth Stocks",
+        "maturity_date": "2027-09-30"
+    },
+    {
+        "id": "SP011",
+        "name": "UBS Barrier Reverse Convertible on SMI",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Attraktiver Kupon, solange der SMI-Index über der vordefinierten Barriere notiert.",
+        "description_en": "Attractive coupon as long as the SMI index trades above the predefined barrier.",
+        "currency": "CHF",
+        "coupon_pa": 5.0,
+        "underlying_assets": "SMI Index",
+        "maturity_date": "2026-03-20"
+    },
+    {
+        "id": "SP012",
+        "name": "CS Capital Protected Note on Gold",
+        "risk_profile": "Konservativ",
+        "description_de": "100% Kapitalschutz in USD mit Partizipation an steigenden Goldpreisen.",
+        "description_en": "100% capital protection in USD with participation in rising gold prices.",
+        "currency": "USD",
+        "coupon_pa": 0.25,
+        "underlying_assets": "Gold (XAU)",
+        "maturity_date": "2028-09-29"
+    },
+    {
+        "id": "SP013",
+        "name": "Vontobel Capped Outperformance Certificate on Nasdaq 100",
+        "risk_profile": "Wachstum",
+        "description_de": "Überproportionale Partizipation an der positiven Entwicklung des Nasdaq 100 bis zu einem Cap.",
+        "description_en": "Disproportionate participation in the positive performance of the Nasdaq 100 up to a cap.",
+        "currency": "USD",
+        "coupon_pa": null,
+        "underlying_assets": "Nasdaq 100 Index",
+        "maturity_date": "2026-12-30"
+    },
+    {
+        "id": "SP014",
+        "name": "Leonteq Barrier Reverse Convertible on EURO STOXX 50",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Hoher Kupon in EUR mit bedingtem Schutz, basierend auf dem EURO STOXX 50 Index.",
+        "description_en": "High coupon in EUR with conditional protection, based on the EURO STOXX 50 Index.",
+        "currency": "EUR",
+        "coupon_pa": 6.5,
+        "underlying_assets": "EURO STOXX 50 Index",
+        "maturity_date": "2026-12-18"
+    },
+    {
+        "id": "SP015",
+        "name": "ZKB Callable Fixed Coupon Note",
+        "risk_profile": "Konservativ",
+        "description_de": "Fester Kupon mit der Möglichkeit einer vorzeitigen Rückzahlung durch den Emittenten.",
+        "description_en": "Fixed coupon with the possibility of early redemption by the issuer.",
+        "currency": "CHF",
+        "coupon_pa": 3.0,
+        "underlying_assets": "Zürcher Kantonalbank",
+        "maturity_date": "2029-06-29"
+    },
+    {
+        "id": "SP016",
+        "name": "BCV Tracker on Swiss Dividend Champions",
+        "risk_profile": "Ausgewogen",
+        "description_de": "Partizipiert an einem Korb von Schweizer Unternehmen mit hoher und stabiler Dividendenausschüttung.",
+        "description_en": "Participates in a basket of Swiss companies with high and stable dividend payouts.",
+        "currency": "CHF",
+        "coupon_pa": null,
+        "underlying_assets": "Basket of Swiss Dividend Stocks",
+        "maturity_date": "2030-03-28"
+    },
+    {
+        "id": "SP017",
+        "name": "Julius Bär Autocallable Barrier Reverse Convertible on Amazon",
+        "risk_profile": "Wachstum",
+        "description_de": "Hoher Kupon und Möglichkeit der vorzeitigen Rückzahlung, wenn die Amazon-Aktie auf oder über dem anfänglichen Niveau liegt.",
+        "description_en": "High coupon and potential for early redemption if the Amazon stock is at or above its initial level.",
+        "currency": "USD",
+        "coupon_pa": 9.5,
+        "underlying_assets": "Amazon.com Inc.",
+        "maturity_date": "2026-09-25"
+    }
+]

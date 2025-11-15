@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 
-async def transcription_sender(websocket: WebSocket, language: str, shutdown_event: asyncio.Event):
+async def transcription_sender(websocket: WebSocket, language: str, shutdown_event: asyncio.Event, user_id: str = "none"):
     """
     Handles the transcription and agent services, sending data to the client.
     This function only WRITES to the websocket.
@@ -40,7 +40,7 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
                 return
             try:
                 response = await asyncio.to_thread(
-                    agent_service.get_response, text_to_send, "transcript-1"
+                    agent_service.get_response, text_to_send
                 )
                 if response and response.strip().upper() != "[SILENT]":
                     # Check if the websocket is still active before sending
@@ -51,7 +51,7 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             except Exception as e:
                 print(f"Error sending transcript to agent: {e}")
 
-        agent_service = AgentService(language=language)
+        agent_service = AgentService(language=language, user_id=user_id)
         transcription_service = TranscriptionService(
             language, text_queue, finished_text_queue
         )
@@ -100,9 +100,10 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
 
             # Send the full transcript to the agent every N sentences.
             # Using modulo is more reliable than integer division for this.
-            if current_sentences > 0 and current_sentences % 5 == 0 and current_sentences != sentence_count:
+            new_sentences = current_sentences - sentence_count
+            if new_sentences >= 6:
                 print(
-                    f"Sending full transcript to agent. Sentence count: {current_sentences}"
+                    f"Sending full transcript to agent after {new_sentences} new sentences. Total: {current_sentences}"
                 )
                 await send_to_agent(stabilized_text)
                 sentence_count = current_sentences
@@ -153,11 +154,13 @@ async def message_receiver(
                 )
 
                 language = data.get("language", "de")
+                user_id = data.get("user_id", "none")
+
                 shutdown_event = asyncio.Event()
                 shutdown_events.append(shutdown_event)
                 # Create a new task in the provided task group
                 new_task = asyncio.create_task(
-                    transcription_sender(websocket, language, shutdown_event)
+                    transcription_sender(websocket, language, shutdown_event, user_id)
                 )
                 transcription_task_group.add(new_task)
             elif action == "stop":
@@ -177,7 +180,7 @@ async def message_receiver(
                     if agent_service and stabilized_text:
                         print("Sending final transcript to agent and waiting for response.")
                         response = await asyncio.to_thread(
-                            agent_service.get_response, stabilized_text, "transcript-1"
+                            agent_service.get_response, stabilized_text
                         )
                         if response and response.strip().upper() != "[SILENT]":
                             await websocket.send_text(

@@ -1,0 +1,46 @@
+@startuml
+title Agent Service Graph Logic
+
+skinparam activity {
+  BackgroundColor #f8f8f8
+  BorderColor #444
+  ArrowColor #333
+}
+skinparam note {
+  BackgroundColor #lightyellow
+  BorderColor #darkgray
+}
+
+start
+
+:START;
+note right
+  Graph entry point.
+  Input: `latest_transcript`
+end note
+
+-> "call_model_node";
+note left
+  1. Assembles messages (System Prompt + History + Transcript).
+  2. Invokes the LLM (`llama3.1`).
+  3. Performs repetition and refusal checks on the response.
+  4. Updates state with new `AIMessage`.
+end note
+
+if ("should_continue?") then ([tool_calls exist])
+  :call_tool;
+  note right
+    A `ToolNode` that executes the function
+    specified in the `AIMessage.tool_calls`.
+    (e.g., `search_structured_products`)
+  end note
+  ->"call_model_node";
+else ([__end__])
+  :stop;
+  note left
+    The graph run finishes.
+    The final state is returned.
+  end note
+endif
+
+@enduml
