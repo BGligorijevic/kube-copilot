@@ -101,7 +101,7 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             # Send the full transcript to the agent every N sentences.
             # Using modulo is more reliable than integer division for this.
             new_sentences = current_sentences - sentence_count
-            if new_sentences >= 7:
+            if new_sentences >= 10:
                 print(f"Sending full transcript to agent after {new_sentences} new sentences. Total: {current_sentences}")
                 print(f"Transcript sent to the agent:\n{bcolors.OKBLUE}{stabilized_text}{bcolors.ENDC}")
                 await send_to_agent(stabilized_text)

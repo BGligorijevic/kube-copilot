@@ -73,6 +73,16 @@ That sounds much more suitable for my current situation. Good. I will re-run you
 assets and guaranteed income streams. Thank you, that would give me peace of mind. Of course. Let me work on that, and I'll send you the revised proposal by the end of the day.
 """
 
+    STABLE_EN_FOCUS_CHF = """
+Hello, thanks for making the time. 
+What shall we cover today? Hello. I've been reading about market volatility, and frankly, I'm a bit concerned about my retirement savings. 
+I understand. You're feeling that your current plan might be too exposed to a potential downturn? Exactly. I'm approaching retirement, and my main priority now is capital protection. 
+I can't afford a big loss. That's a very clear and valid priority. So, we need to shift the focus firmly from accumulation to preservation? Yes. 
+I'm less concerned with high returns now and more concerned with stable, predictable income and protecting what I've built. Right. 
+I am also very concerned about the weakness of the USD and other major currencies compared to the swiss franc.
+Of course. Let me work on that, and I'll send you the revised proposal by the end of the day.
+"""
+
 async def run_long_transcript_test():
     """
     Runs a test with a long, realistic transcript, calling the agent
@@ -80,7 +90,7 @@ async def run_long_transcript_test():
     """
     
     # --- Select the test case to run ---
-    scenario_name = "STABLE_EN"
+    scenario_name = "STABLE_EN_FOCUS_CHF"
     transcript_to_use = getattr(TestScenarios, scenario_name)
     
     # --- Determine language from the chosen transcript ---

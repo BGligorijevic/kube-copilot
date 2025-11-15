@@ -38,4 +38,4 @@ def search_structured_products(
             p for p in results if p["coupon_pa"] and p["coupon_pa"] >= min_coupon_pa
         ]
 
-    return results[:10]  # Return a maximum of 10 results to keep the context small
+    return results 
