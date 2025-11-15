@@ -62,6 +62,16 @@ That's great. I look forward to seeing those.
 My pleasure. I'll be in touch shortly.
 """
 
+    STABLE_EN = """
+Hello, thanks for making the time. 
+What shall we cover today? Hello. I've been reading about market volatility, and frankly, I'm a bit concerned about my retirement savings. 
+I understand. You're feeling that your current plan might be too exposed to a potential downturn? Exactly. I'm approaching retirement, and my main priority now is capital protection. 
+I can't afford a big loss. That's a very clear and valid priority. So, we need to shift the focus firmly from accumulation to preservation? Yes. 
+I'm less concerned with high returns now and more concerned with stable, predictable income and protecting what I've built. Right. 
+This means we should review your equity holdings and significantly increase your allocation to fixed-income assets, perhaps even some annuities, to ensure a stable floor. 
+That sounds much more suitable for my current situation. Good. I will re-run your plan with a capital preservation model. I'll prepare a new strategy that heavily emphasizes low-volatility 
+assets and guaranteed income streams. Thank you, that would give me peace of mind. Of course. Let me work on that, and I'll send you the revised proposal by the end of the day.
+"""
 
 async def run_long_transcript_test():
     """
@@ -70,12 +80,11 @@ async def run_long_transcript_test():
     """
     
     # --- Select the test case to run ---
-    transcript_to_use = TestScenarios.BALANCED_EN
-    # transcript_to_use = TestScenarios.GROWTH_DE
-    # transcript_to_use = TestScenarios.SAFETY_AND_INCOME_DE
+    scenario_name = "STABLE_EN"
+    transcript_to_use = getattr(TestScenarios, scenario_name)
     
     # --- Determine language from the chosen transcript ---
-    if transcript_to_use == TestScenarios.BALANCED_EN:
+    if "_EN" in scenario_name:
         language = "en"
     else:
         language = "de"
