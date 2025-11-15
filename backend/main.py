@@ -101,10 +101,9 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             # Send the full transcript to the agent every N sentences.
             # Using modulo is more reliable than integer division for this.
             new_sentences = current_sentences - sentence_count
-            if new_sentences >= 6:
-                print(
-                    f"Sending full transcript to agent after {new_sentences} new sentences. Total: {current_sentences}"
-                )
+            if new_sentences >= 5:
+                print(f"Sending full transcript to agent after {new_sentences} new sentences. Total: {current_sentences}")
+                print(f"Transcript sent to the agent:\n {bcolors.OKBLUE}{stabilized_text}{bcolors.ENDC}")
                 await send_to_agent(stabilized_text)
                 sentence_count = current_sentences
 
@@ -219,3 +218,14 @@ async def websocket_endpoint(websocket: WebSocket):
         for task in transcription_tasks:
             task.cancel()
         print("All transcription tasks cancelled.")
+
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'

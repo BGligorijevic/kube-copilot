@@ -15,13 +15,13 @@ from .tools.product_tool import search_structured_products
 
 class TranscriptState(TypedDict):
     """
-    latest_transcript: Replaces the previous transcript.
-    ai_history: Appends to the list of AI insights.
+    latest_transcript: Replaces the previous transcript with the latest full version.
+    ai_history: Appends to the list of AI insights and tool calls, preserving the agent's memory of its own actions.
     """
 
     latest_transcript: HumanMessage
     ai_history: Annotated[List[BaseMessage], operator.add]
-
+    
 
 class AgentService:
     """
@@ -54,14 +54,14 @@ class AgentService:
 
         # 3. Build the graph
         builder = StateGraph(TranscriptState)
-        builder.add_node("call_model", self.call_model_node)
+        builder.add_node("call_model", self._call_model_node)
         tool_node = ToolNode(self._tools, messages_key="ai_history")
         builder.add_node("call_tool", tool_node)
 
         builder.add_conditional_edges(
-            "call_model", self.should_continue, {"continue": "call_tool", "__end__": END}
+            "call_model", self._should_continue, {"continue": "call_tool", "__end__": END}
         )
-        builder.add_edge(START, "call_model")
+        builder.add_edge(START, "call_model") # The first node to be called
         builder.add_edge("call_tool", "call_model")
 
         # 4. Compile the graph with memory
@@ -125,11 +125,12 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
 """
         )
 
-    def call_model_node(self, state: TranscriptState) -> dict:
+    def _call_model_node(self, state: TranscriptState) -> dict:
         """
         The node function that calls the LLM.
         It is invoked by the graph and receives the current state.
         """
+        # The state contains the full message history. We pass it to the model.
         history = state.get("ai_history") or []
         latest_transcript = state.get("latest_transcript")
 
@@ -137,19 +138,9 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         messages_for_llm = [self._system_prompt]
         messages_for_llm.extend(history)
 
-        # Only add the transcript if it's a new one. After a tool call, we don't need it again.
+        # The latest transcript is the most up-to-date context from the user.
         if latest_transcript:
             messages_for_llm.append(latest_transcript)
-        # After a tool call, the latest message in history is a ToolMessage.
-        # The LLM needs the original user request (the last HumanMessage) to make sense of the tool output.
-        elif history and isinstance(history[-1], ToolMessage):
-            # Find the last HumanMessage in the history and add it back to the prompt.
-            last_human_message = next(
-                (msg for msg in reversed(history) if isinstance(msg, HumanMessage)),
-                None,
-            )
-            if last_human_message:
-                messages_for_llm.append(last_human_message)
 
         # Call the LLM
         response = self._llm.invoke(messages_for_llm)
@@ -174,31 +165,37 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
             for old_response in previous_ai_responses
         )
 
+        # Language-specific refusal phrases
+        refusal_phrases = {
+            "de": "Ich kann keine Finanzberatung geben",
+            "en": "I cannot provide financial advice",
+        }
+        current_refusal_phrase = refusal_phrases.get(self._language, "I cannot provide")
+
         # 4. Force silence
         # Also force silence on the model's new, bad "explanation" habit
         if (
             is_exact_duplicate or
             is_subset_duplicate or
             "[SILENT]" in new_content or
-            new_content.startswith("I cannot provide") or  # Catch refusals
-            "(Siehe oben" in new_content or  # Filter new bad behavior
-            ": Das bedeutet" in new_content  # Filter new bad behavior
+            new_content.startswith(current_refusal_phrase) or  # Catch refusals
+            "(Siehe oben" in new_content or  # Filter German bad behavior
+            ": Das bedeutet" in new_content  # Filter German bad behavior
 
         ):  # Filter new bad behavior
             response.content = "[SILENT]"
 
-        # We clear the latest_transcript to prevent it from being used in the next iteration
-        # within the same graph run (e.g., after a tool call).
-        # The history is appended, which is the correct stateful operation.
+        # We clear the latest_transcript because it has been processed.
+        # The response is appended to the history, which is the correct stateful operation.
         return {"ai_history": [response], "latest_transcript": None}
 
-    def should_continue(self, state: TranscriptState) -> str:
+
+    def _should_continue(self, state: TranscriptState) -> str:
         """
         Determines the next step in the graph.
         If the model made a tool call, we route to the 'call_tool' node.
         Otherwise, we end the process.
         """
-        # If the LLM makes a tool call, then we route to the tool node
         last_message = state["ai_history"][-1]
         if last_message.tool_calls:
             return "continue"
@@ -222,12 +219,6 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
 
         # Run the graph
         result = self.graph.invoke(input_data, config=config)
-
-        # final_memory = self.get_memory()
-        # print(f"AI memory - transcript:\n{final_memory['latest_transcript'].content}")
-        # print(f"AI memory - his insights:\n")
-        # for msg in final_memory['ai_history']:
-        #    print(f"  - {msg.content}")
 
         # Return the content of the *last* AI message added
         agent_output = result["ai_history"][-1].content
