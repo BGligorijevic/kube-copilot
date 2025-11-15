@@ -101,9 +101,9 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
             # Send the full transcript to the agent every N sentences.
             # Using modulo is more reliable than integer division for this.
             new_sentences = current_sentences - sentence_count
-            if new_sentences >= 5:
+            if new_sentences >= 7:
                 print(f"Sending full transcript to agent after {new_sentences} new sentences. Total: {current_sentences}")
-                print(f"Transcript sent to the agent:\n {bcolors.OKBLUE}{stabilized_text}{bcolors.ENDC}")
+                print(f"Transcript sent to the agent:\n{bcolors.OKBLUE}{stabilized_text}{bcolors.ENDC}")
                 await send_to_agent(stabilized_text)
                 sentence_count = current_sentences
 
@@ -112,13 +112,8 @@ async def transcription_sender(websocket: WebSocket, language: str, shutdown_eve
     except Exception as e:
         print(f"An error occurred in transcription_sender: {e}")
     finally:
-        # This block now handles final sends and cleanup.
-        # It's triggered by the shutdown_event or by cancellation.
-        if websocket.client_state.name == "CONNECTED":
-            print("Sending final (complete) transcript to client.")
-            await websocket.send_text(
-                json.dumps({"type": "transcript", "data": stabilized_text})
-            )
+        # The final transcript is now handled by the message_receiver.
+        # This block is now only for cleaning up the transcription service.
     
         print("Transcription service shutting down.")
         if 'transcription_service' in locals() and transcription_service:
@@ -177,17 +172,21 @@ async def message_receiver(
                 if results and not isinstance(results[0], Exception):
                     stabilized_text, agent_service, sentence_count = results[0]
                     if agent_service and stabilized_text:
-                        print("Sending final transcript to agent and waiting for response.")
-                        response = await asyncio.to_thread(
-                            agent_service.get_response, stabilized_text
-                        )
-                        if response and response.strip().upper() != "[SILENT]":
-                            await websocket.send_text(
-                                json.dumps({"type": "insight", "data": response})
+                        # Ensure the connection is still open before sending the final response.
+                        if websocket.client_state.name == "CONNECTED":
+                            print("Sending final transcript to agent and waiting for response.")
+                            response = await asyncio.to_thread(
+                                agent_service.get_response, stabilized_text
                             )
+                            if response and response.strip().upper() != "[SILENT]":
+                                await websocket.send_text(
+                                    json.dumps({"type": "insight", "data": response})
+                                )
+                        else:
+                            print("Client disconnected before final agent response could be sent.")
 
                 print("All tasks gracefully stopped. Closing connection.")
-                await websocket.close() # Close the connection as the very last step.
+                await websocket.close()  # Close the connection as the very last step.
                 break # Exit the while loop.
 
     except WebSocketDisconnect:
@@ -221,11 +220,5 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 class bcolors:
-    HEADER = '\033[95m'
     OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
     ENDC = '\033[0m'
-    BOLD = '\033[1m'

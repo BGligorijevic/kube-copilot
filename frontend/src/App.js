@@ -80,7 +80,13 @@ function App() {
       if (message.type === 'transcript') {
         setTranscript(message.data);
       } else if (message.type === 'insight') {
-        setInsights(prevInsights => [message.data, ...prevInsights]);
+        // Add the new insight only if it's different from the most recent one.
+        setInsights(prevInsights => {
+          if (prevInsights.length > 0 && prevInsights[0] === message.data) {
+            return prevInsights; // It's a duplicate, do not update.
+          }
+          return [message.data, ...prevInsights]; // It's new, prepend it.
+        });
       }
     };
 

@@ -10,62 +10,12 @@ from backend.agent import AgentService
 from langgraph.graph import START, END
 
 
-async def run_test():
+class TestScenarios:
     """
-    Initializes the AgentService and runs a series of test transcripts against it
-    to verify its behavior in isolation.
+    A container for different test transcript scenarios.
+    This makes it easier to add, remove, or select tests.
     """
-    print("--- Initializing Agent Service for Testing ---")
-    # We use a consistent user_id to ensure the agent maintains memory across calls.
-    agent_service = AgentService(language="de", user_id="test_user_123")
-    print("--- Agent Service Initialized ---\n")
-
-    # A list of transcripts to simulate a conversation flow.
-    test_transcripts = [
-        # 1. Initial greeting, should be silent.
-        "Guten Tag, ich würde gerne über meine Anlagen sprechen.",
-        
-        # 2. Client states a goal. Agent should provide a suggestion.
-        "Mein Ziel ist es, ein ausgewogenes Portfolio zu haben.",
-        
-        # 3. Client asks for specific products, which should trigger the tool.
-        # The agent should first call the tool, then interpret the result in the next step.
-        "Können Sie mir Produkte mit hohem Kupon finden?",
-
-        # 4. A repeated statement, which should be caught by the repetition check.
-        "Mein Ziel ist es, ein ausgewogenes Portfolio zu haben.",
-
-        # 5. A new goal that requires a different suggestion.
-        "Ich habe meine Meinung geändert, ich möchte jetzt ein konservatives Risikoprofil.",
-    ]
-
-    full_transcript = ""
-    for i, transcript in enumerate(test_transcripts):
-        print(f"--- Test Case {i+1} ---")
-        full_transcript += (" " + transcript).strip()
-        print(f"Input Transcript: '{full_transcript}'")
-        
-        # In a real app, this is an async call, so we await it.
-        # We use asyncio.to_thread because the underlying graph invoke call is synchronous.
-        await asyncio.to_thread(agent_service.get_response, full_transcript)
-
-        # Optional: Print the full memory state to see how the history evolves
-        # print("\n--- Current Agent Memory State ---")
-        # memory = await asyncio.to_thread(agent_service.get_memory)
-        # for key, value in memory.items():
-        #     print(f"{key}: {value}")
-        # print("-" * 20 + "\n")
-
-async def run_long_transcript_test():
-    """
-    Runs a test with a long, realistic transcript, calling the agent
-    incrementally to simulate a real-time conversation.
-    """
-    print("--- Initializing Agent Service for Long Transcript Test ---")
-    agent_service = AgentService(language="de", user_id="test_user_long_transcript")
-    print("--- Agent Service Initialized ---\n")
-
-    full_text = """
+    SAFETY_AND_INCOME_DE = """
 Guten Tag, Herr Keller. Schön, Sie zu sehen. Wie geht es Ihnen?
 Guten Tag, Frau Herzog. Danke, mir geht es gut. Ich hoffe, Ihnen auch?
 Ja, danke. Nehmen Sie doch bitte Platz. Sie sagten am Telefon, Sie würden gerne über Ihre Anlagesituation sprechen.
@@ -86,8 +36,56 @@ Ich werde mir Ihre aktuelle Depotstruktur noch einmal genau ansehen und dazu ein
 Ja, das klingt nach einem sehr guten Plan. So machen wir es. Vielen Dank für Ihre Zeit, Frau Herzog.
 Sehr gerne, Herr Keller. Es war mir eine Freude. Ich begleite Sie noch zur Tür.
 """
+
+    GROWTH_DE = """
+Guten Tag. Schön, Sie zu sehen. Worum geht es Ihnen heute? Guten Tag. Ich wollte mir meine Anlagestrategie ansehen. 
+Ich habe das Gefühl, wir könnten da etwas mutiger sein. Das heisst, Sie sind bereit, für höhere Renditechancen auch ein höheres Risiko einzugehen? 
+Ja, genau. Ich bin beruflich etabliert, habe einen langen Anlagehorizont und möchte mein Kapital aktiv vermehren. 
+Ein paar Schwankungen am Markt werfen mich nicht aus der Bahn. Verstehe. Der Fokus liegt also klar auf Wachstum, weniger auf Kapitalerhalt oder Ausschüttungen. 
+Richtig. Ich möchte in Sektoren investieren, die echtes Potenzial haben, auch wenn sie volatiler sind. Stillstand ist für mich derzeit keine Option. Das ist ein klares Profil. 
+In dem Fall sollten wir uns von den "sicheren Häfen" etwas entfernen und uns stattdessen gezielt wachstumsstarke Technologiefonds oder auch Schwellenmärkte ansehen. 
+Das klingt genau nach dem, was ich mir vorgestellt habe. Gut. Ich werde ein paar Simulationen mit einer dynamischeren Portfolio-Allokation durchführen und Ihnen drei konkrete 
+Umschichtungsvorschläge ausarbeiten. Perfekt. Ich warte auf Ihre Vorschläge. Sehr gerne. Dann bis in Kürze.
+"""
+
+    BALANCED_EN = """
+Good afternoon. It's good to see you. What's on your mind today?
+Good afternoon. I'd like to review my investment strategy. I feel it might be time for a more balanced approach.
+Meaning you'd like to reduce some of the volatility, even if it means slightly more moderate returns?
+Yes, precisely. We've had some good growth, but looking ahead, I'd prefer a bit more stability. I'm not looking to eliminate all risk, just to find a better equilibrium.
+I understand. So, the goal is shifting from pure aggressive growth towards a blend of growth and capital preservation?
+Exactly. I want to remain invested, but I'd sleep better knowing it's not quite so exposed to market swings. I'm interested in steady, long-term performance now.
+That's a very sensible adjustment. In that case, we should look at re-weighting your portfolio. We can reduce exposure to the high-growth sectors and increase allocations in high-quality dividend funds or diversified bond holdings.
+That sounds like the direction I was hoping for.
+Excellent. I will prepare an analysis of your current holdings and model a new, more balanced allocation. I'll come back to you with three concrete proposals for us to discuss.
+That's great. I look forward to seeing those.
+My pleasure. I'll be in touch shortly.
+"""
+
+
+async def run_long_transcript_test():
+    """
+    Runs a test with a long, realistic transcript, calling the agent
+    incrementally to simulate a real-time conversation.
+    """
+    
+    # --- Select the test case to run ---
+    transcript_to_use = TestScenarios.BALANCED_EN
+    # transcript_to_use = TestScenarios.GROWTH_DE
+    # transcript_to_use = TestScenarios.SAFETY_AND_INCOME_DE
+    
+    # --- Determine language from the chosen transcript ---
+    if transcript_to_use == TestScenarios.BALANCED_EN:
+        language = "en"
+    else:
+        language = "de"
+
+    print("--- Initializing Agent Service for Long Transcript Test ---")
+    agent_service = AgentService(language=language, user_id="test_user_long_transcript")
+    print("--- Agent Service Initialized ---\n")
+
     # Split the text into sentences, preserving the delimiters.
-    sentences = [s.strip() for s in full_text.replace('?', '?|').replace('.', '.|').replace('!', '!|').split('|') if s.strip()]
+    sentences = [s.strip() for s in transcript_to_use.replace('?', '?|').replace('.', '.|').replace('!', '!|').split('|') if s.strip()]
 
     transcript_chunk = ""
     last_call_index = 0

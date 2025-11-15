@@ -114,6 +114,7 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
     * 'Konservativ' (Safety): Must have LOW equities (e.g., 20-30%).
     * 'Ausgewogen' (Balanced): Must have MEDIUM equities (e.g., 40-60%).
     * 'Wachstum' / 'Risky' (Growth): Must have HIGH equities/risk assets (e.g., 70%+).
+    * **FINANCE RULE:** Do NOT confuse **Growth (Wachstum)** with **Income (Zinsen)**. A 'High-Yield Bond' (Hochzinsanleihe) is an *Income* product, NOT a *Growth* product. If the client asks for *Wachstum*, you MUST suggest *equity-based* assets (like stocks or funds) and NOT *bond-based* assets.
 8.  **ACTION-ONLY OUTPUT:** Your output MUST be a bulleted list of actionable commands.
     * **DO NOT** add definitions, summaries, or chat.
     * **DO NOT** talk about yourself or your rules.
@@ -146,25 +147,6 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         response = self._llm.invoke(messages_for_llm)
         new_content = response.content.strip()  # Clean up any whitespace
 
-        # --- Robust Repetition Check ---
-
-        # 1. Get previous AI responses
-        previous_ai_responses = {
-            msg.content.strip() for msg in history if isinstance(msg, AIMessage)
-        }
-
-        # 2. Check for exact duplicates
-        is_exact_duplicate = new_content in previous_ai_responses
-
-        # 3. Check if new response is a "subset" of an old one
-        #    (e.g., new="A" when history contains "A, B, C")
-        #    This is the check you are currently missing.
-        is_subset_duplicate = any(
-            new_content in old_response
-            and new_content != old_response  # Make sure it's not just an exact match
-            for old_response in previous_ai_responses
-        )
-
         # Language-specific refusal phrases
         refusal_phrases = {
             "de": "Ich kann keine Finanzberatung geben",
@@ -172,12 +154,11 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         }
         current_refusal_phrase = refusal_phrases.get(self._language, "I cannot provide")
 
-        # 4. Force silence
+        # Force silence on refusals or bad formatting
         # Also force silence on the model's new, bad "explanation" habit
         if (
-            is_exact_duplicate or
-            is_subset_duplicate or
             "[SILENT]" in new_content or
+            "*SILENT*" in new_content or
             new_content.startswith(current_refusal_phrase) or  # Catch refusals
             "(Siehe oben" in new_content or  # Filter German bad behavior
             ": Das bedeutet" in new_content  # Filter German bad behavior
@@ -234,11 +215,5 @@ You are an internal-only training tool. Your persona is that of a 'whisperer'.
         return state.values
 
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
     ENDC = '\033[0m'
-    BOLD = '\033[1m'
